@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00574b">
+
+    <RelativeLayout
+        android:id="@+id/mngrequests"
+        android:layout_width="146dp"
+        android:layout_height="122dp"
+        android:background="#40d3d3d3"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="402dp">
+
+        <ImageView
+            android:id="@id/moneydonationimg"
+            android:layout_width="75dp"
+            android:layout_height="57dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="52dp"
+            app:srcCompat="@drawable/feedback" />
+
+        <TextView
+            android:id="@+id/mngrequestslabel"
+            android:layout_width="111dp"
+            android:layout_height="36dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginBottom="9dp"
+            android:text="إدارة طلبات التبرع"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mngmemberships"
+        android:layout_width="146dp"
+        android:layout_height="122dp"
+        android:background="#40d3d3d3"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="402dp">
+
+        <TextView
+            android:id="@+id/mngmembershipslabel"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="23dp"
+            android:text="إدارة العضويات"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@id/itemdonationimg"
+            android:layout_width="74dp"
+            android:layout_height="58dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="53dp"
+            app:srcCompat="@drawable/report" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ehsanlogo2"
+        android:layout_width="283dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084"
+        app:srcCompat="@drawable/ehsan_white" />
+
+    <ImageView
+        android:id="@+id/sidemenu2"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.013"
+        app:srcCompat="@drawable/menu" />
+
+    <RelativeLayout
+        android:id="@+id/mngadmin"
+        android:layout_width="146dp"
+        android:layout_height="122dp"
+        android:background="#40d3d3d3"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="268dp">
+
+        <ImageView
+            android:id="@+id/moneydonationimg"
+            android:layout_width="75dp"
+            android:layout_height="58dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="51dp"
+            app:srcCompat="@drawable/group" />
+
+        <TextView
+            android:id="@+id/mngadminlabel"
+            android:layout_width="97dp"
+            android:layout_height="34dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="11dp"
+            android:text="إدارة المشرفين"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mngevents"
+        android:layout_width="146dp"
+        android:layout_height="122dp"
+        android:background="#40d3d3d3"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="268dp">
+
+        <TextView
+            android:id="@+id/mngeventslabel"
+            android:layout_width="76dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="4dp"
+            android:text="إدارة الأخبار والفعاليات"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/itemdonationimg"
+            android:layout_width="74dp"
+            android:layout_height="59dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="52dp"
+            app:srcCompat="@drawable/calendar" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

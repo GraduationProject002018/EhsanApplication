@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "261049024117",
+    "firebase_url": "https://ehsan-c48bc.firebaseio.com",
+    "project_id": "ehsan-c48bc",
+    "storage_bucket": "ehsan-c48bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261049024117:android:7e5ec9deabf321c0",
+        "android_client_info": {
+          "package_name": "com.example.ishzark.ehsanapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261049024117-3odb0cb50qq4secl6ilp2t9mrtf232go.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ishzark.ehsanapp",
+            "certificate_hash": "480c62644c34832e431a3d27cc57692ce85a59ac"
+          }
+        },
+        {
+          "client_id": "261049024117-d7a33l0b5rpu0iegvq5pgro693jh6ncf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3kJHMYVIWnp5-fDShsL2OahhJEX5jxa8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261049024117-d7a33l0b5rpu0iegvq5pgro693jh6ncf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
