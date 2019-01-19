@@ -4,6 +4,7 @@ package com.example.ishzark.ehsanapp;
 import android.Manifest;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -21,6 +22,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,79 +41,97 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class RegisterActivity   extends AppCompatActivity implements OnMapReadyCallback{
-//Get date variables
+
+public class RegisterActivity   extends AppCompatActivity implements OnMapReadyCallback {
+    //Get date variables
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     private static final String TAG = "RegisterActivity";
 
-//Get location variables
+    //Get location variables
     private GoogleMap mMap;
-    LocationManager locationManager;
+    private LocationManager locationManager;
     private FusedLocationProviderClient mFusedLocationClient;
     private LocationCallback mLocationCallback;
     private Marker marker;
-    Button btnButton;
+    private Button btnButton;
     private Context mContext;
     private static final int REQUEST_ACCESS_COARSE_LOCATION = 1;
     private TextView CityText;
+    private RadioButton ChosenGender;
 
 
+    private EditText InputName, InputPhonenum, InputPass, InputBd, InputCity;
+    private RadioGroup GenderGroup;
+    private ProgressBar progressBar;
+    private Button SignupButton;
 
-
-    //private EditText InputName,InputPhonenum,InputCity,InputNeighborhood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
+
+        InputName = (EditText) findViewById(R.id.nameinput);
+        InputPass = (EditText) findViewById(R.id.passwordinput);
+        //InputBd = (EditText) findViewById(R.id.bdinput);
+//        InputCity = findViewById(R.id.locationadd);
+        InputPhonenum = (EditText) findViewById(R.id.phoneinput);
+
+        SignupButton = findViewById(R.id.signupbtn);
+        GenderGroup = findViewById(R.id.Gendergrp);
+        progressBar = findViewById(R.id.progressbar);
+        progressBar.setVisibility(View.GONE);
+
+        final List<Users> user = new ArrayList<Users>();
+        //FirebaseStorage storage = FirebaseStorage.getInstance(FirebaseApp.initializeApp(m_context));
+
+
 ///////////////////////////////////Start of Date Picker Code///////////////////////////
 
-            mDisplayDate = (TextView) findViewById(R.id.bdinput);
+        mDisplayDate = (TextView) findViewById(R.id.bdinput);
 
-            mDisplayDate.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Calendar cal = Calendar.getInstance();
-                    int year = cal.get(Calendar.YEAR);
-                    int month = cal.get(Calendar.MONTH);
-                    int day = cal.get(Calendar.DAY_OF_MONTH);
+        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
 
-                    DatePickerDialog dialog = new DatePickerDialog(
-                            RegisterActivity.this,
-                            android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                            mDateSetListener,
-                            year,month,day);
-                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                    dialog.show();
-                }
-            });
+                DatePickerDialog dialog = new DatePickerDialog(
+                        RegisterActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
 
-            mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                    month = month + 1;
-                    Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
 
-                    String date = month + "/" + day + "/" + year;
-                    mDisplayDate.setText(date);
-                }
-            };
+                String date = month + "/" + day + "/" + year;
+                mDisplayDate.setText(date);
+            }
+        };
 
 ///////////////////////////////////End of Date Picker Code///////////////////////////
-
-
-
-
-
-
 
 
 ///////////////////////////////////Start of City Picker Code///////////////////////////
@@ -141,7 +164,7 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
                 Location mCurrentLocation = locationResult.getLastLocation();
                 LatLng myCoordinates = new LatLng(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
                 String cityName = getCityName(myCoordinates);
-                Toast.makeText(RegisterActivity.this, cityName, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(RegisterActivity.this, cityName, Toast.LENGTH_SHORT).show();
                 CityText.setText(cityName);
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myCoordinates, 13.0f));
                 if (marker == null) {
@@ -160,6 +183,17 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
                 requestLocation();
         } else
             requestLocation();
+
+
+
+
+
+        SignupButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                FirebaseApp.initializeApp(RegisterActivity.this);
+                registerUser();
+            }
+        });
     }
 
     private String getCityName(LatLng myCoordinates) {
@@ -184,13 +218,13 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
     }
 
     private void requestLocation() {
-        CityText=findViewById(R.id.locationadd);
+        CityText = findViewById(R.id.locationadd);
 
         Criteria criteria = new Criteria();
         criteria.setAccuracy(Criteria.ACCURACY_MEDIUM);
         criteria.setPowerRequirement(Criteria.POWER_MEDIUM);
         String provider = locationManager.getBestProvider(criteria, true);
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions((RegisterActivity) mContext,
                     new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
                     REQUEST_ACCESS_COARSE_LOCATION);            //    ActivityCompat#requestPermissions
@@ -202,10 +236,9 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
         if (location != null && (System.currentTimeMillis() - location.getTime()) <= 1000 * 2) {
             LatLng myCoordinates = new LatLng(location.getLatitude(), location.getLongitude());
             String cityName = getCityName(myCoordinates);
-           // Toast.makeText(this, cityName, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, cityName, Toast.LENGTH_SHORT).show();
             CityText.setText(cityName);
-        }
-        else {
+        } else {
             LocationRequest locationRequest = new LocationRequest();
             locationRequest.setNumUpdates(1);
             locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -216,15 +249,90 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
 
         }
 
+    }
+
 ///////////////////////////////////End of City Picker Code///////////////////////////
 
 
 ///////////////////////////////////Start of Register into firebase Code///////////////////////////
 
 
+        private void registerUser() {
+
+
+            final String name = InputName.getText().toString().trim();
+            final String Bd = mDisplayDate.getText().toString().trim();
+            String password = InputPass.getText().toString().trim();
+            final String phone = InputPhonenum.getText().toString().trim();
+
+
+            if (name.isEmpty()) {
+                InputName.setError(getString(R.string.input_error_name));
+                InputName.requestFocus();
+                return;
+            }
+
+
+            if (password.isEmpty()) {
+                InputPass.setError(getString(R.string.input_error_password));
+                InputPass.requestFocus();
+                return;
+            }
+
+            if (password.length() < 8) {
+                InputPass.setError(getString(R.string.input_error_password_length));
+                InputPass.requestFocus();
+                return;
+            }
+
+            if (phone.isEmpty()) {
+                InputPhonenum.setError(getString(R.string.input_error_phone));
+                InputPhonenum.requestFocus();
+                return;
+            }
+
+            if (phone.length() != 10) {
+                InputPhonenum.setError(getString(R.string.input_error_phone_invalid));
+                InputPhonenum.requestFocus();
+                return;
+            }
+
+
+            progressBar.setVisibility(View.VISIBLE);
+
+            int selectedId = GenderGroup.getCheckedRadioButtonId();
+            ChosenGender = (RadioButton) findViewById(selectedId);
+
+    Users user = new Users();
+
+    user.setName(InputName.getText().toString());
+    user.setPhone(InputPhonenum.getText().toString());
+    user.setPass(InputPass.getText().toString());
+    user.setGen(ChosenGender.getText().toString());
+    user.setBd(mDisplayDate.getText().toString());
+    user.setCity(CityText.getText().toString());
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference databasereference = database.getReference();
+           databasereference.child("Users").push().setValue(user);
+
+    Toast.makeText(RegisterActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+    progressBar.setVisibility(View.GONE);
+
+            Intent intent=new Intent(this,DonorHomeActivity.class);
+            startActivity(intent);
+
+        }}
+
+
+
+
+
 ///////////////////////////////////End of Register into firebase Code///////////////////////////
 
 
 
-    }
-}
+
+
+
+
