@@ -1,17 +1,37 @@
 package com.example.ishzark.ehsanapp;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 
 
 public class LoginActivity extends Activity {
-    private Button RegButton;
+    private Button RegestButton;
 
-   /* @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        RegestButton = findViewById(R.id.loginbtn3);
+
+        RegestButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                openActivity();
+            }
+
+            public void openActivity(){
+                Intent intent = new Intent(LoginActivity.this,
+                        PhoneAuth.class);
+                startActivity(intent);
+            }
+        });
+    }
+        /*
         Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
 
 
@@ -43,6 +63,7 @@ public class LoginActivity extends Activity {
             // have one; use User.TokenAsync() instead.
             string uid = user.UserId;
         }
+         */
     }
-    */
-}
+
+

@@ -11,20 +11,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.homepage);
         // Register Button Listener
 
-        RegButton = findViewById(R.id.loginbtn3);
+        RegButton = findViewById(R.id.donatebtn);
 
         RegButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                openActivity();}
+                openActivity();
+            }
 
             public void openActivity(){
                 Intent intent = new Intent(MainActivity.this,
-                        RegisterActivity.class);
+                        LoginActivity.class);
                 startActivity(intent);
             }
         });

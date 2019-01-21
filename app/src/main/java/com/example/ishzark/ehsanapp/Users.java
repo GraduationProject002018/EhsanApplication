@@ -2,7 +2,7 @@ package com.example.ishzark.ehsanapp;
 
 public class Users {
 
-    public String name, email, phone,pass,gen,bd,city;
+    public String name, email, phone,gen,bd,city;
 
     public Users(){
 
@@ -10,9 +10,9 @@ public class Users {
 
 
 
-    public Users(String name, String phone, String pass,String gen,String bd,String city) {
+    public Users(String name, String phone,String gen,String bd,String city) {
         this.name = name;
-        this.phone = pass;
+        this.phone = phone;
         this.gen = gen;
         this.bd=bd;
         this.city=city;
@@ -39,9 +39,6 @@ public class Users {
         this.phone = phone;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
 }
 
 

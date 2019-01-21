@@ -16,6 +16,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -41,8 +42,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
@@ -84,15 +87,13 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
 
 
         InputName = (EditText) findViewById(R.id.nameinput);
-        InputPass = (EditText) findViewById(R.id.passwordinput);
-        //InputBd = (EditText) findViewById(R.id.bdinput);
-//        InputCity = findViewById(R.id.locationadd);
-        InputPhonenum = (EditText) findViewById(R.id.phoneinput);
+
 
         SignupButton = findViewById(R.id.signupbtn);
         GenderGroup = findViewById(R.id.Gendergrp);
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.GONE);
+
 
         final List<Users> user = new ArrayList<Users>();
         //FirebaseStorage storage = FirebaseStorage.getInstance(FirebaseApp.initializeApp(m_context));
@@ -258,42 +259,17 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
 
 
         private void registerUser() {
+            Intent intent = getIntent();
+            String mobile = intent.getStringExtra("mobile");
 
 
             final String name = InputName.getText().toString().trim();
             final String Bd = mDisplayDate.getText().toString().trim();
-            String password = InputPass.getText().toString().trim();
-            final String phone = InputPhonenum.getText().toString().trim();
 
 
             if (name.isEmpty()) {
                 InputName.setError(getString(R.string.input_error_name));
                 InputName.requestFocus();
-                return;
-            }
-
-
-            if (password.isEmpty()) {
-                InputPass.setError(getString(R.string.input_error_password));
-                InputPass.requestFocus();
-                return;
-            }
-
-            if (password.length() < 8) {
-                InputPass.setError(getString(R.string.input_error_password_length));
-                InputPass.requestFocus();
-                return;
-            }
-
-            if (phone.isEmpty()) {
-                InputPhonenum.setError(getString(R.string.input_error_phone));
-                InputPhonenum.requestFocus();
-                return;
-            }
-
-            if (phone.length() != 10) {
-                InputPhonenum.setError(getString(R.string.input_error_phone_invalid));
-                InputPhonenum.requestFocus();
                 return;
             }
 
@@ -306,21 +282,31 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
     Users user = new Users();
 
     user.setName(InputName.getText().toString());
-    user.setPhone(InputPhonenum.getText().toString());
-    user.setPass(InputPass.getText().toString());
+    user.setPhone(mobile);
     user.setGen(ChosenGender.getText().toString());
-    user.setBd(mDisplayDate.getText().toString());
+    user.setBd(Bd);
     user.setCity(CityText.getText().toString());
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference databasereference = database.getReference();
-           databasereference.child("Users").push().setValue(user);
+            Task<Void> donors = FirebaseDatabase.getInstance().getReference("Donors")
+                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(RegisterActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
 
-    Toast.makeText(RegisterActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
-    progressBar.setVisibility(View.GONE);
 
-            Intent intent=new Intent(this,DonorHomeActivity.class);
-            startActivity(intent);
+                    } else
+                        Toast.makeText(RegisterActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+
+                }
+            });
+            final  Intent in = new Intent(this, DonorHomeActivity.class);
+            startActivity(in);
+
+
+
 
         }}
 

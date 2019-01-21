@@ -2,7 +2,7 @@
     <string name="app_name">Ehsan</string>
     <string name="gmap_key">AIzaSyDERoFAGnUfr34oJvTtDoMuQ_Dh1duCxqs</string>
 
-
+<string name="ehsanlogo"></string>
     <string name="input_error_name">الرجاء إدخال الأسم</string>
     <string name="input_error_password">الرجاء تعبئة كلمة المرور</string>
     <string name="input_error_password_length">كلمة المرور يجب أن لا تقل عن ٨ حروف إو ارقام</string>
@@ -11,4 +11,8 @@
     <string name="registration_success">تم تسجيلك بنجاح</string>
     <string name="registration_failed">حدث خطآ اثناء تسجيلك يرجى المحاولة مرة أخرى</string>
     <string name="title_activity_verify_phone">VerifyPhoneActivity</string>
+    <string name="Phoneregistration_success">تم تأكيد الرقم بنجاح</string>
+    <string name="Phoneregistration_failed">حدث خطآ اثناء التأكيد يرجى المحاولة مرة أخرى</string>
+    <string name="Phoneregistration_exsist">الرقم المدخل مسجل مسبقاً يرجى تسجيل الدخول بهذا الرقم أو ادخال دقم اخر</string>
+    <string name="Phoneregistrationcancelled">cancelled</string>
 </resources>

@@ -34,7 +34,16 @@
         <activity
             android:name=".VerifyPhoneActivity"
             android:label="@string/title_activity_verify_phone"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity android:name=".PhoneAuth">
+            <intent-filter>
+
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
