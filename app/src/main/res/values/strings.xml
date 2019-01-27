@@ -14,5 +14,7 @@
     <string name="Phoneregistration_success">تم تأكيد الرقم بنجاح</string>
     <string name="Phoneregistration_failed">حدث خطآ اثناء التأكيد يرجى المحاولة مرة أخرى</string>
     <string name="Phoneregistration_exsist">الرقم المدخل مسجل مسبقاً يرجى تسجيل الدخول بهذا الرقم أو ادخال دقم اخر</string>
-    <string name="Phoneregistrationcancelled">cancelled</string>
+    <string name="Phonedontexist">هذا الرقم غير مسجل الرجاء التسجيل كمستخدم جديد</string>
+    <string name="Phoneregistration_wrongcode">رقم التحقق المدخل خاطئ، الرجاء إدخاله مرة أخرى</string>
+
 </resources>

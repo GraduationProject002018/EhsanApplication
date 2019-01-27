@@ -69,15 +69,16 @@ private String userslocation;
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Intent restart=getIntent();
                 for (DataSnapshot child:dataSnapshot.getChildren()){
-                    String phone= (String) child.child("phone").getValue();
+                    String phone=  child.child("phone").getValue().toString();
 
                     if(phone.equals(number)){
                         Toast.makeText(PhoneAuth.this, getString(R.string.Phoneregistration_exsist), Toast.LENGTH_LONG).show();
                         finish();
                         startActivity(restart);
-                    }
+                    }else return;
 
                 }
+
 
 
 

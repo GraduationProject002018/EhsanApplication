@@ -79,7 +79,6 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
     private ProgressBar progressBar;
     private Button SignupButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -298,7 +297,7 @@ public class RegisterActivity   extends AppCompatActivity implements OnMapReadyC
 
 
                     } else
-                        Toast.makeText(RegisterActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                        Toast.makeText(RegisterActivity.this, getString(R.string.registration_failed), Toast.LENGTH_LONG).show();
 
                 }
             });
