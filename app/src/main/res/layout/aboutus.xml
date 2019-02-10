@@ -251,16 +251,6 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/backbtn"
-            android:layout_width="35dp"
-            android:layout_height="40dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="11dp"
-            android:layout_marginEnd="13dp"
-            app:srcCompat="@drawable/backwhite" />
-
     </RelativeLayout>
 
     <ScrollView
@@ -421,7 +411,7 @@
         app:layout_constraintTop_toTopOf="@+id/scrollView2"
         app:layout_constraintVertical_bias="0.65" />
 
-    <ImageView
+    <Button
         android:id="@+id/instagram"
         android:layout_width="36dp"
         android:layout_height="34dp"
@@ -429,60 +419,60 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/instagram"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintEnd_toStartOf="@+id/youtube"
+        app:layout_constraintHorizontal_bias="0.815"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/strategylabel2"
-        app:layout_constraintVertical_bias="0.333"
-        app:srcCompat="@drawable/instagram" />
+        app:layout_constraintVertical_bias="0.277" />
 
-    <ImageView
-        android:id="@+id/youtube"
-        android:layout_width="42dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toEndOf="@+id/instagram"
-        app:layout_constraintTop_toBottomOf="@+id/strategylabel2"
-        app:layout_constraintVertical_bias="0.272"
-        app:srcCompat="@drawable/yt" />
-
-    <ImageView
+    <Button
         android:id="@+id/email"
-        android:layout_width="42dp"
-        android:layout_height="35dp"
+        android:layout_width="36dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/instagram"
-        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/strategylabel2"
-        app:layout_constraintVertical_bias="0.235"
-        app:srcCompat="@drawable/email" />
+        app:layout_constraintVertical_bias="0.277" />
 
-    <ImageView
+    <Button
         android:id="@+id/twitter"
-        android:layout_width="40dp"
-        android:layout_height="39dp"
+        android:layout_width="36dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        android:background="@drawable/twttr"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.232"
-        app:layout_constraintStart_toEndOf="@+id/youtube"
+        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/strategylabel2"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/twttr" />
+        app:layout_constraintVertical_bias="0.277" />
+
+    <Button
+        android:id="@+id/youtube"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/yt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/twitter"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/strategylabel2"
+        app:layout_constraintVertical_bias="0.2" />
 
 </android.support.constraint.ConstraintLayout>
