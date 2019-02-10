@@ -12,6 +12,7 @@ public class Aboutus extends AppCompatActivity {
     Button instagram;
     Button twitter;
     Button youtube;
+    Button email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,18 +21,40 @@ public class Aboutus extends AppCompatActivity {
         instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 Intent instaintent = getPackageManager().getLaunchIntentForPackage("com.instagram.android");
 
                 instaintent.setComponent(new ComponentName( "com.instagram.android", "com.instagram.android.activity.UrlHandlerActivity"));
                 instaintent.setData( Uri.parse( "https://www.instagram.com/_u/bitter_truth_lol") );
 
                 startActivity(instaintent);
+            }
+        });
 
+        youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ytintent = getPackageManager().getLaunchIntentForPackage("com.youtube.android");
+
+                ytintent.setComponent(new ComponentName( "com.youtube.android", "com.youtube.android.activity.UrlHandlerActivity"));
+                ytintent.setData( Uri.parse( "https://www.youtube.com/channel/UC_vslRzEZads8yhpO5wkUzA") );
+
+                startActivity(ytintent);
+            }
+        });
+
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent twitterintent = getPackageManager().getLaunchIntentForPackage("com.youtube.android");
+
+                twitterintent.setComponent(new ComponentName( "com.twitter.android", "com.twitter.android.activity.UrlHandlerActivity"));
+                twitterintent.setData( Uri.parse( "https://twitter.com/AlberSharqia") );
+
+                startActivity(twitterintent);
             }
         });
 
 
+        //add email link
     }
 }
