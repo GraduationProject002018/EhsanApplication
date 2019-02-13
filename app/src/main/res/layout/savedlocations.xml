@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/prelocationtext"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="196dp"
+        android:text="@string/prevloctexts"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/LocationListView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newlocationlayout" />
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="412dp"
+        android:layout_height="58dp"
+        android:background="#00574b"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/headertxt"
+            android:layout_width="136dp"
+            android:layout_height="31dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="11dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/chooselocationtext"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/newlocationlayout"
+        android:layout_width="375dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintVertical_bias="0.44">
+
+        <ImageView
+            android:id="@+id/markerimage"
+            android:layout_width="41dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@drawable/location"
+            tools:layout_editor_absoluteX="331dp"
+            tools:layout_editor_absoluteY="160dp" />
+
+        <TextView
+            android:id="@+id/newlocationtext2"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="51dp"
+            android:text="@string/newlocationText"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="267dp"
+            tools:layout_editor_absoluteY="160dp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/LocationListView"
+        android:layout_width="370dp"
+        android:layout_height="244dp"
+        android:scrollbars="vertical"
+        android:textDirection="rtl"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prelocationtext"
+        app:layout_constraintVertical_bias="0.255"
+        tools:layout_editor_absoluteX="7dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="40dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/LocationListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/prelocationtext"
+        app:layout_constraintTop_toBottomOf="@+id/newlocationlayout"
+        app:srcCompat="@drawable/history" />
+</android.support.constraint.ConstraintLayout>

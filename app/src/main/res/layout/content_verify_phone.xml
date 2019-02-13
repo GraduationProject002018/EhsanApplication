@@ -28,12 +28,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/verifynumbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ehsanlogo"
-        app:layout_constraintVertical_bias="0.187">
+        app:layout_constraintVertical_bias="0.433">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/numberinput"
@@ -76,33 +76,34 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:text="رقم الجوال"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/number"
+        app:layout_constraintBottom_toBottomOf="@+id/number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toEndOf="@+id/number"
-        app:layout_constraintTop_toBottomOf="@+id/number"
-        app:layout_constraintVertical_bias="0.438" />
+        app:layout_constraintTop_toTopOf="@+id/number"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/saudinumberlabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="230dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="+966"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/number"
         app:layout_constraintEnd_toStartOf="@+id/number"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/number" />
 
 </android.support.constraint.ConstraintLayout>
 

@@ -22,6 +22,8 @@ public class LoginActivity extends Activity {
     private EditText phone;
     private EditText editTextMobile;
 private Button  RegisterButton;
+public String Usertype;
+public boolean found=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,18 +62,18 @@ private Button  RegisterButton;
     }
         public void checkNumber ( final String number){
 
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Donors");
 
-            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference().child("SuperAdmin");
+
+            ref1.addListenerForSingleValueEvent(new ValueEventListener() {
 
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Intent restart=getIntent();
                     Intent intent = new Intent(LoginActivity.this, loginverifyphone.class);
                     intent.putExtra("mobile",number);
-                    boolean found=false;
+
                     for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        String phone = child.child("phone").getValue().toString();
+                        String phone = child.getValue().toString();
                         Log.d("phone found",phone);
                         if (phone.equals(number)) {
                             found=true;
@@ -81,25 +83,112 @@ private Button  RegisterButton;
                     }
 
                     if(found)
-                    {  finish();
-                        startActivity(intent);}
+                    {  Usertype="SuperAdmin";
+                    intent.putExtra("usertype",Usertype);
+                        finish();
+                        startActivity(intent);
+                    }
                     else
-                        {Toast.makeText(LoginActivity.this, getString(R.string.Phonedontexist), Toast.LENGTH_LONG).show();
-                            finish();
-                            startActivity(restart);}
+                    {
+                        checkifAdmin(number);
 
+                    }
 
-                }
+        }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
-            });
-        }
 
+
+            });}
+
+    private void checkifAdmin(final String number) {
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Admins");
+
+                ref.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Intent intent = new Intent(LoginActivity.this, loginverifyphone.class);
+                        intent.putExtra("mobile",number);
+                        boolean found=false;
+                        for (DataSnapshot child : dataSnapshot.getChildren()) {
+                            String phone = child.child("phone").getValue().toString();
+                            Log.d("phone found",phone);
+                            if (phone.equals(number)) {
+                                found=true;
+
+
+                            }
+                        }
+
+                        if(found)
+                        {Usertype="Admin";
+                            intent.putExtra("usertype",Usertype);
+                            finish();
+                            startActivity(intent);}
+                        else
+                        {
+                            checkifDonor(number);
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+            }
+
+    private void checkifDonor(final String number) {
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Donors");
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Intent restart=getIntent();
+                Intent intent = new Intent(LoginActivity.this, loginverifyphone.class);
+                intent.putExtra("mobile",number);
+                boolean found=false;
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    String phone = child.child("phone").getValue().toString();
+                    Log.d("phone found",phone);
+                    if (phone.equals(number)) {
+                        found=true;
+
+
+                    }
+                }
+
+                if(found)
+                {Usertype="Donor";
+                    intent.putExtra("usertype",Usertype);
+                    finish();
+                    startActivity(intent);}
+                else
+                {Toast.makeText(LoginActivity.this, getString(R.string.Phonedontexist), Toast.LENGTH_LONG).show();
+                    finish();
+                    startActivity(restart);}
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
     }
 
 
+}

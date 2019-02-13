@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listcityText"
+    android:layout_width="208dp"
+    android:layout_height="32dp"
+    android:text="لايوجد مواقع سابقة"
+    android:textColor="@color/colorPrimary"
+    android:textSize="14sp"
+    android:textStyle="bold" />

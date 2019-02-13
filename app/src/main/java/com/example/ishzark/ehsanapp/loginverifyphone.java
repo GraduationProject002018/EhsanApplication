@@ -118,11 +118,22 @@ public class loginverifyphone extends AppCompatActivity {
                             //verification successful we will start the profile activity
                             Intent intent = getIntent();
                             String mobile = intent.getStringExtra("mobile");
-                            Intent i = new Intent(loginverifyphone.this, DonorHomeActivity.class);
-                            i.putExtra("mobile", mobile);
-                             i.putExtra("user", user);
-                            Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
-                            startActivity(i);
+                            String usertype=intent.getStringExtra("usertype");
+                            ////////based on the user go to the activity///////
+                            if(usertype.equals("SuperAdmin")||usertype.equals("Admin")){
+
+                                Intent i = new Intent(loginverifyphone.this, AdminHomeActivity.class);
+                                i.putExtra("mobile", mobile);
+                                i.putExtra("user", user);
+                                Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
+                                startActivity(i);
+                            }else if(usertype.equals("Donor")) {
+                                Intent i = new Intent(loginverifyphone.this, DonorHomeActivity.class);
+                                i.putExtra("mobile", mobile);
+                                i.putExtra("user", user);
+                                Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
+                                startActivity(i);
+                            }
 
                         } else {
 

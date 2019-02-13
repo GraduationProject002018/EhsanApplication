@@ -3,7 +3,7 @@
     <string name="gmap_key">AIzaSyDERoFAGnUfr34oJvTtDoMuQ_Dh1duCxqs</string>
 
 <string name="ehsanlogo"></string>
-    <string name="input_error_name">الرجاء إدخال الأسم</string>
+    <string name="input_error_name">الرجاء تعبئة الحقل</string>
     <string name="input_error_password">الرجاء تعبئة كلمة المرور</string>
     <string name="input_error_password_length">كلمة المرور يجب أن لا تقل عن ٨ حروف إو ارقام</string>
     <string name="input_error_phone">الرجاء تعبئة رقم الجوال</string>
@@ -16,5 +16,42 @@
     <string name="Phoneregistration_exsist">الرقم المدخل مسجل مسبقاً يرجى تسجيل الدخول بهذا الرقم أو ادخال دقم اخر</string>
     <string name="Phonedontexist">هذا الرقم غير مسجل الرجاء التسجيل كمستخدم جديد</string>
     <string name="Phoneregistration_wrongcode">رقم التحقق المدخل خاطئ، الرجاء إدخاله مرة أخرى</string>
+    <string name="continubtn">استمرار</string>
+    <string name="chosenlocatemeText">موقع التبرع </string>
+    <string name="chooselocationtext">اختر موقع</string>
+    <string name="newlocationText">موقع جديد</string>
 
+    <string name="uploading">يتم رفع الطلب</string>
+    <string name="doneuploading">تم</string>
+    <string name="notuploading">حصل خطآ يرجى المحاولة مرة أخرى</string>
+    <string name="prevloctexts">مواقع سابقة</string>
+    <string name="cityhint">الرجاء اختيار مدينة من القائمة</string>
+    <string-array name="city_arrays">
+        <item>الخبر</item>
+        <item> الدمام</item>
+        <item>الأحساء</item>
+        <item>الظهران</item>
+        <item>الجبيل</item>
+        <item>حفر الباطن</item>
+        <item>رأس تنورة </item>
+        <item>النعيرية</item>
+        <item>الهفوف</item>
+        <item>القطيف</item>
+        <item>الخفجي</item>
+        <item>بقيق</item>
+        <item>أخرى</item>
+    </string-array>
+    <string-array name="donationtype_array">
+        <item>أثاث</item>
+        <item>طعام</item>
+        <item> أثاث</item>
+        <item>جهاز كهربائي</item>
+        <item>ملابس</item>
+    </string-array>
+
+    <string-array name="item_status_array">
+        <item>مستخدم</item>
+        <item>جديد</item>
+        <item> يحتاج تصليح</item>
+    </string-array>
 </resources>

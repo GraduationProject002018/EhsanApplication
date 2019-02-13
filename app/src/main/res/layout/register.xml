@@ -7,32 +7,6 @@
     android:background="#ffffff"
     tools:layout_editor_absoluteY="25dp">
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="361dp"
-        android:layout_height="119dp"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/locationadd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bd" />
-
-    <Button
-        android:id="@+id/cityinput"
-        android:layout_width="103dp"
-        android:layout_height="36dp"
-        android:layout_gravity="center"
-        android:background="@android:color/holo_green_dark"
-        android:text="حدد موقعي"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toTopOf="@+id/signupbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bd"
-        app:layout_constraintVertical_bias="0.906" />
-
     <ImageView
         android:id="@+id/important3"
         android:layout_width="29dp"
@@ -83,26 +57,25 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/roundbutton"
-        android:text="انهاء التسجيل "
+        android:text="تسجيل"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/name"
         android:layout_width="207dp"
-        android:layout_height="49dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/bd"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toStartOf="@+id/namelabel"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header">
 
@@ -119,14 +92,18 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/bd"
-        android:layout_width="244dp"
-        android:layout_height="174dp"
+        android:id="@+id/citylayout"
+        android:layout_width="237dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/map"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toStartOf="@+id/bdlabel"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name">
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintVertical_bias="0.106">
 
         <EditText
             android:id="@+id/bdinput"
@@ -147,70 +124,94 @@
     <TextView
         android:id="@+id/bdlabel"
         android:layout_width="0dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="56dp"
         android:text="تاريخ الميلاد"
         android:textAlignment="center"
         android:textColor="#00574b"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/genderlabel"
+        app:layout_constraintBottom_toBottomOf="@+id/citylayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/relativeLayout"
         app:layout_constraintTop_toBottomOf="@+id/namelabel" />
 
     <TextView
         android:id="@+id/genderlabel"
-        android:layout_width="46dp"
-        android:layout_height="35dp"
+        android:layout_width="49dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="92dp"
         android:text="الجنس"
         android:textAlignment="center"
         android:textColor="#00574b"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/citylabel"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/relativeLayout"
-        app:layout_constraintTop_toBottomOf="@+id/bdlabel"
-        app:layout_constraintVertical_bias="0.623" />
+        app:layout_constraintTop_toBottomOf="@+id/citylabel"
+        app:layout_constraintVertical_bias="0.578" />
 
 
     <TextView
         android:id="@+id/namelabel"
-        android:layout_width="107dp"
-        android:layout_height="19dp"
-        android:layout_marginBottom="23dp"
-        android:layout_marginTop="128dp"
+        android:layout_width="108dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:text="الإسم الكامل"
         android:textAlignment="center"
         android:textColor="#00574b"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/bd"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/name" />
 
 
     <TextView
         android:id="@+id/citylabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
         android:text="المدينة"
         android:textAlignment="center"
         android:textColor="#00574b"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/map"
+        app:layout_constraintBottom_toBottomOf="@+id/cityspinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toEndOf="@+id/progressbar"
-        app:layout_constraintTop_toBottomOf="@+id/genderlabel" />
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toEndOf="@+id/cityspinner"
+        app:layout_constraintTop_toBottomOf="@+id/bdlabel"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <Spinner
+        android:id="@+id/cityspinner"
+        android:layout_width="222dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
+        android:entries="@array/city_arrays"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/citylayout"
+        app:layout_constraintVertical_bias="1.0" />
+
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="214dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="164dp"
         app:layout_constraintEnd_toStartOf="@+id/genderlabel"
         app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="parent"
@@ -218,8 +219,8 @@
 
         <RadioGroup
             android:id="@+id/Gendergrp"
-            android:layout_width="234dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
@@ -231,6 +232,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_weight="1"
+                android:buttonTint="#00574b"
                 android:checked="true"
                 android:text="ذكر"
                 android:textAlignment="viewStart"
@@ -243,6 +245,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_weight="1"
+                android:buttonTint="#00574b"
                 android:checked="false"
                 android:text="أنثى"
                 android:textAlignment="viewStart"
@@ -251,26 +254,19 @@
         </RadioGroup>
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/locationadd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="موقعك هو"
-        app:layout_constraintBottom_toTopOf="@+id/signupbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map" />
-
     <ProgressBar
         android:id="@+id/progressbar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/map"
-        app:layout_constraintEnd_toStartOf="@+id/map"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/map"
-        app:layout_constraintTop_toBottomOf="@+id/bd"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toStartOf="@+id/citylabel"
+        app:layout_constraintStart_toStartOf="@+id/cityspinner"
+        app:layout_constraintTop_toTopOf="@+id/citylayout"
         tools:visibility="invisible" />
 
 

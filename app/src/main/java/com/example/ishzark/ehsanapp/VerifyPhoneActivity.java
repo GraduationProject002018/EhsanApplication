@@ -15,6 +15,7 @@ import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
@@ -113,13 +114,13 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            //FirebaseUser user = task.getResult().getUser();
+                            FirebaseUser user = task.getResult().getUser();
                             //verification successful we will start the profile activity
                             Intent intent = getIntent();
                             String mobile = intent.getStringExtra("mobile");
                             Intent i = new Intent(VerifyPhoneActivity.this, RegisterActivity.class);
                             i.putExtra("mobile", mobile);
-                           // i.putExtra("user", user);
+                           i.putExtra("user", user);
                             Toast.makeText(VerifyPhoneActivity.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
                             startActivity(i);
 
