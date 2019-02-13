@@ -1,39 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <fragment
+        android:id="@+id/map2"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="375dp"
+        android:layout_height="387dp"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/continubtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <Button
+        android:id="@+id/continubtn"
+        android:layout_width="144dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/roundbutton"
+        android:text="@string/continubtn"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.984" />
+
+    <TextView
+        android:id="@+id/locationadd2"
+        android:layout_width="144dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="136dp"
+        android:text="موقعك هو"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/Locationlayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintVertical_bias="0.04" />
+
     <RelativeLayout
         android:id="@+id/header"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
         android:layout_width="412dp"
         android:layout_height="58dp"
-        android:background="#00574b">
-
-        <ImageView
-            android:id="@+id/backbtn3"
-            android:layout_width="35dp"
-            android:layout_height="34dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="19dp"
-            app:srcCompat="@drawable/backwhite" />
+        android:background="#00574b"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/headertxt"
             android:layout_width="136dp"
             android:layout_height="31dp"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="11dp"
             android:layout_marginStart="136dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="11dp"
             android:text="تبرع عيني"
             android:textAlignment="center"
             android:textColor="#ffffff"
@@ -41,19 +78,66 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/map"
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/map"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="58dp" />
+    <RelativeLayout
+        android:id="@+id/Locationlayout"
+        android:layout_width="108dp"
+        android:layout_height="89dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/map2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/locationadd2"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintVertical_bias="0.126">
 
-    <ImageView
-        android:id="@+id/locator"
-        android:layout_width="51dp"
-        android:layout_height="51dp"
-        app:srcCompat="@drawable/locator"
-        tools:layout_editor_absoluteX="344dp"
-        tools:layout_editor_absoluteY="592dp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="87dp"
+            android:layout_height="27dp"
+            android:text="@string/chosenlocatemeText"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="288dp"
+            tools:layout_editor_absoluteY="63dp" />
+
+        <ImageView
+            android:id="@+id/locator"
+            android:layout_width="46dp"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginEnd="14dp"
+            app:srcCompat="@drawable/locator"
+            tools:layout_editor_absoluteX="344dp"
+            tools:layout_editor_absoluteY="592dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/latitiudetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/longtitiudetext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/longtitiudetext" />
+
+    <TextView
+        android:id="@+id/longtitiudetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintTop_toTopOf="@+id/header"
+        tools:layout_editor_absoluteX="71dp" />
+
 </android.support.constraint.ConstraintLayout>
