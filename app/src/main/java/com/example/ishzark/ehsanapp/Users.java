@@ -26,13 +26,13 @@ public class Users {
 
 
 
-    public Users(String name, String phone,String gen,String bd,ArrayList mylist) {
+    public Users(String name, String phone,String gen,String bd,ArrayList mylist,String City) {
         this.name = name;
         this.phone = phone;
         this.gen = gen;
         this.bd=bd;
         this.mylist=mylist;
-        this.city=city;
+        City=city;
     }
 
 

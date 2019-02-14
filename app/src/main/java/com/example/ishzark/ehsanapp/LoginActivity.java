@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +25,7 @@ public class LoginActivity extends Activity {
 private Button  RegisterButton;
 public String Usertype;
 public boolean found=false;
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,9 @@ public boolean found=false;
         LoginButton = findViewById(R.id.verifynumbtn);
         editTextMobile = findViewById(R.id.loginnumberinput);
         RegisterButton=findViewById(R.id.loginbtn3);
+
+        progressBar = findViewById(R.id.progressBarlog);
+        progressBar.setVisibility(View.GONE);
 
         RegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +66,7 @@ public boolean found=false;
         });
     }
         public void checkNumber ( final String number){
+            progressBar.setVisibility(View.VISIBLE);
 
 
             DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference().child("SuperAdmin");
@@ -171,8 +177,11 @@ public boolean found=false;
                 if(found)
                 {Usertype="Donor";
                     intent.putExtra("usertype",Usertype);
+                    progressBar.setVisibility(View.GONE);
                     finish();
-                    startActivity(intent);}
+                    startActivity(intent);
+
+                }
                 else
                 {Toast.makeText(LoginActivity.this, getString(R.string.Phonedontexist), Toast.LENGTH_LONG).show();
                     finish();

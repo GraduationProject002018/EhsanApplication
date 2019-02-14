@@ -14,11 +14,12 @@
         android:layout_height="13dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
-        app:layout_constraintEnd_toEndOf="@+id/donationmethod2"
+        app:layout_constraintBottom_toTopOf="@+id/agreementCb"
+        app:layout_constraintEnd_toEndOf="@+id/agreementCb"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/donationmethod2"
-        app:layout_constraintTop_toBottomOf="@+id/important2"
+        app:layout_constraintStart_toEndOf="@+id/agreementview"
+        app:layout_constraintTop_toBottomOf="@+id/agreementCb"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/asterisk" />
 
     <ImageView
@@ -38,7 +39,7 @@
         android:id="@+id/donatebtn"
         android:layout_width="243dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/roundbutton"
@@ -59,7 +60,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/roundbutton"
-        android:text="اختيار صورة"
+        android:text="اختر صورة"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,20 +104,19 @@
         android:layout_width="120dp"
         android:layout_height="31dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:text="تفاصيل القطعة"
         android:textAlignment="center"
         android:textColor="#00574b"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/detailstext"
+        app:layout_constraintBottom_toTopOf="@+id/agreementview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
-        app:layout_constraintStart_toStartOf="@+id/uploadedimage"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/detailstext"
         app:layout_constraintTop_toBottomOf="@+id/upload"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.212" />
 
     <TextView
         android:id="@+id/donationtypelabel5"
@@ -137,9 +137,9 @@
     <TextView
         android:id="@+id/donationmethod2"
         android:layout_width="170dp"
-        android:layout_height="27dp"
+        android:layout_height="25dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
         android:text=" صورة  للمراد التبرع به"
         android:textAlignment="center"
@@ -148,7 +148,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/uploadedimage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/uploadedimage" />
+        app:layout_constraintTop_toTopOf="@+id/uploadedimage"
+        app:layout_constraintVertical_bias="0.366" />
 
     <RelativeLayout
         android:id="@+id/header"
@@ -177,8 +178,8 @@
 
     <EditText
         android:id="@+id/numberofitems"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="261dp"
+        android:layout_height="42dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
@@ -197,6 +198,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="44dp"
         android:entries="@array/donationtype_array"
+        android:textDirection="rtl"
         app:layout_constraintEnd_toStartOf="@+id/donationtypelabel"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -204,23 +206,21 @@
 
     <EditText
         android:id="@+id/detailstext"
-        android:layout_width="341dp"
-        android:layout_height="46dp"
+        android:layout_width="230dp"
+        android:layout_height="65dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:ems="10"
 
+        android:ems="10"
         android:hint="مثال: حجم القطع،مشكلة القطع ،الخ"
         android:inputType="text"
         android:maxLines="5"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/donatebtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uploadedimage"
-        app:layout_constraintVertical_bias="0.614" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <Spinner
         android:id="@+id/itemstatusspinner"
@@ -228,8 +228,9 @@
         android:layout_height="29dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:entries="@array/item_status_array"
+        android:textDirection="rtl"
         app:layout_constraintEnd_toStartOf="@+id/donationtypelabel4"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -242,7 +243,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="28dp"
-        android:background="@android:color/darker_gray"
+        android:background="#faf6f6"
         app:layout_constraintEnd_toStartOf="@+id/donationmethod2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numberofitems"
@@ -250,18 +251,43 @@
 
     <TextView
         android:id="@+id/textView3"
+        android:layout_width="61dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="اوافق على"
+        app:layout_constraintBottom_toTopOf="@+id/donatebtn"
+        app:layout_constraintStart_toEndOf="@+id/agreementview"
+        app:layout_constraintTop_toBottomOf="@+id/detailstext"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <CheckBox
+        android:id="@+id/agreementCb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Date"
-        app:layout_constraintBottom_toTopOf="@+id/donationtypespinner"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/agreementview"
+        android:layout_width="117dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="8dp"
+        android:text=" شروط وبنود الخدمة"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/donatebtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintTop_toBottomOf="@+id/detailstext"
+        app:layout_constraintVertical_bias="0.409" />
 
 </android.support.constraint.ConstraintLayout>

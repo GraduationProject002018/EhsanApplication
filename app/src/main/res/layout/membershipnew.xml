@@ -7,17 +7,17 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/newmembershipsubmit"
+        android:id="@+id/SaveBtn"
         android:layout_width="243dp"
         android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="264dp"
+        android:layout_marginEnd="84dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/roundbutton"
         android:text="حفظ"
         android:textColor="#ffffff"
@@ -25,87 +25,37 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintHorizontal_bias="0.987"
+        app:layout_constraintHorizontal_bias="0.984"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/benefit4"
-        app:layout_constraintVertical_bias="0.608" />
-
-    <TextView
-        android:id="@+id/benefit4"
-        android:layout_width="315dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="60% خصم من مركز فتوح الفهد للتجميل "
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/benefit3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/addbenefitbtn"
-        android:layout_width="243dp"
-        android:layout_height="34dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/roundbutton"
-        android:text="أضف إلى القائمة"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintHorizontal_bias="0.987"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/benefitinput"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintTop_toBottomOf="@+id/MembershipFeature" />
 
     <TextView
         android:id="@+id/benefits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="مميزات العضوية"
         android:textColor="#00574b"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.211" />
 
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="412dp"
         android:layout_height="58dp"
         android:background="#00574b"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-        <ImageView
-            android:id="@+id/backbtn"
-            android:layout_width="35dp"
-            android:layout_height="34dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="19dp"
-            app:srcCompat="@drawable/backwhite" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/headertxt"
@@ -147,34 +97,35 @@
         app:layout_constraintVertical_bias="0.06" />
 
     <EditText
-        android:id="@+id/membershipnameinput"
+        android:id="@+id/MembershipType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="العضوية الألماسية 1500"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="#00574b"
-        app:layout_constraintBottom_toTopOf="@+id/benefitinput"
+        app:layout_constraintBottom_toTopOf="@+id/MembershipFeature"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/membershipname"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/benefitinput"
-        android:layout_width="274dp"
-        android:layout_height="48dp"
+        android:id="@+id/MembershipFeature"
+        android:layout_width="272dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="أدخل أحد المميزات حتى تحفظ في الأسفل "
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:textAlignment="center"
         android:textColor="#00574b"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -184,51 +135,4 @@
         app:layout_constraintTop_toBottomOf="@+id/benefits"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/benefit1"
-        android:layout_width="315dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text=" حضور اللقاءات الشهرية"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addbenefitbtn"
-        app:layout_constraintVertical_bias="0.047" />
-
-    <TextView
-        android:id="@+id/benefit2"
-        android:layout_width="315dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text=" حضور اللقاءات السنوية لجمعية البر بالمنطقة الشرقية"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/benefit1"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/benefit3"
-        android:layout_width="315dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="50% خصم من عيادات شام وبطاقة بقيمة 1000 ريال  "
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/benefit2"
-        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>

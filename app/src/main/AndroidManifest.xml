@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.ishzark.ehsanapp">
 
     <uses-permission android:name="android.permissions.INTERNET" />
@@ -43,11 +44,40 @@
         <activity android:name=".DonationTypeActivity" />
         <activity android:name=".SavedLocationsActivity" />
         <activity android:name=".ItemDonationActivity" />
-        <activity android:name=".MoneyDonationActivity" />
+        <activity android:name=".MoneyDonationTypeActivity" />
         <activity android:name=".pickLocationActivity" />
+        <activity android:name=".PrepaidInvoice_main" />
+        <activity android:name=".Gpay" />
+        <activity android:name=".AboutAlberActivity" />
+        <activity android:name=".DonationHistoryAcitivty" />
+        <activity android:name=".AdminHomeActivity" />
+        <activity android:name=".ItemsRequestsHome" />
+        <activity android:name=".ManageAdminsHome" />
+        <activity android:name=".MembershipHome" />
+        <activity android:name=".EventsActivityDonor" />
+        <activity android:name=".EventHome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".eventDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NewEventActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NewMembershipActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".membershipDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RecyclerEvent"
+            android:screenOrientation="portrait"
+            tools:ignore="DuplicateActivity" />
 
 
 

@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -54,13 +55,17 @@ public String chosenitemstatus;
     private FirebaseAuth auth;
 FirebaseStorage storage;
 StorageReference storageReference;
-    private static final String TAG = "ItemDonaationActivity";
+private static final String TAG = "ItemDonaationActivity";
+private CheckBox agreementcb;
+public String date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.itemdonation);
         number=findViewById(R.id.numberofitems);
         detials=findViewById(R.id.detailstext);
+        agreementcb=findViewById(R.id.agreementCb);
+         date=new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
 ///////////////////////////////Donation Type Spinner/////////////////////////////////
         Spinner spinner = findViewById(R.id.donationtypespinner);
@@ -117,12 +122,25 @@ StorageReference storageReference;
                 chooseImage();
             }
         });
+       // final boolean[] checked = {false};
+
 
         donatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadimage();
-                uploadRequest();
+                if(agreementcb.isChecked()){
+
+                    uploadimage();
+                    uploadRequest();
+                }else
+                {
+                    Toast.makeText(ItemDonationActivity.this,R.string.serviceagreement,Toast.LENGTH_SHORT).show();
+
+                }
+
+
+
+
             }
         });
 
@@ -130,7 +148,13 @@ StorageReference storageReference;
 
     }
 
+
+
     private void uploadimage() {
+
+
+
+
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
         String userID = user.getUid();
@@ -139,7 +163,7 @@ StorageReference storageReference;
         if(filePath!=null){
 
 
-            StorageReference ref= storageReference.child("RequestImages"+ userID.toString()+"/");
+            StorageReference ref= storageReference.child(date+" USERID:"+ userID.toString()+"/");
             ref.putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -175,10 +199,10 @@ StorageReference storageReference;
                  String mobile =  user.getPhoneNumber();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     String phone = child.child("phone").getValue().toString();
-                    Log.d(TAG,"phone found"+mobile.replace("+966",""));
+                 //   Log.d(TAG,"phone found"+mobile.replace("+966",""));
                     if (phone.equals(mobile.replace("+966",""))) {
                            donorname = child.child("name").getValue().toString();
-                        Log.d(TAG,"name found"+donorname);
+                       // Log.d(TAG,"name found"+donorname);
                             found=true;
 
                     }
@@ -190,8 +214,7 @@ StorageReference storageReference;
                         String location=intent.getStringExtra("chosencity");
                         String numberofitemes = number.getText().toString().trim();
                         String detailofitems = detials.getText().toString();
-
-                        String date=new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+                        String reqstatus="بإنتظار الموافقة";
 
                         if (numberofitemes.isEmpty()) {
                             number.setError(getString(R.string.input_error_name));
@@ -208,7 +231,8 @@ StorageReference storageReference;
                         Newrequest.setQuantity(numberofitemes);
                         Newrequest.setLocation(location);
                         Newrequest.setDate(date.toString());
-                        Log.d(TAG,"Founded details"+mobile+chosendonationtype+chosenitemstatus+detailofitems);
+                        Newrequest.setRequestStatus(reqstatus);
+                     //   Log.d(TAG,"Founded details"+mobile+chosendonationtype+chosenitemstatus+detailofitems);
 
                           final ProgressDialog progressDialog=new ProgressDialog(ItemDonationActivity.this);
                          progressDialog.setTitle(R.string.uploading);

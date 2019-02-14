@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,12 +27,14 @@ public class loginverifyphone extends AppCompatActivity {
     private String mVerificationId;
     private EditText editTextCode;
     private FirebaseAuth mAuth;
-
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginauthinitcate);
 
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.GONE);
         mAuth = FirebaseAuth.getInstance();
         editTextCode = findViewById(R.id.numberinput2);
         Intent intent = getIntent();
@@ -109,6 +112,8 @@ public class loginverifyphone extends AppCompatActivity {
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        progressBar.setVisibility(View.VISIBLE);
+
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(loginverifyphone.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -125,12 +130,14 @@ public class loginverifyphone extends AppCompatActivity {
                                 Intent i = new Intent(loginverifyphone.this, AdminHomeActivity.class);
                                 i.putExtra("mobile", mobile);
                                 i.putExtra("user", user);
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
                                 startActivity(i);
                             }else if(usertype.equals("Donor")) {
                                 Intent i = new Intent(loginverifyphone.this, DonorHomeActivity.class);
                                 i.putExtra("mobile", mobile);
                                 i.putExtra("user", user);
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
                                 startActivity(i);
                             }

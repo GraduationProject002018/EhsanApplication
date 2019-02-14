@@ -27,38 +27,31 @@
         app:layout_constraintEnd_toEndOf="@+id/header"
         app:layout_constraintHorizontal_bias="0.987"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventdescinput"
+        app:layout_constraintTop_toBottomOf="@+id/EventDescInput"
         app:layout_constraintVertical_bias="0.113" />
 
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="412dp"
         android:layout_height="58dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
         android:background="#00574b"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-        <ImageView
-            android:id="@+id/backbtn"
-            android:layout_width="35dp"
-            android:layout_height="34dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="19dp"
-            app:srcCompat="@drawable/backwhite" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/headertxt"
             android:layout_width="186dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="61dp"
             android:layout_marginStart="111dp"
             android:layout_marginTop="14dp"
-            android:layout_marginEnd="61dp"
-            android:layout_marginBottom="12dp"
             android:layout_toStartOf="@+id/backbtn"
             android:text="إضافة فعالية جديدة"
             android:textAlignment="center"
@@ -127,16 +120,16 @@
         app:layout_constraintVertical_bias="0.09" />
 
     <EditText
-        android:id="@+id/eventdescinput"
+        android:id="@+id/EventDescInput"
         android:layout_width="274dp"
-        android:layout_height="50dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="سيقام الإجتماع في الفرع النسائي بالدمام"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:textAlignment="center"
         android:textColor="#00574b"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -146,7 +139,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/eventdateinput"
+        android:id="@+id/EventDateInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -158,14 +151,14 @@
         android:inputType="date"
         android:textAlignment="center"
         android:textColor="#00574b"
-        app:layout_constraintBottom_toTopOf="@+id/eventdescinput"
+        app:layout_constraintBottom_toTopOf="@+id/EventDescInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventname3"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/eventnameinput"
+        android:id="@+id/EventTitleInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -177,7 +170,7 @@
         android:inputType="text"
         android:textAlignment="center"
         android:textColor="#00574b"
-        app:layout_constraintBottom_toTopOf="@+id/eventdateinput"
+        app:layout_constraintBottom_toTopOf="@+id/EventDateInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventname"

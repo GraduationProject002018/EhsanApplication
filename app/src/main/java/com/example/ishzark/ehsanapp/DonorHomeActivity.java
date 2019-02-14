@@ -20,7 +20,10 @@ public class DonorHomeActivity extends AppCompatActivity {
 Button donateButton;
 TextView username;
 public String Donorname="";
-
+private TextView eventsview;
+private TextView aboutalberview;
+private TextView benefitsview;
+private TextView historyview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +39,40 @@ donateButton.setOnClickListener(new View.OnClickListener() {
     }
 });
 
+eventsview=findViewById(R.id.events);
+aboutalberview=findViewById(R.id.aboutalber);
+benefitsview=findViewById(R.id.benefits);
+historyview=findViewById(R.id.history2);
 
+eventsview.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(DonorHomeActivity.this, EventsActivityDonor.class);
+        startActivity(intent);
+    }
+});
+
+aboutalberview.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(DonorHomeActivity.this, AboutAlberActivity.class);
+        startActivity(intent);
+    }
+});
+
+benefitsview.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        //Show pop up
+    }
+});
+historyview.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(DonorHomeActivity.this,DonationHistoryAcitivty .class);
+        startActivity(intent);
+    }
+});
 
 username=findViewById(R.id.welcome);
         Intent intent = getIntent();

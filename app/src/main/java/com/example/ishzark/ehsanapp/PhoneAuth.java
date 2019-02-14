@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -27,11 +28,15 @@ public class PhoneAuth extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
 private String userslocation;
 
+    private static final String TAG = "PhoneAuth";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_verify_phone);
 
+
+        progressBar = findViewById(R.id.progressBar2);
+        progressBar.setVisibility(View.GONE);
         editTextMobile = findViewById(R.id.numberinput);
 
         findViewById(R.id.verifynumbtn).setOnClickListener(new View.OnClickListener() {
@@ -45,14 +50,13 @@ private String userslocation;
                     editTextMobile.setError("الرجاء ادخال رقم جوال مكون من ٩ ارقام");
                     editTextMobile.requestFocus();
 
-                }
-                Intent intent = new Intent(PhoneAuth.this, VerifyPhoneActivity.class);
-                intent.putExtra("mobile", mobile);
+                }else {
+
                // userslocation="https://ehsan-c48bc.firebaseio.com/";
                 checkNumber(mobile);
-                startActivity(intent);
 
-            }
+
+            }}
         });
 
 
@@ -60,23 +64,33 @@ private String userslocation;
 
     }
     public void checkNumber (final String number) {
-
+        progressBar.setVisibility(View.VISIBLE);
         DatabaseReference ref=FirebaseDatabase.getInstance().getReference().child("Donors");
 
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                boolean found=false;
                 Intent restart=getIntent();
                 for (DataSnapshot child:dataSnapshot.getChildren()){
-                    String phone=  child.child("phone").getValue().toString();
-
+                    String phone= child.child("phone").getValue().toString();
+                    Log.d(TAG,"phone found"+phone);
                     if(phone.equals(number)){
-                        Toast.makeText(PhoneAuth.this, getString(R.string.Phoneregistration_exsist), Toast.LENGTH_LONG).show();
-                        finish();
-                        startActivity(restart);
-                    }else return;
-
+                      found=true;
+                    }
+                }
+                if(found){
+                    progressBar.setVisibility(View.GONE);
+                    Log.d(TAG,"number is "+number);
+                    Toast.makeText(PhoneAuth.this, getString(R.string.Phoneregistration_exsist), Toast.LENGTH_LONG).show();
+                    startActivity(restart);
+                    finish();
+                }else {
+                    progressBar.setVisibility(View.GONE);
+                    Intent intent = new Intent(PhoneAuth.this, VerifyPhoneActivity.class);
+                    intent.putExtra("mobile", number);
+                    startActivity(intent);
                 }
 
 

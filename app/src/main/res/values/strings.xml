@@ -26,6 +26,13 @@
     <string name="notuploading">حصل خطآ يرجى المحاولة مرة أخرى</string>
     <string name="prevloctexts">مواقع سابقة</string>
     <string name="cityhint">الرجاء اختيار مدينة من القائمة</string>
+    <string name="serviceagreement">الرجاء الموافقة على شروط الخدمة</string>
+    <array name="donationProgram">
+        <item>مشروع سقيا الماء</item>
+        <item>مشروع السلة الرمضانية</item>
+        <item>مشروع الحقيبة المدرسية</item>
+        <item>مشروع كفالة يتيم</item>
+    </array>
     <string-array name="city_arrays">
         <item>الخبر</item>
         <item> الدمام</item>

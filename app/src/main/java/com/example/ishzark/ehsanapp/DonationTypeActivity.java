@@ -17,8 +17,8 @@ public class DonationTypeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.donationtype);
-       itemButton=findViewById(R.id.itemdonationbg);
-        moneyButton=findViewById(R.id.moneydonationbg);
+       itemButton=findViewById(R.id.Monetrydonationbg);
+        moneyButton=findViewById(R.id.itemdonationbg);
 
 
 
@@ -42,7 +42,7 @@ public class DonationTypeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                finish();
-                Intent intent = new Intent(DonationTypeActivity.this, MoneyDonationActivity.class);
+                Intent intent = new Intent(DonationTypeActivity.this, MoneyDonationTypeActivity.class);
                 startActivity(intent);
 
             }
