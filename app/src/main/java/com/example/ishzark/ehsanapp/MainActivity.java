@@ -50,7 +50,7 @@ private TextView About;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,
-                        AboutAlberActivity.class);
+                        Aboutus.class);
                 startActivity(intent);
             }
         });

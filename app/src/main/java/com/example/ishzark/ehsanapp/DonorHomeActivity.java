@@ -55,7 +55,7 @@ eventsview.setOnClickListener(new View.OnClickListener() {
 aboutalberview.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(DonorHomeActivity.this, AboutAlberActivity.class);
+        Intent intent = new Intent(DonorHomeActivity.this, Aboutus.class);
         startActivity(intent);
     }
 });

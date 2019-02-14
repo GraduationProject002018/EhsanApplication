@@ -48,13 +48,15 @@
         <activity android:name=".pickLocationActivity" />
         <activity android:name=".PrepaidInvoice_main" />
         <activity android:name=".Gpay" />
-        <activity android:name=".AboutAlberActivity" />
+
         <activity android:name=".DonationHistoryAcitivty" />
         <activity android:name=".AdminHomeActivity" />
         <activity android:name=".ItemsRequestsHome" />
         <activity android:name=".ManageAdminsHome" />
         <activity android:name=".MembershipHome" />
         <activity android:name=".EventsActivityDonor" />
+        <activity android:name=".Aboutus" />
+        <activity android:name=".SendEmail" />
         <activity android:name=".EventHome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
