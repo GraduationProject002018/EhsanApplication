@@ -17,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions{
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+        exclude 'META-INF/DEPENDENCIES'
+    }
 }
 
 dependencies {
@@ -38,6 +43,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.5'
     implementation 'com.firebase:geofire-java:2.3.1'
     implementation 'com.google.firebase:firebase-storage:16.0.5'
-
+    implementation group:"com.twilio.sdk",name:"twilio",version:"7.35.0"
 }
 apply plugin: 'com.google.gms.google-services'

@@ -24,7 +24,7 @@ public class SendEmail extends AppCompatActivity {
 
         //Send Email
 
-        mEditTextTo = findViewById(R.id.emailTo);
+
         mEditTextSubject = findViewById(R.id.emailSubject);
         mEditTextMsg = findViewById(R.id.emailMsg);
 
@@ -38,17 +38,15 @@ public class SendEmail extends AppCompatActivity {
     }
 
     private void sendMail(){
-        String recipientList = mEditTextTo.getText().toString();
-        String[] recipients = recipientList.split(",");
 
         String subject = mEditTextSubject.getText().toString();
         String message = mEditTextMsg.getText().toString();
 
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+        intent.putExtra(Intent.EXTRA_EMAIL, "norahalghuraibi@gmail.com");
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, message);
-
+//Org email:alber@alber.org.sa
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Choose an email client"));
 

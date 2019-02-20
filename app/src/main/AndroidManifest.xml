@@ -57,13 +57,8 @@
         <activity android:name=".EventsActivityDonor" />
         <activity android:name=".Aboutus" />
         <activity android:name=".SendEmail" />
-        <activity android:name=".EventHome">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".EventHome"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".eventDetails"
             android:screenOrientation="portrait" />
@@ -78,10 +73,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".RecyclerEvent"
-            android:screenOrientation="portrait"
-            tools:ignore="DuplicateActivity" />
-
-
+            android:screenOrientation="portrait" />
 
     </application>
 
