@@ -6,21 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/saudinumberlabel3"
+        android:layout_width="47dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="455dp"
+        android:text="+966"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AdminNumberInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AdminNameInput" />
+
     <Button
-        android:id="@+id/adminsubmit"
+        android:id="@+id/Save"
         android:layout_width="243dp"
         android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="349dp"
         android:background="@drawable/roundbutton"
         android:text="حفظ"
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="472dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AdminNumberInput" />
 
     <RelativeLayout
         android:id="@+id/header"
@@ -29,16 +51,6 @@
         android:layout_width="412dp"
         android:layout_height="58dp"
         android:background="#00574b">
-
-        <ImageView
-            android:id="@+id/backbtn"
-            android:layout_width="35dp"
-            android:layout_height="34dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="19dp"
-            app:srcCompat="@drawable/backwhite" />
 
         <TextView
             android:id="@+id/headertxt"
@@ -73,10 +85,10 @@
         android:textColor="#00574b"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/adminnameinput"
+        app:layout_constraintBottom_toBottomOf="@+id/AdminNameInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/adminnameinput"
-        app:layout_constraintTop_toTopOf="@+id/adminnameinput" />
+        app:layout_constraintStart_toEndOf="@+id/AdminNameInput"
+        app:layout_constraintTop_toTopOf="@+id/AdminNameInput" />
 
     <TextView
         android:id="@+id/username"
@@ -90,102 +102,46 @@
         android:textColor="#00574b"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/usernameinput"
+        app:layout_constraintBottom_toBottomOf="@+id/AdminNumberInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toEndOf="@+id/usernameinput"
-        app:layout_constraintTop_toTopOf="@+id/usernameinput"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/username2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:text="الصلاحيات"
-        android:textColor="#00574b"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/checkBox2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintStart_toEndOf="@+id/AdminNumberInput"
+        app:layout_constraintTop_toTopOf="@+id/AdminNumberInput"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/adminnameinput"
+        android:id="@+id/AdminNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="خالد محمد الغريبي"
         android:inputType="textPersonName"
         android:textColor="#00574b"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        tools:layout_editor_absoluteX="60dp" />
+        app:layout_constraintBottom_toTopOf="@+id/AdminNumberInput"
+        app:layout_constraintEnd_toStartOf="@+id/adminname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <EditText
-        android:id="@+id/usernameinput"
+        android:id="@+id/AdminNumberInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
-        android:hint="khalidmg"
-        android:inputType="textPersonName"
+        android:hint="0550747479"
+        android:inputType="number"
         android:textColor="#00574b"
+        app:layout_constraintBottom_toTopOf="@+id/Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.339"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminnameinput" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="إدارة المشرفين"
-        app:layout_constraintBottom_toBottomOf="@+id/checkBox3"
-        app:layout_constraintTop_toTopOf="@+id/checkBox3"
-        tools:layout_editor_absoluteX="179dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="إدارة الفعاليات"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox2"
-        app:layout_constraintHorizontal_bias="0.753"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="298dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="24dp"
-        android:text="إدارة طلبات التبرع"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="108dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="إدارة العضويات"
-        app:layout_constraintBottom_toBottomOf="@+id/checkBox4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
-        app:layout_constraintStart_toEndOf="@+id/checkBox4"
-        app:layout_constraintTop_toTopOf="@+id/checkBox4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/AdminNameInput" />
 
 </android.support.constraint.ConstraintLayout>

@@ -29,6 +29,8 @@
     <string name="serviceagreement">الرجاء الموافقة على شروط الخدمة</string>
     <string name="sms_requestSent">لقد تم استلام طلبك سيتم التواصل معك خلال ٢-٣ ايام عمل</string>
     <string name="DefaultStatus">معلق</string>
+
+
     <array name="donationProgram">
         <item>مشروع سقيا الماء</item>
         <item>مشروع السلة الرمضانية</item>
@@ -52,7 +54,7 @@
     </string-array>
     <string-array name="donationtype_array">
         <item>أثاث</item>
-        <item>طعام</item>
+        <item>طعام جاف</item>
         <item> أثاث</item>
         <item>جهاز كهربائي</item>
         <item>ملابس</item>

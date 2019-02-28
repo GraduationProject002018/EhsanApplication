@@ -43,19 +43,19 @@
 
     <TextView
         android:id="@+id/locationadd2"
-        android:layout_width="171dp"
+        android:layout_width="260dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="موقعك هو"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/Locationlayout"
         app:layout_constraintEnd_toStartOf="@+id/Locationlayout"
-        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.267" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <RelativeLayout
         android:id="@+id/header"
