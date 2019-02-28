@@ -9,30 +9,31 @@ import java.util.ArrayList;
 public class Users {
 
     public String name;
-    public String email;
     public String phone;
     public String gen;
     public String bd;
-
+    public String donorlevel;
+    public float donationvalue;
 
 
     public String city;
 
     ArrayList<LatLng> mylist = new ArrayList<LatLng>();
 
-    public Users(){
-
-    }
 
 
+public Users(){
 
-    public Users(String name, String phone,String gen,String bd,ArrayList mylist,String City) {
+}
+
+    public Users(String name, String phone,String gen,String bd,ArrayList mylist,String City,float dValue,String Dlevel) {
         this.name = name;
         this.phone = phone;
         this.gen = gen;
         this.bd=bd;
         this.mylist=mylist;
-        City=city;
+        this.donationvalue=dValue;
+        this.donorlevel=Dlevel;
     }
 
 
@@ -61,6 +62,13 @@ public class Users {
 
     }
 
+    public void setdlevel(String dlevel) {
+        this.donorlevel = dlevel;
+    }
+
+    public void setdvalue(float dvalue) {
+        this.donationvalue = dvalue;
+    }
 }
 
 

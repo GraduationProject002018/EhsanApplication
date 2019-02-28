@@ -40,7 +40,9 @@ private ArrayAdapter<String> adapter;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SavedLocationsActivity.this, pickLocationActivity.class);
+                finish();
                 startActivity(intent);
+
             }
         });
 /////////////////////////Retrive Location List////////////////////////////////////////////////

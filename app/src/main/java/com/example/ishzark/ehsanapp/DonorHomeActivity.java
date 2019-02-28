@@ -114,7 +114,10 @@ username=findViewById(R.id.welcome);
                 }
                 else
                 {
-                    //Toast.makeText(DonorHomeActivity.this, getString(R.string.Phonedontexist), Toast.LENGTH_LONG).show();
+Intent in=getIntent();
+String p=in.getStringExtra("mobile");
+Log.d("DonorHomeActivity","got from register:"+p);
+
                   }
 
 

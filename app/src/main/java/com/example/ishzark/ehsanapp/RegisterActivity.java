@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ishzark.ehsanapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -175,6 +176,11 @@ spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
     user.setGen(ChosenGender.getText().toString());
     user.setBd(Bd);
     user.setCity(chosencity);
+    user.setdlevel("1");
+    user.setdvalue(0);
+    final  Intent in = new Intent(this, DonorHomeActivity.class);
+            in.putExtra("mobile",mobile);
+
 
             Task<Void> donors = FirebaseDatabase.getInstance().getReference("Donors")
                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -185,13 +191,12 @@ spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         Toast.makeText(RegisterActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.GONE);
 
-
                     } else {
                         Toast.makeText(RegisterActivity.this, getString(R.string.registration_failed), Toast.LENGTH_LONG).show();
                     }
                 }
             });
-            final  Intent in = new Intent(this, DonorHomeActivity.class);
+
             startActivity(in);
 
 
