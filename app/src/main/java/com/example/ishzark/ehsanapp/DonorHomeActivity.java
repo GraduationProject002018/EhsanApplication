@@ -1,12 +1,14 @@
 package com.example.ishzark.ehsanapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,10 +26,20 @@ private TextView eventsview;
 private TextView aboutalberview;
 private TextView benefitsview;
 private TextView historyview;
+private TextView LevelView;
+private TextView donationlevel;
+    private String level;
+    private String value;
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepagedonor);
+
+        LevelView=findViewById(R.id.levelview);
+        donationlevel=findViewById(R.id.donationlevel);
+        progressBar=findViewById(R.id.level);
 
 donateButton=findViewById(R.id.donatebtn);
 donateButton.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +113,8 @@ username=findViewById(R.id.welcome);
                     if (phone.equals(number)) {
                         found=true;
                         Donorname = child.child("name").getValue().toString();
-
+                        level=child.child("donorlevel").getValue().toString();
+                        value=child.child("donationvalue").getValue().toString();
 
                     }
                 }
@@ -110,10 +123,13 @@ username=findViewById(R.id.welcome);
                 {
 
                     username.setText("مرحبا"+" "+Donorname);
+                    //LEVEL IN CIRCLE
+                    donationlevel.setText(level+"/5");
+                    //LEVEL NAME
+                    LevelView.setText(returnlevelname(level));
 
-                }
-                else
-                {
+                    showPrgoress(value,level);
+
 Intent in=getIntent();
 String p=in.getStringExtra("mobile");
 Log.d("DonorHomeActivity","got from register:"+p);
@@ -130,7 +146,72 @@ Log.d("DonorHomeActivity","got from register:"+p);
         });
     }
 
+    private void showPrgoress(String v,String level) {
+int value=Integer.parseInt(v);
 
+switch (level){
+    case "1":
+        if(value>=1 && value<=2499){
+            progressBar.setProgress(25);
+        }
+        else if(value>=2500 && value<=4999){
+            progressBar.setProgress(50);
+        }
+        else if(value>=5000 && value<=7499){
+            progressBar.setProgress(75);
+        }
+        else if(value>=7500 && value<=9999){
+            progressBar.setProgress(100);
+        }
+        break;
+    case "2":
+        break;
+    case "3":
+        break;
+    case "4":
+        break;
+    case "5":
+        break;
+    default:
+        break;
+        }
+
+if(value>=1 && value<=2499){
+
+}
+
+
+    }
+
+    public String returnlevelname(String level){
+        String Lname="";
+        String chosencolor="blue";
+
+        if (level.equals("1"))
+        {
+            Lname="الأزرق";
+            LevelView.setTextColor(Color.parseColor("#FFFFFF"));
+
+        }
+    if (level.equals("2"))
+    {
+        Lname="برونزي";
+    }
+    if (level.equals("3"))
+    {
+        Lname="فضي";
+    }
+    if (level.equals("4"))
+    {
+        Lname="ذهبي";
+    }
+    if (level.equals("5"))
+    {
+        Lname="بلاتيني";
+    }
+
+    return Lname;
+}
 }
 
 

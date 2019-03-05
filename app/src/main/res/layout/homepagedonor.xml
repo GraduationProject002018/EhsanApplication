@@ -129,24 +129,10 @@
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="412dp"
-        android:layout_height="71dp"
+        android:layout_height="37dp"
         android:background="#00574b"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-        <ImageView
-            android:id="@+id/ehsanlogo"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="119dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="119dp"
-            app:srcCompat="@drawable/ehsan_white" />
-
-    </RelativeLayout>
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/welcome"
@@ -176,7 +162,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:max="100"
-        android:progress="90"
+        android:progress="20"
         android:progressDrawable="@drawable/circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -208,7 +194,7 @@
         app:srcCompat="@drawable/history" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/levelview"
         android:layout_width="52dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
@@ -238,11 +224,11 @@
         android:textColor="@android:color/darker_gray"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintBottom_toBottomOf="@+id/levelview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/levelview"
+        app:layout_constraintTop_toTopOf="@+id/levelview"
         app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
