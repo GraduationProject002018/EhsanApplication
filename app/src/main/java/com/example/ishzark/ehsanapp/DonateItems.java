@@ -2,7 +2,7 @@ package com.example.ishzark.ehsanapp;
 
 public class DonateItems {
 
-    private String Donor_name, Item_type, quantity, Item_status, Location, phone,ItemDetails,ItemValue,Date,RequestStatus, Url;
+    private String Donor_name, Item_type, quantity, Item_status, Location, phone,ItemDetails,ItemValue,Date,RequestStatus, Url, key;
 
 
 
@@ -97,5 +97,9 @@ public class DonateItems {
 
     public String getItemValue() {
         return ItemValue;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

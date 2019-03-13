@@ -49,6 +49,7 @@ public class PrepaidInvoice_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(prepaidinvoice);
 
+
         /* getting the reference of invoices node */
         Ehsan = FirebaseDatabase.getInstance().getReference("Invoices");
 

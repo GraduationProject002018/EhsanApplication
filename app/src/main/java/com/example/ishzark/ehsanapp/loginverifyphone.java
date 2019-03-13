@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +29,8 @@ public class loginverifyphone extends AppCompatActivity {
     private EditText editTextCode;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
+    private TextView mobiletext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +40,10 @@ public class loginverifyphone extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
         mAuth = FirebaseAuth.getInstance();
         editTextCode = findViewById(R.id.numberinput2);
+        mobiletext=findViewById(R.id.textView9);
         Intent intent = getIntent();
         String mobile = intent.getStringExtra("mobile");
+        mobiletext.setText("+966"+mobile);
         sendVerificationCode(mobile);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 

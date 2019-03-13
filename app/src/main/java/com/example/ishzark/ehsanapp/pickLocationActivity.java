@@ -10,6 +10,7 @@ import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -18,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -50,7 +52,7 @@ public class pickLocationActivity extends AppCompatActivity implements OnMapRead
     private FusedLocationProviderClient mFusedLocationClient;
     private LocationCallback mLocationCallback;
     private Marker marker;
-    private RelativeLayout btnButton;
+    private ImageView btnButton;
     private Context mContext;
     private static final int REQUEST_ACCESS_COARSE_LOCATION = 1;
     private TextView CityText;
@@ -109,7 +111,7 @@ String longt=longText.getText().toString();
                 .findFragmentById(R.id.map2);
         mapFragment.getMapAsync(this);
 
-        btnButton = findViewById(R.id.Locationlayout);
+        btnButton = findViewById(R.id.locator);
 
         btnButton.setOnClickListener(new View.OnClickListener() {
             @Override

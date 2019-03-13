@@ -12,42 +12,39 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class firebaseDatabaseDonationRequests {
+public class firebaseDatabaseDonationRequests_DR {
+
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private List<DonateItems> RList = new ArrayList<>();
+    private List<PrepaidInvoice> RList = new ArrayList<>();
 
 
     public interface DataStatues {
 
-        void DataDR(List<DonateItems> items, List<String> keys);
+        void DataInvoice(List<PrepaidInvoice> pre, List<String> keys);
 
     }
-    public firebaseDatabaseDonationRequests() {
+    public firebaseDatabaseDonationRequests_DR() {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Items");
+        databaseReference = firebaseDatabase.getReference("Invoices");
     }
 
     public void readrequests(final DataStatues dataStatues) {
 
-
         Query applyQuery = databaseReference.orderByChild("request_status").equalTo("معلق");
-                applyQuery.addValueEventListener(new ValueEventListener() {
 
-
+        applyQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
                 RList.clear();
                 List<String> keys = new ArrayList<>();
                 for (DataSnapshot D : dataSnapshot.getChildren()) {
                     keys.add(D.getKey());
-                    DonateItems items = D.getValue(DonateItems.class);
-                    RList.add(items);
+                    PrepaidInvoice pre = D.getValue(PrepaidInvoice.class);
+                    RList.add(pre);
                 }
-                dataStatues.DataDR(RList, keys);
+                dataStatues.DataInvoice(RList, keys);
             }
 
             @Override

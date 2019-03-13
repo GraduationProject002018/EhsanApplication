@@ -16,13 +16,13 @@ public class Users {
     public float donationvalue;
 
 
-    public String city;
+    private String city;
 
     ArrayList<LatLng> mylist = new ArrayList<LatLng>();
 
 
 
-public Users(){
+    public Users(){
 
 }
 

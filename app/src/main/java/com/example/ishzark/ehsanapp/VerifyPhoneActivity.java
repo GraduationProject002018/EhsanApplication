@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +27,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     private String mVerificationId;
     private EditText editTextCode;
     private FirebaseAuth mAuth;
+    private TextView mobiletext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,8 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         editTextCode = findViewById(R.id.numberinput2);
         Intent intent = getIntent();
         String mobile = intent.getStringExtra("mobile");
+        mobiletext=findViewById(R.id.textView8);
+        mobiletext.setText("+966"+mobile);
         sendVerificationCode(mobile);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 

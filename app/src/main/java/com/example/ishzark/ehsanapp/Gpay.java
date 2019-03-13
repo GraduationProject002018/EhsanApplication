@@ -8,6 +8,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
+
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -74,6 +76,8 @@ public class Gpay extends AppCompatActivity {
                                         new View.OnClickListener() {
                                             @Override
                                             public void onClick(View view) {
+                                                Toast.makeText(Gpay.this, R.string.Moneydonationsoon, Toast.LENGTH_SHORT).show();
+                                                finish();
                                                 requestPayment(view);
                                             }
                                         });

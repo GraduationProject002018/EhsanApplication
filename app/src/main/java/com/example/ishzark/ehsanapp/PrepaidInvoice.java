@@ -8,6 +8,11 @@ public class PrepaidInvoice {
     private String bankName;
     private String phone;
     private String Program;
+    private String request_status;
+
+
+
+
 
     public String getDate() {
         return date;
@@ -17,10 +22,18 @@ public class PrepaidInvoice {
         this.date = date;
     }
 
+    public String getRequest_status() {
+        return request_status;
+    }
+
+    public void setRequest_status(String request_status) {
+        this.request_status = request_status;
+    }
+
     public PrepaidInvoice() {
     }
 
-    public PrepaidInvoice(String donorName, String donationAmount, String invoiceNum, String date, String bankName, String phone, String program) {
+    public PrepaidInvoice(String donorName, String donationAmount, String invoiceNum, String date, String bankName, String phone, String program, String request_status) {
         DonorName = donorName;
         DonationAmount = donationAmount;
         InvoiceNum = invoiceNum;
@@ -28,6 +41,7 @@ public class PrepaidInvoice {
         this.bankName = bankName;
         this.phone = phone;
         Program = program;
+        this.request_status = request_status;
     }
 
     public String getDonorName() {
