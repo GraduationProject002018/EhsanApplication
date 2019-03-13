@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popwindow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/benefitslayoutL5"
+        android:layout_width="395dp"
+        android:layout_height="212dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="DuplicateIds">
+
+        <ProgressBar
+            android:id="@+id/level5"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="78dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/progressbar"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/circle"
+            android:progressTint="#ddddd9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.525"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/donationlevel5"
+            android:layout_width="44dp"
+            android:layout_height="27dp"
+            android:text="1/5"
+            android:textAlignment="center"
+            android:textColor="@color/wallet_hint_foreground_holo_dark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/level5"
+            app:layout_constraintEnd_toEndOf="@+id/level5"
+            app:layout_constraintStart_toStartOf="@+id/level5"
+            app:layout_constraintTop_toTopOf="@+id/level5" />
+
+        <TextView
+            android:id="@+id/levelview5"
+            android:layout_width="52dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text=" بلاتيني"
+            android:textAlignment="center"
+            android:textColor="#C0C0C0"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10L5"
+            app:layout_constraintEnd_toStartOf="@+id/textView10L5"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/level5"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView10L5"
+            android:layout_width="67dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginBottom="8dp"
+            android:text="عضويتي : "
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/platibenefits"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/level5"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <TextView
+            android:id="@+id/platibenefits"
+            android:layout_width="378dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/platinummembership"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/level5" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/benefitslayout4"
+        android:layout_width="208dp"
+        android:layout_height="213dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="215dp"
+        app:layout_constraintBottom_toTopOf="@+id/benefitslayoutL5"
+        app:layout_constraintEnd_toStartOf="@+id/benefitslayoutL3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/benefitslayoutL2">
+
+        <ProgressBar
+            android:id="@+id/level4"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="77dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/progressbar"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/circle"
+            android:progressTint="#ffd500"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.043" />
+
+        <TextView
+            android:id="@+id/donationlevel4"
+            android:layout_width="44dp"
+            android:layout_height="27dp"
+            android:text="1/5"
+            android:textAlignment="center"
+            android:textColor="@color/wallet_hint_foreground_holo_dark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/level4"
+            app:layout_constraintEnd_toEndOf="@+id/level4"
+            app:layout_constraintStart_toStartOf="@+id/level4"
+            app:layout_constraintTop_toTopOf="@+id/level4" />
+
+        <TextView
+            android:id="@+id/levelview4"
+            android:layout_width="52dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:text=" ذهبي"
+            android:textAlignment="center"
+            android:textColor="#F2D203"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/level4" />
+
+        <TextView
+            android:id="@+id/textView10L4"
+            android:layout_width="67dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="عضويتي : "
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/levelview4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.112"
+            app:layout_constraintStart_toEndOf="@+id/levelview4"
+            app:layout_constraintTop_toBottomOf="@+id/level4"
+            app:layout_constraintVertical_bias="0.857" />
+
+        <TextView
+            android:id="@+id/goldbenefits"
+            android:layout_width="208dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/goldenmembership"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/levelview4" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="379dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/benefitslayoutL3"
+        android:layout_width="191dp"
+        android:layout_height="212dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/benefitslayoutL5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/benefitslayout"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ProgressBar
+            android:id="@+id/level3"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/progressbar"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/circle"
+            android:progressTint="#C0C0C0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/donationlevel3"
+            android:layout_width="44dp"
+            android:layout_height="27dp"
+            android:text="1/5"
+            android:textAlignment="center"
+            android:textColor="@color/wallet_hint_foreground_holo_dark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/level3"
+            app:layout_constraintEnd_toEndOf="@+id/level3"
+            app:layout_constraintStart_toStartOf="@+id/level3"
+            app:layout_constraintTop_toTopOf="@+id/level3" />
+
+        <TextView
+            android:id="@+id/levelview3"
+            android:layout_width="52dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:text=" فضي"
+            android:textAlignment="center"
+            android:textColor="#C0C0C0"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/level3" />
+
+        <TextView
+            android:id="@+id/textView10L3"
+            android:layout_width="67dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="عضويتي : "
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/levelview3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.112"
+            app:layout_constraintStart_toEndOf="@+id/levelview3"
+            app:layout_constraintTop_toBottomOf="@+id/level3"
+            app:layout_constraintVertical_bias="0.857" />
+
+        <TextView
+            android:id="@+id/silverbenefits"
+            android:layout_width="181dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/silveremembership"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/levelview3" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="379dp"
+            android:layout_height="28dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.967" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/benefitslayoutL2"
+        android:layout_width="209dp"
+        android:layout_height="224dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="186dp"
+        app:layout_constraintEnd_toEndOf="@+id/benefitslayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainbenefit"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ProgressBar
+            android:id="@+id/level2"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="79dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/progressbar"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/circle"
+            android:progressTint="#d28c47"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/donationlevel2"
+            android:layout_width="44dp"
+            android:layout_height="27dp"
+            android:text="2/5"
+            android:textAlignment="center"
+            android:textColor="@color/wallet_hint_foreground_holo_dark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/level2"
+            app:layout_constraintEnd_toEndOf="@+id/level2"
+            app:layout_constraintStart_toStartOf="@+id/level2"
+            app:layout_constraintTop_toTopOf="@+id/level2" />
+
+        <TextView
+            android:id="@+id/levelview2"
+            android:layout_width="52dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:text=" برونزي"
+            android:textAlignment="center"
+            android:textColor="#d28c47"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/level2" />
+
+        <TextView
+            android:id="@+id/textView10L2"
+            android:layout_width="67dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="عضويتي : "
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/levelview2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.112"
+            app:layout_constraintStart_toEndOf="@+id/levelview2"
+            app:layout_constraintTop_toBottomOf="@+id/level2"
+            app:layout_constraintVertical_bias="0.857" />
+
+        <TextView
+            android:id="@+id/bronzebenefits"
+            android:layout_width="198dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/bronzemembership"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/divider2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/levelview2" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="393dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.974" />
+    </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="454dp"
+        android:layout_height="48dp"
+        android:background="#00574b"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="162dp"
+            android:layout_height="37dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="111dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="181dp"
+            android:layout_marginBottom="0dp"
+            android:text="مميزات العضوية"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/benefitslayout"
+        android:layout_width="187dp"
+        android:layout_height="222dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/benefitslayoutL3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/mainbenefit"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ProgressBar
+            android:id="@+id/level1"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="77dp"
+            android:layout_height="81dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/progressbar"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/circle"
+            android:progressTint="@color/wallet_highlighted_text_holo_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/donationlevel1"
+            android:layout_width="44dp"
+            android:layout_height="27dp"
+            android:text="1/5"
+            android:textAlignment="center"
+            android:textColor="@color/wallet_hint_foreground_holo_dark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/level1"
+            app:layout_constraintEnd_toEndOf="@+id/level1"
+            app:layout_constraintStart_toStartOf="@+id/level1"
+            app:layout_constraintTop_toTopOf="@+id/level1" />
+
+        <TextView
+            android:id="@+id/levelview1"
+            android:layout_width="52dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:text=" أزرق"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/level1" />
+
+        <TextView
+            android:id="@+id/textView10L1"
+            android:layout_width="67dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="عضويتي : "
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/levelview1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.112"
+            app:layout_constraintStart_toEndOf="@+id/levelview1"
+            app:layout_constraintTop_toBottomOf="@+id/level1"
+            app:layout_constraintVertical_bias="0.857" />
+
+        <TextView
+            android:id="@+id/bluebenefits"
+            android:layout_width="174dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/bluemembership"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/divider1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/levelview1" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="379dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.974" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/mainbenefit"
+        android:layout_width="391dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/mainmembershipbenefits"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+</android.support.constraint.ConstraintLayout>

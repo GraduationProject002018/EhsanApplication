@@ -6,33 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/AddMembership"
-        android:layout_width="243dp"
-        android:layout_height="34dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/roundbutton"
-        android:text="إضافة عضوية"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerV"
-        app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintHorizontal_bias="0.987"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="1.0" />
-
     <RelativeLayout
         android:id="@+id/header"
-        android:layout_width="411dp"
+        android:layout_width="412dp"
         android:layout_height="58dp"
         android:background="#00574b"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,11 +17,10 @@
 
         <TextView
             android:id="@+id/headertxt"
-            android:layout_width="136dp"
+            android:layout_width="match_parent"
             android:layout_height="31dp"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="16dp"
-            android:text="إدارة العضويات"
+            android:layout_centerInParent="true"
+            android:text="ادارة طلبات التبرع المالي"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="24sp"
@@ -57,10 +32,10 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerV"
         android:layout_width="395dp"
-        android:layout_height="513dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="497dp"
         android:layout_marginBottom="17dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

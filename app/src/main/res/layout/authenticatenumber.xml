@@ -3,7 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/willlsendcode2"
+        android:layout_width="188dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="44dp"
+        android:text="@string/wesentacode"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/verifynumbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberinput2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="155dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/verifynumbtn"
+        app:layout_constraintEnd_toStartOf="@+id/willlsendcode"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberinput2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/verifynumbtn"
@@ -11,7 +45,7 @@
         android:layout_height="33dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="200dp"
         android:background="@drawable/roundbutton"
         android:text="التالي"
         android:textColor="#ffffff"
@@ -44,7 +78,7 @@
         android:id="@+id/numberinput2"
         android:layout_width="182dp"
         android:layout_height="43dp"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="8dp"
         android:hint="324***"
         android:inputType="phone"
         android:textAlignment="textEnd"
@@ -52,21 +86,25 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/verifynumbtn"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ehsanlogo3" />
+        app:layout_constraintTop_toBottomOf="@+id/ehsanlogo3"
+        app:layout_constraintVertical_bias="0.473" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="رقم التحقق"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/verifynumbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.835"
         app:layout_constraintStart_toEndOf="@+id/numberinput2"
-        app:layout_constraintTop_toBottomOf="@+id/ehsanlogo3" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ehsanlogo3"
+        app:layout_constraintVertical_bias="0.462" />
 </android.support.constraint.ConstraintLayout>

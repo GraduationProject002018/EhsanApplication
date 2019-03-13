@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <TextView
         android:id="@+id/saudinumberlabel3"
@@ -34,7 +35,7 @@
         android:layout_marginEnd="84dp"
         android:layout_marginBottom="349dp"
         android:background="@drawable/roundbutton"
-        android:text="حفظ"
+        android:text="إضافة"
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -48,7 +49,7 @@
         android:id="@+id/header"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
-        android:layout_width="412dp"
+        android:layout_width="411dp"
         android:layout_height="58dp"
         android:background="#00574b">
 
@@ -77,37 +78,35 @@
         android:id="@+id/adminname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="8dp"
         android:text="اسم المشرف"
         android:textColor="#00574b"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/AdminNameInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/AdminNameInput"
-        app:layout_constraintTop_toTopOf="@+id/AdminNameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="136dp"
         android:text="رقم الجوال"
         android:textColor="#00574b"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/AdminNumberInput"
+        app:layout_constraintBottom_toTopOf="@+id/Save"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintStart_toEndOf="@+id/AdminNumberInput"
-        app:layout_constraintTop_toTopOf="@+id/AdminNumberInput"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/adminname"
+        app:layout_constraintVertical_bias="0.863" />
 
     <EditText
         android:id="@+id/AdminNameInput"
@@ -118,7 +117,7 @@
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="24dp"
         android:ems="10"
-        android:hint="خالد محمد الغريبي"
+        android:hint="الأسم الكامل"
         android:inputType="textPersonName"
         android:textColor="#00574b"
         app:layout_constraintBottom_toTopOf="@+id/AdminNumberInput"
@@ -129,19 +128,16 @@
     <EditText
         android:id="@+id/AdminNumberInput"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         android:ems="10"
-        android:hint="0550747479"
-        android:inputType="number"
+        android:hint="550xxxxxx"
+        android:inputType="phone"
         android:textColor="#00574b"
         app:layout_constraintBottom_toTopOf="@+id/Save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.339"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/saudinumberlabel3"
         app:layout_constraintTop_toBottomOf="@+id/AdminNameInput" />
 
 </android.support.constraint.ConstraintLayout>

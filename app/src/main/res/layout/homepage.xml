@@ -13,24 +13,26 @@
         android:layout_width="110dp"
         android:layout_height="66dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="186dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/aboutalber"
         app:srcCompat="@drawable/newloogo" />
 
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="412dp"
         android:layout_height="212dp"
+        android:layout_marginBottom="95dp"
         android:background="#00574b"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintBottom_toTopOf="@+id/eventsimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/ehsanlogo"
@@ -59,7 +61,7 @@
             android:background="@drawable/whiteroundbtn"
             android:text="تبرع وأحدث فرق!"
             android:textColor="#00574b"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/header"
             app:layout_constraintEnd_toEndOf="@+id/header"
@@ -100,15 +102,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="252dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="32dp"
         android:text="فعالياتنا "
         android:textColor="#00574b"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/aboutalber"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.198" />
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <TextView
         android:id="@+id/aboutalber"
@@ -120,7 +121,7 @@
         android:layout_marginBottom="176dp"
         android:text="من نحن"
         android:textColor="#00574b"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/aboutalberimg"

@@ -12,9 +12,12 @@
         android:id="@+id/header"
         android:layout_width="411dp"
         android:layout_height="58dp"
+        android:layout_marginBottom="8dp"
         android:background="#00574b"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-3dp">
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/eventsheader"
@@ -49,8 +52,11 @@
         app:srcCompat="@drawable/newloogo" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="368dp"
-        android:layout_height="417dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="64dp" />
+        android:layout_height="557dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 </android.support.constraint.ConstraintLayout>

@@ -4,50 +4,82 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <Button
+        android:id="@+id/downloadimg"
+        android:layout_width="174dp"
+        android:layout_height="34dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/roundbutton"
+        android:text="عرض الصورة"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemimg"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/donationtypelabel6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
         android:text="تفاصيل اخرى"
         android:textColor="#00574b"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/itemimg"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/quantity2"
-        app:layout_constraintTop_toBottomOf="@+id/donationtypelabel2" />
+        app:layout_constraintTop_toBottomOf="@+id/donationtypelabel2"
+        app:layout_constraintVertical_bias="0.031" />
 
     <TextView
         android:id="@+id/quantity2"
-        android:layout_width="0dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginStart="67dp"
+        android:layout_width="222dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="number"
+        android:maxLines="5"
         android:textAlignment="center"
         android:textColor="#00574b"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/donationtypelabel6"
+        app:layout_constraintBottom_toTopOf="@+id/itemimg"
         app:layout_constraintEnd_toStartOf="@+id/donationtypelabel6"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantity"
+        app:layout_constraintVertical_bias="0.842" />
 
     <Button
         android:id="@+id/accept"
         android:layout_width="125dp"
         android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/roundbutton"
         android:text="قبول"
         android:textColor="#ffffff"
@@ -55,23 +87,23 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locationbtnadminreq"
-        app:layout_constraintVertical_bias="0.764" />
+        app:layout_constraintVertical_bias="0.631" />
 
     <Button
         android:id="@+id/decline"
         android:layout_width="125dp"
         android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/whiteroundbtn"
         android:text="رفض"
         android:textColor="#00574b"
@@ -79,52 +111,58 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/accept"
-        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintHorizontal_bias="0.813"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locationbtnadminreq"
-        app:layout_constraintVertical_bias="0.764" />
+        app:layout_constraintVertical_bias="0.631" />
 
     <ImageView
         android:id="@+id/locationimg"
-        android:layout_width="36dp"
-        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/locationbtnadminreq"
         app:layout_constraintEnd_toEndOf="@+id/locationbtnadminreq"
-        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toStartOf="@+id/locationbtnadminreq"
         app:layout_constraintTop_toTopOf="@+id/locationbtnadminreq"
-        app:layout_constraintVertical_bias="0.777"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/location" />
 
     <Button
         android:id="@+id/locationbtnadminreq"
         android:layout_width="251dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="96dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/btnborder"
         android:text="موقع الإستلام              "
         android:textColor="#00574b"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/decline"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toEndOf="@+id/decline"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/downloadimg"
+        app:layout_constraintVertical_bias="0.006"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="76dp" />
 
     <TextView
         android:id="@+id/itemimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="180dp"
-        android:layout_marginEnd="19dp"
         android:text="صورة للأشياء المراد التبرع بها"
         android:textColor="#00574b"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donationtypelabel6"
+        app:layout_constraintVertical_bias="0.473"
         tools:ignore="MissingConstraints" />
 
 
@@ -145,18 +183,18 @@
 
     <TextView
         android:id="@+id/donationtypelabel2"
-        android:layout_width="90dp"
+        android:layout_width="93dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
         android:text="عدد القطع"
         android:textColor="#00574b"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/donationtypelabel6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/quantity"
-        app:layout_constraintTop_toBottomOf="@+id/donationtypelabel" />
+        tools:layout_editor_absoluteY="271dp" />
 
     <TextView
         android:id="@+id/itemstatus"
@@ -174,17 +212,18 @@
 
     <TextView
         android:id="@+id/quantity"
-        android:layout_width="141dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginStart="119dp"
+        android:layout_width="168dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="number"
         android:textAlignment="textEnd"
         android:textColor="#00574b"
-        app:layout_constraintBottom_toBottomOf="@+id/donationtypelabel2"
-        app:layout_constraintEnd_toStartOf="@+id/donationtypelabel2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemstatus" />
 
     <TextView
         android:id="@+id/requestdatelabel"
@@ -218,7 +257,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/donationtypelabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/phone"
+        app:layout_constraintStart_toEndOf="@+id/itemphone"
         app:layout_constraintTop_toBottomOf="@+id/donornamelabel"
         tools:ignore="MissingConstraints" />
 
@@ -240,23 +279,19 @@
 
     <RelativeLayout
         android:id="@+id/header"
-        android:layout_width="412dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="371dp"
+        android:layout_width="411dp"
+        android:layout_height="58dp"
         android:background="#00574b"
-        app:layout_constraintBottom_toTopOf="@+id/locationbtnadminreq"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/headertxt"
-            android:layout_width="136dp"
+            android:layout_width="wrap_content"
             android:layout_height="31dp"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="16dp"
+            android:layout_centerInParent="true"
             android:text="طلب تبرع عيني"
-            android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -270,6 +305,7 @@
         android:layout_height="27dp"
         android:layout_marginEnd="17dp"
         android:layout_marginStart="76dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#00574b"
@@ -279,7 +315,7 @@
         app:layout_constraintTop_toTopOf="@+id/donornamelabel" />
 
     <TextView
-        android:id="@+id/phone"
+        android:id="@+id/itemphone"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginEnd="14dp"
@@ -295,15 +331,16 @@
 
     <TextView
         android:id="@+id/itemtype"
-        android:layout_width="175dp"
+        android:layout_width="164dp"
         android:layout_height="26dp"
-        android:layout_marginEnd="13dp"
         android:layout_marginStart="90dp"
+        android:layout_marginEnd="13dp"
         android:ems="10"
         android:inputType="text"
         android:textColor="#00574b"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/requestdatelabel"
+        app:layout_constraintHorizontal_bias="0.825"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/requestdatelabel" />
 

@@ -14,13 +14,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <receiver android:name=".SmsSentReceiver"/>
-        <receiver android:name=".SmsDeliveredReceiver"/>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/gmap_key" />
@@ -67,8 +66,9 @@
 
         </activity>
 
-
-
+        <activity android:name=".GifActivity"/>
+        <activity android:name=".Pop" />
+        <activity android:name=".MembershipPop" />
         <activity android:name=".ManageAdminsHome" />
         <activity android:name=".MembershipHome" />
         <activity android:name=".EventsActivityDonor" />
@@ -94,9 +94,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".membershipDetails"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".RecyclerEvent"
             android:screenOrientation="portrait" />
 
     </application>

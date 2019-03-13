@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <TextView
-        android:id="@+id/strategylabel2"
+        android:id="@+id/contactuslabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -150,10 +151,10 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.399" />
+        app:layout_constraintVertical_bias="0.369" />
 
     <TextView
         android:id="@+id/msg"
@@ -172,7 +173,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.248" />
+        app:layout_constraintVertical_bias="0.231" />
 
     <TextView
         android:id="@+id/valueslabel"
@@ -244,11 +245,12 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="169dp"
-            android:layout_marginBottom="9dp"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="155dp"
+            android:layout_marginBottom="8dp"
             android:text="من نحن"
+            android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -426,7 +428,7 @@
         app:layout_constraintEnd_toStartOf="@+id/youtube"
         app:layout_constraintHorizontal_bias="0.815"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strategylabel2"
+        app:layout_constraintTop_toBottomOf="@+id/contactuslabel"
         app:layout_constraintVertical_bias="0.277" />
 
     <Button
@@ -443,7 +445,7 @@
         app:layout_constraintEnd_toStartOf="@+id/instagram"
         app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strategylabel2"
+        app:layout_constraintTop_toBottomOf="@+id/contactuslabel"
         app:layout_constraintVertical_bias="0.277" />
 
     <Button
@@ -459,7 +461,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.805"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strategylabel2"
+        app:layout_constraintTop_toBottomOf="@+id/contactuslabel"
         app:layout_constraintVertical_bias="0.277" />
 
     <Button
@@ -475,7 +477,7 @@
         app:layout_constraintEnd_toStartOf="@+id/twitter"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strategylabel2"
+        app:layout_constraintTop_toBottomOf="@+id/contactuslabel"
         app:layout_constraintVertical_bias="0.2" />
 
 </android.support.constraint.ConstraintLayout>

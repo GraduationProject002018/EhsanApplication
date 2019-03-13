@@ -4,77 +4,111 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#00574b">
 
-    <Button
-        android:id="@+id/ListEventBtn"
-        android:layout_width="243dp"
-        android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginStart="85dp"
+    <ImageView
+        android:id="@+id/ehsanlogo"
+        android:layout_width="283dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/roundbutton"
-        android:text="الفعاليات "
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.473" />
-
-    <Button
-        android:id="@+id/AddEventBtn"
-        android:layout_width="243dp"
-        android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="121dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="148dp"
-        android:background="@drawable/roundbutton"
-        android:text="أضف فعالية جديدة"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ListEventBtn"
-        app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintHorizontal_bias="0.984"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084"
+        app:srcCompat="@drawable/ehsan_white" />
 
     <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="412dp"
-        android:layout_height="58dp"
-        android:background="#00574b"
+        android:id="@+id/AddEventBtn"
+        android:layout_width="146dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="64dp"
+        android:background="#40d3d3d3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/ehsanlogo">
 
         <TextView
-            android:id="@+id/headertxt"
-            android:layout_width="136dp"
-            android:layout_height="31dp"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="16dp"
-            android:text="إدارة الفعاليات"
+            android:id="@+id/neweventlabel"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="4dp"
+            android:text=" فعالية جديدة"
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/neweventimg"
+            android:layout_width="74dp"
+            android:layout_height="59dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="52dp"
+            app:srcCompat="@drawable/calendar" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ListEventBtn"
+        android:layout_width="147dp"
+        android:layout_height="122dp"
+        android:layout_marginBottom="144dp"
+        android:background="#40d3d3d3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddEventBtn"
+        app:layout_constraintVertical_bias="0.682">
+
+        <ImageView
+            android:id="@+id/eventlistimg"
+            android:layout_width="74dp"
+            android:layout_height="59dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="52dp"
+            app:srcCompat="@drawable/event"
+            tools:layout_editor_absoluteX="168dp"
+            tools:layout_editor_absoluteY="402dp" />
+
+        <TextView
+            android:id="@+id/listeventslabel"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="4dp"
+            android:text="الفعاليات"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
