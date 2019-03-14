@@ -68,15 +68,16 @@ public class DonorHomeActivity extends AppCompatActivity {
         aboutalberview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //  Intent intent = new Intent(DonorHomeActivity.this, Aboutus.class);
-                //   startActivity(intent);
+                 Intent intent = new Intent(DonorHomeActivity.this, Aboutus.class);
+                   startActivity(intent);
             }
         });
 
         benefitsview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Show pop up
+                Intent intent = new Intent(DonorHomeActivity.this, MembershipforDonor.class);
+                startActivity(intent);
             }
         });
         historyview.setOnClickListener(new View.OnClickListener() {

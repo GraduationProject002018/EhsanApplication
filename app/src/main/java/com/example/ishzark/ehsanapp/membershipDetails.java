@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -12,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class membershipDetails extends AppCompatActivity {
     private EditText ModifyType;
     private EditText ModifyFeature;
-
+    private ProgressBar progressBar;
     private Button UpdateBtn;
     private Button DeleteBtn;
     private FirebaseDatabase firebaseDatabase;
@@ -27,7 +28,8 @@ public class membershipDetails extends AppCompatActivity {
         setContentView(R.layout.membership_edit);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Memberships");
-
+        progressBar = findViewById(R.id.progressBar9);
+        progressBar.setVisibility(View.GONE);
         key = getIntent().getStringExtra("key");
         type = getIntent().getStringExtra("type");
         feature = getIntent().getStringExtra("feature");
@@ -55,10 +57,12 @@ public class membershipDetails extends AppCompatActivity {
                 Update(key, membership); }
 
             public void Update(String key, Memberships membership) {
+                progressBar.setVisibility(View.VISIBLE);
                 databaseReference.child(key).setValue(membership);
 
-                Toast.makeText(membershipDetails.this, " العضويه تم تحديثها", Toast.LENGTH_LONG).show();
-
+                Toast.makeText(membershipDetails.this, "  تم تحديث العضويه", Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
+                finish();
             }
 
 
@@ -75,10 +79,12 @@ public class membershipDetails extends AppCompatActivity {
 
 
             public void Delete(String key) {
+                progressBar.setVisibility(View.VISIBLE);
                 //databaseReference.child(key).setValue(null); for change dont use it aseel
                 databaseReference.child(key).removeValue();
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(membershipDetails.this, " تم حذف العضويه", Toast.LENGTH_LONG).show();
 
-                Toast.makeText(membershipDetails.this, "العضويه تم حذفها", Toast.LENGTH_LONG).show();
                 finish();
 
 

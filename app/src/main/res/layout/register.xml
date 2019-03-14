@@ -83,7 +83,7 @@
             android:id="@+id/nameinput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="مثال:نوره صالح الغريبي"
+            android:hint="الاسم الاول و الأب و العائلة"
             android:selectAllOnFocus="true"
             android:singleLine="false"
             android:textAlignment="center"
@@ -91,50 +91,22 @@
             android:textSize="8pt" />
     </android.support.design.widget.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/citylayout"
-        android:layout_width="237dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toStartOf="@+id/bdlabel"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        app:layout_constraintVertical_bias="0.106">
-
-        <EditText
-            android:id="@+id/bdinput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:focusableInTouchMode="false"
-            android:hint="الرجاء إختيار التاريخ بالميلادي"
-            android:inputType="text"
-            android:onClick="onClick"
-            android:selectAllOnFocus="false"
-            android:singleLine="false"
-            android:textSize="8pt" />
-
-    </android.support.design.widget.TextInputLayout>
-
 
     <TextView
         android:id="@+id/bdlabel"
         android:layout_width="0dp"
         android:layout_height="33dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="28dp"
         android:text="تاريخ الميلاد"
         android:textAlignment="center"
         android:textColor="#00574b"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/citylayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/bdinput"
         app:layout_constraintTop_toBottomOf="@+id/namelabel" />
 
     <TextView
@@ -193,6 +165,41 @@
         app:layout_constraintTop_toBottomOf="@+id/bdlabel"
         app:layout_constraintVertical_bias="1.0" />
 
+
+    <EditText
+        android:id="@+id/bdinput"
+        android:layout_width="234dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:focusableInTouchMode="false"
+        android:hint=" إختيار التاريخ  الميلادي"
+        android:inputType="text"
+        android:onClick="onClick"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textSize="8pt"
+        app:layout_constraintBottom_toTopOf="@+id/citylayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/citylayout"
+        android:layout_width="237dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toStartOf="@+id/bdlabel"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintVertical_bias="1.0">
+
+    </android.support.design.widget.TextInputLayout>
 
     <Spinner
         android:id="@+id/cityspinner"

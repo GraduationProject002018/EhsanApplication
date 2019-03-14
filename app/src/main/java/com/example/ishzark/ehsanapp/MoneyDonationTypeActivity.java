@@ -21,6 +21,7 @@ public class MoneyDonationTypeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MoneyDonationTypeActivity.this, PrepaidInvoice_main.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -29,6 +30,7 @@ public class MoneyDonationTypeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MoneyDonationTypeActivity.this, Gpay.class);
                 startActivity(i);
+                finish();
             }
         });
 

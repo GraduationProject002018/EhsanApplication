@@ -119,7 +119,6 @@
         android:background="#40d3d3d3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.396"
-        app:layout_constraintStart_toEndOf=""
         app:layout_constraintTop_toBottomOf="@+id/ehsanlogo2">
 
         <ImageView

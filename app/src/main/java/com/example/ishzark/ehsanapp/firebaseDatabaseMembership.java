@@ -24,7 +24,7 @@ void DataMembership(List<Memberships> membership, List<String> keys);
         databaseReference = firebaseDatabase.getReference("Memberships");
     }
 
-    public void readEnterd(final firebaseDatabaseMembership.DataStatues dataStatues) {
+    public void readEnterd(final DataStatues dataStatues) {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

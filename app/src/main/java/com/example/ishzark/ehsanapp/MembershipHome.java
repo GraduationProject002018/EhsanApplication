@@ -25,23 +25,12 @@ public class MembershipHome extends AppCompatActivity {
 
         });
 
-        AddMembership=(Button)findViewById(R.id.AddMembership);
 
         intent1 = new Intent(this, NewMembershipActivity.class);
 
 
 
-        AddMembership.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent1);
-            }
-        });
 
-    }
-
-
-
-}
+}}
 
 

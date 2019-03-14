@@ -32,7 +32,7 @@ public class firebaseDatabaseDonationRequests {
     public void readrequests(final DataStatues dataStatues) {
 
 
-        Query applyQuery = databaseReference.orderByChild("request_status").equalTo("معلق");
+        Query applyQuery = databaseReference.orderByChild("requestStatus").equalTo("معلق");
                 applyQuery.addValueEventListener(new ValueEventListener() {
 
 

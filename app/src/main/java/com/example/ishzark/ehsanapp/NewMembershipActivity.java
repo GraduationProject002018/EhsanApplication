@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -17,7 +18,7 @@ public class NewMembershipActivity extends AppCompatActivity {
     private Button SaveBtn, AddFeatureBtn;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-
+    private ProgressBar progressBar;
     Memberships membership = new Memberships();
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,8 @@ public class NewMembershipActivity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Memberships");
-
+        progressBar = findViewById(R.id.progressBar10);
+        progressBar.setVisibility(View.GONE);
         MembershipType=(EditText)findViewById(R.id.MembershipType);
         MembershipFeaure=(EditText)findViewById(R.id.MembershipFeature);
 
@@ -41,6 +43,7 @@ public class NewMembershipActivity extends AppCompatActivity {
                                        }
 
                                        public void Add( ){
+                                           progressBar.setVisibility(View.VISIBLE);
                                            String Type=MembershipType.getText().toString();
                                            String Feature =MembershipFeaure.getText().toString();
 
@@ -48,18 +51,22 @@ public class NewMembershipActivity extends AppCompatActivity {
 
 
                                            if (Type.isEmpty()) {
-                                               Toast.makeText(NewMembershipActivity.this, "الرجاء إدخال اسم العضوية", Toast.LENGTH_LONG).show();
+                                               MembershipType.setError("الرجاء إدخال اسم العضوية");
+                                               MembershipType.requestFocus();
+
                                            } else if (Feature.isEmpty()) {
-                                               Toast.makeText(NewMembershipActivity.this, "الرجاء إدخال مميزات العضوية", Toast.LENGTH_LONG).show();
+                                               MembershipFeaure.setError("الرجاء إدخال مميزات العضوية");
+                                               MembershipFeaure.requestFocus();
+
                                            } else {
 
-
+                                               progressBar.setVisibility(View.VISIBLE);
                                                String key = databaseReference.push().getKey();
                                               Memberships membership=new Memberships(Type,Feature);
                                                databaseReference.child(key).setValue(membership);
 
-                                               Toast.makeText(NewMembershipActivity.this, "العضوية تم إضافتها ", Toast.LENGTH_LONG).show();
-
+                                               Toast.makeText(NewMembershipActivity.this, " تم إضافة العضوية ", Toast.LENGTH_LONG).show();
+                                               progressBar.setVisibility(View.GONE);
                                                finish(); }
 
                                        }

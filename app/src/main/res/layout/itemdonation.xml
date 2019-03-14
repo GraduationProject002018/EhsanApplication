@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -203,12 +202,12 @@
             android:id="@+id/headertxt"
             android:layout_width="136dp"
             android:layout_height="31dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginBottom="11dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="136dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="11dp"
             android:text="تبرع عيني"
             android:textAlignment="center"
             android:textColor="#ffffff"
@@ -253,12 +252,12 @@
 
     <EditText
         android:id="@+id/detailstext"
-        android:layout_width="230dp"
+        android:layout_width="290dp"
         android:layout_height="65dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
 
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="مثال: حجم القطع،مشكلة القطع ،الخ"
@@ -270,7 +269,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uploadedimage"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintVertical_bias="0.114" />
 
     <Spinner
         android:id="@+id/itemstatusspinner"
@@ -345,5 +344,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailstext"
         app:layout_constraintVertical_bias="0.213" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/donatebtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
 </android.support.constraint.ConstraintLayout>

@@ -46,6 +46,7 @@
 
         </activity>
         <activity android:name=".PhoneAuth" />
+        <activity android:name=".ShowImageActivity" />
         <activity android:name=".loginverifyphone" />
         <activity android:name=".DonationTypeActivity" />
         <activity android:name=".SavedLocationsActivity" />
@@ -54,9 +55,13 @@
         <activity android:name=".pickLocationActivity" />
         <activity android:name=".PrepaidInvoice_main" />
         <activity android:name=".Gpay" />
-
+        <activity android:name=".RecyclerEvent" />
         <activity android:name=".DonationHistoryAcitivty" />
+        <activity android:name=".DonationHistoryTypes" />
+        <activity android:name=".DonationTypes_mng" />
         <activity android:name=".AdminHomeActivity" />
+        <activity android:name=".PrepaidInvoiceHome" />
+        <activity android:name=".MembershipforDonor" />
         <activity android:name=".ItemsRequestsHome">
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />

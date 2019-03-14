@@ -2,7 +2,22 @@ package com.example.ishzark.ehsanapp;
 
 public class DonateItems {
 
-    private String Donor_name, Item_type, quantity, Item_status, Location, phone,ItemDetails,ItemValue,Date,RequestStatus, Url, key;
+    private String Donor_name;
+    private String Item_type;
+    private String quantity;
+    private String Item_status;
+    private String Location;
+    private String phone;
+    private String ItemDetails;
+    private String ItemValue;
+    private String Date;
+
+
+
+
+    private String request_status;
+    private String Url;
+    private String key;
 
 
 
@@ -10,8 +25,8 @@ public class DonateItems {
 
     }
 
-    public void setRequestStatus(String requestStatus) {
-        RequestStatus = requestStatus;
+    public void setRequestStatus(String requeststatus) {
+        request_status = requeststatus;
     }
 
     public void setDonor_name(String donor_name) {
@@ -44,7 +59,7 @@ public class DonateItems {
 
 
     public String getRequestStatus() {
-        return RequestStatus;
+        return request_status;
     }
 
     public String getUrl() {

@@ -148,11 +148,13 @@ public class loginverifyphone extends AppCompatActivity {
                             }
 
                         } else {
+                            progressBar.setVisibility(View.GONE);
 
                             Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_failed), Toast.LENGTH_LONG).show();
 
 
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_wrongcode), Toast.LENGTH_LONG).show();
                             }
 

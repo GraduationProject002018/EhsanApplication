@@ -10,13 +10,13 @@
         android:id="@+id/UpdatebtnId"
         android:layout_width="243dp"
         android:layout_height="29dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="8dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/roundbutton"
         android:text="تعديل"
         android:textColor="#ffffff"
@@ -151,7 +151,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:inputType="date"
+        android:inputType="text"
+        android:focusableInTouchMode="false"
+        android:selectAllOnFocus="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.284"
         app:layout_constraintStart_toStartOf="parent"
@@ -159,7 +161,7 @@
 
     <EditText
         android:id="@+id/edeventDescId"
-        android:layout_width="235dp"
+        android:layout_width="226dp"
         android:layout_height="78dp"
         android:layout_marginTop="36dp"
         android:ems="10"
@@ -168,5 +170,20 @@
         app:layout_constraintHorizontal_bias="0.284"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edEventDateId" />
+
+    <ProgressBar
+        android:id="@+id/progressBar5"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/UpdatebtnId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
 </android.support.constraint.ConstraintLayout>

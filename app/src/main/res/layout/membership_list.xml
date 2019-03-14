@@ -8,33 +8,69 @@
 
     <TextView
         android:id="@+id/TypeMembership"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="332dp"
-        android:layout_marginEnd="1dp"
+        android:layout_width="251dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="TextView"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textColorLink="@color/common_google_signin_btn_text_dark_focused"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/FeatureMembership"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/FeatureMembership"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="332dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="1dp"
+        android:layout_width="320dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="204dp"
         android:text="TextView"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textColorLink="@color/common_google_signin_btn_text_dark_focused"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TypeMembership" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="النوع"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/TypeMembership"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/TypeMembership" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="المميزات"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/FeatureMembership"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/FeatureMembership"
+        app:layout_constraintTop_toTopOf="@+id/FeatureMembership"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/divider3"

@@ -19,7 +19,7 @@ public class AdminHomeActivity extends AppCompatActivity {
 
         manageadmins=findViewById(R.id.mngadmin);
         managebenefits=findViewById(R.id.mngmemberships);
-        manageevents=findViewById(R.id.mngevents);
+        manageevents=findViewById(R.id.AddEventBtn);
         managerequests=findViewById(R.id.mngrequests);
 
 
@@ -36,7 +36,7 @@ public class AdminHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(AdminHomeActivity.this, ItemsRequestsHome.class);
+                Intent intent = new Intent(AdminHomeActivity.this, DonationTypes_mng.class);
                 startActivity(intent);
             }
         });

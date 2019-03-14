@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +19,7 @@ public class adminDetails extends AppCompatActivity {
     private Button DeleteBtn;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private ProgressBar progressBar;
     //Memberships  membership = new Memberships();
 
     String key, name, number;
@@ -28,7 +30,8 @@ public class adminDetails extends AppCompatActivity {
         setContentView(R.layout.admin_edit);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Admins");
-
+        progressBar = findViewById(R.id.progressBar8);
+        progressBar.setVisibility(View.GONE);
         key = getIntent().getStringExtra("key");
         name = getIntent().getStringExtra("name");
         number = getIntent().getStringExtra("phone");
@@ -56,10 +59,12 @@ public class adminDetails extends AppCompatActivity {
                 Update(key, admin); }
 
             public void Update(String key, Admins admin) {
+                progressBar.setVisibility(View.VISIBLE);
                 databaseReference.child(key).setValue(admin);
 
-                Toast.makeText(adminDetails.this, " العضويه تم تحديثها", Toast.LENGTH_LONG).show();
-
+                Toast.makeText(adminDetails.this, " تم تحديث المشرف", Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
+                finish();
             }
 
 
@@ -70,16 +75,19 @@ public class adminDetails extends AppCompatActivity {
         });
 
         DeleteBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Delete(key);}
 
 
             public void Delete(String key) {
+                progressBar.setVisibility(View.VISIBLE);
 
                 databaseReference.child(key).removeValue();
 
-                Toast.makeText(adminDetails.this, "العضويه تم حذفها", Toast.LENGTH_LONG).show();
+                Toast.makeText(adminDetails.this, " تم حذف المشرف", Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
                 finish();
 
 

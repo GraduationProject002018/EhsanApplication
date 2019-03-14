@@ -80,13 +80,13 @@
             android:textColor="@android:color/darker_gray"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/platibenefits"
+            app:layout_constraintBottom_toTopOf="@+id/benefits4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/level5"
             app:layout_constraintVertical_bias="0.666" />
 
         <TextView
-            android:id="@+id/platibenefits"
+            android:id="@+id/benefits4"
             android:layout_width="378dp"
             android:layout_height="72dp"
             android:layout_marginStart="8dp"
@@ -181,9 +181,9 @@
             app:layout_constraintVertical_bias="0.857" />
 
         <TextView
-            android:id="@+id/goldbenefits"
+            android:id="@+id/benefits3"
             android:layout_width="208dp"
-            android:layout_height="74dp"
+            android:layout_height="75dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -194,19 +194,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/levelview4" />
 
-        <View
-            android:id="@+id/divider4"
-            android:layout_width="379dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -287,9 +274,9 @@
             app:layout_constraintVertical_bias="0.857" />
 
         <TextView
-            android:id="@+id/silverbenefits"
-            android:layout_width="181dp"
-            android:layout_height="75dp"
+            android:id="@+id/benefits2"
+            android:layout_width="183dp"
+            android:layout_height="83dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -300,28 +287,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/levelview3" />
 
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="379dp"
-            android:layout_height="28dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.967" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/benefitslayoutL2"
         android:layout_width="209dp"
-        android:layout_height="224dp"
+        android:layout_height="217dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="186dp"
         app:layout_constraintEnd_toEndOf="@+id/benefitslayout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainbenefit"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/mainbenefit">
 
         <ProgressBar
             android:id="@+id/level2"
@@ -388,34 +365,20 @@
             app:layout_constraintVertical_bias="0.857" />
 
         <TextView
-            android:id="@+id/bronzebenefits"
+            android:id="@+id/benefits1"
             android:layout_width="198dp"
             android:layout_height="41dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:text="@string/bronzemembership"
             android:textAlignment="center"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/divider2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/levelview2" />
 
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="393dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.974" />
     </android.support.constraint.ConstraintLayout>
 
     <RelativeLayout
@@ -525,34 +488,20 @@
             app:layout_constraintVertical_bias="0.857" />
 
         <TextView
-            android:id="@+id/bluebenefits"
+            android:id="@+id/benefits0"
             android:layout_width="174dp"
             android:layout_height="42dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:text="@string/bluemembership"
             android:textAlignment="center"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/divider1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/levelview1" />
 
-        <View
-            android:id="@+id/divider1"
-            android:layout_width="379dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.974" />
     </android.support.constraint.ConstraintLayout>
 
     <TextView
@@ -562,6 +511,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/mainmembershipbenefits"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header" />

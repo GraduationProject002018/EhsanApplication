@@ -1,26 +1,33 @@
 package com.example.ishzark.ehsanapp;
 
+import android.app.DatePickerDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class NewEventActivity extends AppCompatActivity {
 private EditText EvTitle;
@@ -30,7 +37,8 @@ private Button Savebtn;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     Events event = new Events();
-
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
+    private ProgressBar progressBar;
     //notification variables
     public static final String EVENTS_CHANNEL_ID = "فعالية جديدة";
     private NotificationManagerCompat notificationManager;
@@ -40,6 +48,8 @@ private Button Savebtn;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eventnew);
+        progressBar = findViewById(R.id.progressBar6);
+        progressBar.setVisibility(View.GONE);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Events");
@@ -52,6 +62,39 @@ private Button Savebtn;
         //notifications stuff
         createNotificationChannels();
         notificationManager = NotificationManagerCompat.from(this);
+
+///////////////////////////////////Date Picker ///////////////////////////
+
+
+        EvDate.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance(new Locale("@calendar=islamic-umalqura"));
+                //IslamicCalendar cal=IslamicCalendar.getInstance(locale);
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+                // System.currentTimeMillis();
+                DatePickerDialog dialog = new DatePickerDialog(
+                        NewEventActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year, month, day);
+
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                String date = month + "/" + day + "/" + year;
+                EvDate.setText(date);
+            }
+        };
 
 
         Savebtn.setOnClickListener(new View.OnClickListener() {
@@ -71,26 +114,31 @@ private Button Savebtn;
 
 
 
-
-
                     if (Title.isEmpty()) {
-                        Toast.makeText(NewEventActivity.this, "الرجاء إدخال اسم الحدث", Toast.LENGTH_LONG).show();
+                        EvTitle.setError("الرجاء إدخال اسم الحدث");
+                        EvTitle.requestFocus();
                     } else if (Date.isEmpty()) {
-                        Toast.makeText(NewEventActivity.this, "الرجاء إدخال تاريخ الحدث", Toast.LENGTH_LONG).show();
+                        EvDate.setError("الرجاء إدخال تاريخ الحدث");
+                        EvDate.requestFocus();
                     } else if (Description.isEmpty()) {
-                        Toast.makeText(NewEventActivity.this, "الرجاء إدخال تفاصيل الحدث", Toast.LENGTH_LONG).show();
+                        EvDescription.setError("الرجاء إدخال تفاصيل الحدث");
+                        EvDescription.requestFocus();
+
                     } else {
+                        progressBar.setVisibility(View.VISIBLE);
 
 
                         String key = databaseReference.push().getKey();
                         Events event= new Events(Title,Date,Description);
                         databaseReference.child(key).setValue(event);
 
-                        Toast.makeText(NewEventActivity.this, "الحدث تم إضافته", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NewEventActivity.this, " تم إضافةالحدث", Toast.LENGTH_LONG).show();
 
                         //sending notification
                         sendOnEventsChannel();
-                   finish(); }
+                   finish();
+                        progressBar.setVisibility(View.GONE);
+                    }
 
                 }
 
@@ -126,7 +174,7 @@ private Button Savebtn;
         Notification notification = new NotificationCompat.Builder(this, EVENTS_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_event_notification)
                 .setContentTitle("فعالية جديدة")
-                .setContentText(EvDate.getText().toString())
+                .setContentText(EvDescription.getText().toString())
                 .setColor(Color.GREEN)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)

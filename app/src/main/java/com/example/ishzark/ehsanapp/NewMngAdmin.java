@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -17,10 +18,12 @@ public class NewMngAdmin extends AppCompatActivity {
     private Button Save;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-
+    private ProgressBar progressBar;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adminnew);
+        progressBar = findViewById(R.id.progressBar7);
+        progressBar.setVisibility(View.GONE);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Admins");
@@ -40,6 +43,7 @@ public class NewMngAdmin extends AppCompatActivity {
                                        }
 
                                        public void Add( ){
+                                           progressBar.setVisibility(View.VISIBLE);
                                            String Name=AdminNameInput.getText().toString();
                                            String Phone =AdminNumberInput.getText().toString();
 
@@ -47,9 +51,13 @@ public class NewMngAdmin extends AppCompatActivity {
 
 
                                            if (Name.isEmpty()) {
-                                               Toast.makeText(NewMngAdmin.this, "الرجاء إدخال اسم المشرف", Toast.LENGTH_LONG).show();
+                                               AdminNameInput.setError("الرجاء إدخال اسم المشرف");
+                                               AdminNameInput.requestFocus();
+
                                            } else if (Phone.isEmpty()) {
-                                               Toast.makeText(NewMngAdmin.this, "الرجاء إدخال رقم المشرف ", Toast.LENGTH_LONG).show();
+                                               AdminNumberInput.setError("الرجاء إدخال رقم المشرف");
+                                               AdminNumberInput.requestFocus();
+
                                            } else {
 
 
@@ -59,7 +67,9 @@ public class NewMngAdmin extends AppCompatActivity {
 
                                                Toast.makeText(NewMngAdmin.this, "تمت إضافة المشرف الجديد ", Toast.LENGTH_LONG).show();
 
-                                               finish(); }
+                                               finish();
+                                               progressBar.setVisibility(View.GONE);
+                                           }
 
                                        }
 
