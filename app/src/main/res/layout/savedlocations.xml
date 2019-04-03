@@ -10,26 +10,30 @@
         android:layout_width="136dp"
         android:layout_height="37dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="204dp"
+        android:layout_marginStart="216dp"
         android:layout_marginTop="64dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/prevloctexts"
         android:textAlignment="viewEnd"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/LocationListView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newlocationlayout" />
+        app:layout_constraintTop_toBottomOf="@+id/newlocationlayout"
+        app:layout_constraintVertical_bias="0.8" />
 
     <RelativeLayout
         android:id="@+id/header"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="164dp"
+        android:layout_width="428dp"
+        android:layout_height="53dp"
         android:background="#00574b"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/headertxt"
@@ -88,11 +92,11 @@
 
     <ListView
         android:id="@+id/LocationListView"
-        android:layout_width="370dp"
-        android:layout_height="244dp"
+        android:layout_width="397dp"
+        android:layout_height="461dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="16dp"
         android:layoutDirection="rtl"
         android:orientation="horizontal"
         android:scrollbars="vertical"
@@ -100,7 +104,6 @@
         android:textDirection="rtl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -108,11 +111,10 @@
         android:layout_width="29dp"
         android:layout_height="28dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="480dp"
+        android:layout_marginBottom="496dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toEndOf="@+id/prelocationtext"
-        app:layout_constraintTop_toBottomOf="@+id/header"
         app:srcCompat="@drawable/history" />
 </android.support.constraint.ConstraintLayout>

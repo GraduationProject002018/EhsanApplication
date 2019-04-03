@@ -235,8 +235,8 @@
 
     <Spinner
         android:id="@+id/donationtypespinner"
-        android:layout_width="231dp"
-        android:layout_height="29dp"
+        android:layout_width="282dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="12dp"
@@ -265,16 +265,15 @@
         android:maxLines="5"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/donationtypelabel3"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uploadedimage"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.11" />
 
     <Spinner
         android:id="@+id/itemstatusspinner"
-        android:layout_width="237dp"
-        android:layout_height="29dp"
+        android:layout_width="268dp"
+        android:layout_height="31dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"

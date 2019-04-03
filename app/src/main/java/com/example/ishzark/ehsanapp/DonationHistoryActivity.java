@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,6 +28,7 @@ public class DonationHistoryActivity extends AppCompatActivity {
     PrepaidInvoice pre ;
     private FirebaseAuth auth;
     String TAG="DonationHistoryAct";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,8 @@ public class DonationHistoryActivity extends AppCompatActivity {
                             if(p.equals(mobile.replace("+966","")))
                             {
                             pre = ds.getValue(PrepaidInvoice.class);
-                            list.add(pre.getProgram().toString() + " - حالة الطلب: "+ pre.getRequest_status());
+
+                            list.add(pre.getProgram().toString() + " - حالة الطلب : "+pre.getRequest_status()) ;
 
 
                         } //end for

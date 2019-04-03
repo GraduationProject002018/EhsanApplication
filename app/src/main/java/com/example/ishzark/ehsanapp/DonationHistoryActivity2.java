@@ -3,6 +3,7 @@ package com.example.ishzark.ehsanapp;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -61,7 +62,8 @@ public class DonationHistoryActivity2 extends AppCompatActivity {
                     if(p.equals(mobile))
                     {
                         items = ds.getValue(DonateItems.class);
-                        list.add(items.getItem_type().toString() + " - حالة الطل : "+ items.getRequestStatus());
+
+                        list.add(items.getItem_type().toString() + " - حالة الطلب : "+ items.getRequestStatus());
 
 
                     } //end for

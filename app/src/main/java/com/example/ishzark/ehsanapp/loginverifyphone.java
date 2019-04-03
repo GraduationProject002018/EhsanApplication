@@ -130,7 +130,7 @@ public class loginverifyphone extends AppCompatActivity {
                             String mobile = intent.getStringExtra("mobile");
                             String usertype=intent.getStringExtra("usertype");
                             ////////based on the user go to the activity///////
-                            if(usertype.equals("SuperAdmin")||usertype.equals("Admin")){
+                            if(usertype.equals("SuperAdmin")){
 
                                 Intent i = new Intent(loginverifyphone.this, AdminHomeActivity.class);
                                 i.putExtra("mobile", mobile);
@@ -138,6 +138,14 @@ public class loginverifyphone extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
                                 startActivity(i);
+                            }else if (usertype.equals("Admin")) {
+                                Intent i = new Intent(loginverifyphone.this, normaladminhome.class);
+                                i.putExtra("mobile", mobile);
+                                i.putExtra("user", user);
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
+                                startActivity(i);
+
                             }else if(usertype.equals("Donor")) {
                                 Intent i = new Intent(loginverifyphone.this, DonorHomeActivity.class);
                                 i.putExtra("mobile", mobile);

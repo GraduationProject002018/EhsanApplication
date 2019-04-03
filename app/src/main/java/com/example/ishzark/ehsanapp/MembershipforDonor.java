@@ -48,16 +48,16 @@ TextView silver;
                         blue.setText(feature);
                     }
                     else if(name.equals("برونزي")){
-                        blue.setText(feature);
+                        bronze.setText(feature);
 
                     } else if(name.equals("فضي")){
-                        blue.setText(feature);
+                        silver.setText(feature);
 
                     } else if(name.equals("ذهبي")){
-                        blue.setText(feature);
+                        gold.setText(feature);
 
                     } else if(name.equals("بلاتيني")){
-                        blue.setText(feature);
+                        plat.setText(feature);
 
                     }
 

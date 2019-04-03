@@ -9,7 +9,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/benefitslayoutL5"
         android:layout_width="395dp"
-        android:layout_height="212dp"
+        android:layout_height="203dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +66,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/level5"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.611" />
 
         <TextView
             android:id="@+id/textView10L5"
@@ -83,12 +83,12 @@
             app:layout_constraintBottom_toTopOf="@+id/benefits4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/level5"
-            app:layout_constraintVertical_bias="0.666" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/benefits4"
             android:layout_width="378dp"
-            android:layout_height="72dp"
+            android:layout_height="105dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="8dp"
@@ -100,14 +100,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/level5" />
+            app:layout_constraintTop_toBottomOf="@+id/level5"
+            android:scrollbars="vertical"/>
 
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/benefitslayout4"
         android:layout_width="208dp"
-        android:layout_height="213dp"
+        android:layout_height="221dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="215dp"
         app:layout_constraintBottom_toTopOf="@+id/benefitslayoutL5"
@@ -132,7 +133,7 @@
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.043" />
+            app:layout_constraintVertical_bias="0.1" />
 
         <TextView
             android:id="@+id/donationlevel4"
@@ -183,7 +184,7 @@
         <TextView
             android:id="@+id/benefits3"
             android:layout_width="208dp"
-            android:layout_height="75dp"
+            android:layout_height="113dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -192,7 +193,8 @@
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/levelview4" />
+            app:layout_constraintTop_toBottomOf="@+id/textView10L4"
+            android:scrollbars="vertical"/>
 
     </android.support.constraint.ConstraintLayout>
 
@@ -285,7 +287,8 @@
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/levelview3" />
+            app:layout_constraintTop_toBottomOf="@+id/levelview3"
+            android:scrollbars="vertical"/>
 
     </android.support.constraint.ConstraintLayout>
 
@@ -367,7 +370,7 @@
         <TextView
             android:id="@+id/benefits1"
             android:layout_width="198dp"
-            android:layout_height="41dp"
+            android:layout_height="56dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -377,7 +380,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/levelview2" />
+            app:layout_constraintTop_toBottomOf="@+id/levelview2"
+            android:scrollbars="vertical"/>
 
     </android.support.constraint.ConstraintLayout>
 
@@ -490,7 +494,7 @@
         <TextView
             android:id="@+id/benefits0"
             android:layout_width="174dp"
-            android:layout_height="42dp"
+            android:layout_height="55dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -500,7 +504,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/levelview1" />
+            app:layout_constraintTop_toBottomOf="@+id/levelview1"
+            android:scrollbars="vertical"/>
 
     </android.support.constraint.ConstraintLayout>
 

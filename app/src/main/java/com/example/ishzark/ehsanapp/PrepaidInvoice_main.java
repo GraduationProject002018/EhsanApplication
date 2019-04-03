@@ -58,7 +58,7 @@ public class PrepaidInvoice_main extends AppCompatActivity {
     String Username = "mariamedu";
     String Password="ehsan2019";
     String Sender= "Ehsan";
-    String Message ="لقد تم استلام طلب تبرعك وسيتم التواصل معك خلال ٢-٣ايام عمل";
+    String Message ="لقد تم استلام طلب تأكيد الإيصال وسيتم التواصل معك خلال ٢-٣ايام عمل";
 
     //a list to store all the invoice from firebase database
     List<PrepaidInvoice> invoices;
@@ -226,6 +226,7 @@ public class PrepaidInvoice_main extends AppCompatActivity {
                     }
 
                     prgressBar.setVisibility(View.GONE);
+                    sendSMS(mobile,donorname);
 
                     startActivity(new Intent(PrepaidInvoice_main.this, GifActivity.class));
                     finish();

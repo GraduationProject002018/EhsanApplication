@@ -21,7 +21,7 @@ public class EventsActivityDonor extends AppCompatActivity {
             @Override
             public void DataLoaded(List<Events> event, List<String> keys) {
 
-                new RecyclerViewActivity().setConfig(recyclerView, EventsActivityDonor.this, event, keys);
+                new RecyclerViewActivity2().setConfig(recyclerView, EventsActivityDonor.this, event, keys);
             }
 
 
@@ -29,22 +29,6 @@ public class EventsActivityDonor extends AppCompatActivity {
 
         });
 
-        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(@NonNull RecyclerView recyclerView, @NonNull MotionEvent motionEvent) {
-                return true;
-            }
-
-            @Override
-            public void onTouchEvent(@NonNull RecyclerView recyclerView, @NonNull MotionEvent motionEvent) {
-
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean b) {
-
-            }
-        });
 
     }
 

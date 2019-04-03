@@ -124,7 +124,7 @@ public class DonorHomeActivity extends AppCompatActivity {
                 if(found)
                 {
 
-                    username.setText("مرحبا"+" "+Donorname);
+                    username.setText(Donorname);
                     //LEVEL IN CIRCLE
                     donationlevel.setText(level+"/5");
                     //LEVEL NAME
@@ -155,6 +155,7 @@ public class DonorHomeActivity extends AppCompatActivity {
             case "1":
                 if(value>=1 && value<=2499){
                     progressBar.setProgress(25);
+                    progressBar.setProgressBackgroundTintList(ColorStateList.valueOf(Color.BLUE));
                 }
                 else if(value>=2500 && value<=4999){
                     progressBar.setProgress(50);

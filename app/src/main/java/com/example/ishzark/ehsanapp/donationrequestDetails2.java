@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 public class donationrequestDetails2 extends AppCompatActivity {
 
@@ -35,6 +37,9 @@ public class donationrequestDetails2 extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
 String TAG= "donationrequestDetails2";
+    String Username = "mariamedu";
+    String Password = "ehsan2019";
+    String Sender = "Ehsan";
 
     String key, donor_name,donationAmount,phone, bank_, date_, Invoicenum, program_;
     @Override
@@ -138,8 +143,8 @@ String TAG= "donationrequestDetails2";
 
 
             public void Update(final String key, PrepaidInvoice pre ) {
-                databaseReference.child(key).child("request_status").setValue("قبول");
-                Toast.makeText(donationrequestDetails2.this, "تم قبول طلب التبرع بنجاح.", Toast.LENGTH_LONG).show();
+                databaseReference.child(key).child("request_status").setValue("مقبول");
+                Toast.makeText(donationrequestDetails2.this, "تم قبول الإيصال بنجاح.", Toast.LENGTH_LONG).show();
 
 
                 final DatabaseReference refe = FirebaseDatabase.getInstance().getReference().child("Donors");
@@ -195,6 +200,7 @@ int newvalue=Integer.parseInt(donationamount.getText().toString());
     Log.d(TAG, "k found " + k);
     refe.child(k).child("donorlevel").setValue(DonorLevel);
     refe.child(k).child("donationvalue").setValue(value);
+    sendSMS(phone,donor_name,"تم التأكد من وصول الإيصال جزاك الله خيراً على حسن عملك");
 
 }
 
@@ -215,16 +221,47 @@ int newvalue=Integer.parseInt(donationamount.getText().toString());
 
 
             public void Update(String key, PrepaidInvoice pre ) {
-             //   databaseReference.child(key).child("request_status").setValue("رفض");
+               databaseReference.child(key).child("request_status").setValue("مرفوض");
                 //items.setItemValue("رفض");
                 Toast.makeText(donationrequestDetails2.this, "تم رفض طلب التبرع بنجاح.", Toast.LENGTH_LONG).show();
+                sendSMS(phone,donor_name,"تم التأكد واتضح ان الإيصال لا وجود له في بياناتنا، يرجى مراجعة الفرع للتأكد");
 
             }
 
 
         } );
     }
-});}}
+});}
+
+
+
+    private void sendSMS(String mobile, String name, String msg) {
+
+        final RequestParams params = new RequestParams();
+
+        params.add("mobile", Username);
+        params.add("password", Password);
+        params.add("returnJson", "1");
+        params.add("sender", Sender);
+        params.add("msg", Utils.convertUnicode(name + "" + msg));
+        params.add("numbers", mobile.replace("+", ""));
+        params.add("applicationType", "68");
+        params.add("dateSend", "03/12/2019");
+        params.add("timeSend", "3:30:00");
+        MyConnectionType.get("https://mobily.ws/api/msgSend.php", params, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, org.json.JSONObject response) {
+                        //Log.d(TAG, "objapi"+response.toString());
+                        //Toast.makeText(PrepaidInvoice.this, "sms sent", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+
+        );
+
+    }
+}
 
 
 

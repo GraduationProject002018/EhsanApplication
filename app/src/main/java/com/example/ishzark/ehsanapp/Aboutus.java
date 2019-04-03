@@ -18,21 +18,19 @@ public class Aboutus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aboutus);
-email=findViewById(R.id.email);
-instagram=findViewById(R.id.instagram);
-twitter=findViewById(R.id.twitter);
-youtube=findViewById(R.id.youtube);
+        email=findViewById(R.id.email);
+        instagram=findViewById(R.id.instagram);
+        twitter=findViewById(R.id.twitter);
+        youtube=findViewById(R.id.youtube);
+
         //Instagram
 
         instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent instaintent = getPackageManager().getLaunchIntentForPackage("com.instagram.android");
-
-                instaintent.setComponent(new ComponentName("com.instagram.android", "com.instagram.android.activity.UrlHandlerActivity"));
-                instaintent.setData(Uri.parse("https://www.instagram.com/_u/bitter_truth_lol"));
-
-                //startActivity(instaintent);
+                Uri instawebpage = Uri.parse("https://www.instagram.com/asharqiaber/?hl=en");
+                Intent instaintent = new Intent(Intent.ACTION_VIEW, instawebpage);
+                startActivity(instaintent);
             }
         });
 
@@ -41,12 +39,9 @@ youtube=findViewById(R.id.youtube);
         youtube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ytintent = getPackageManager().getLaunchIntentForPackage("com.youtube.android");
-
-                ytintent.setComponent(new ComponentName("com.youtube.android", "com.youtube.android.activity.UrlHandlerActivity"));
-                ytintent.setData(Uri.parse("https://www.youtube.com/channel/UC_vslRzEZads8yhpO5wkUzA"));
-
-              // startActivity(ytintent);
+                Uri ytwebpage = Uri.parse("https://www.youtube.com/channel/UC_vslRzEZads8yhpO5wkUzA");
+                Intent ytintent = new Intent(Intent.ACTION_VIEW, ytwebpage);
+                startActivity(ytintent);
             }
         });
 
@@ -55,12 +50,9 @@ youtube=findViewById(R.id.youtube);
         twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent twitterintent = getPackageManager().getLaunchIntentForPackage("com.youtube.android");
-
-                twitterintent.setComponent(new ComponentName("com.twitter.android", "com.twitter.android.activity.UrlHandlerActivity"));
-                twitterintent.setData(Uri.parse("https://twitter.com/AlberSharqia"));
-
-                //startActivity(twitterintent);
+                Uri twitterwebpage = Uri.parse("https://twitter.com/AlberSharqia");
+                Intent twitterintent = new Intent(Intent.ACTION_VIEW, twitterwebpage);
+                startActivity(twitterintent);
             }
         });
 
@@ -69,7 +61,6 @@ youtube=findViewById(R.id.youtube);
             public void onClick(View v) {
                 Intent sendemailbtn = new Intent(Aboutus.this, SendEmail.class);
                 startActivity(sendemailbtn);
-
             }
         });
     }

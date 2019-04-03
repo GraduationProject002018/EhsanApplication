@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,6 +20,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+import com.squareup.picasso.Picasso;
+
+import static android.support.constraint.Constraints.TAG;
 
 public class donationrequestDetails extends AppCompatActivity {
 
@@ -32,15 +38,22 @@ public class donationrequestDetails extends AppCompatActivity {
     FirebaseStorage firebaseStorage;
     StorageReference mainRef;
     private Button showBtn;
-    private Button locationMap;
+    private ImageView locationMap;
     private Button Accept;
     private Button Decline;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    String TAG= "donationrequestDetails2 ";
-
-
-    String key, donor_name, item_status,item_type, location,phone,quantity, itemDetails;
+    String TAG = "donationrequestDetails2 ";
+    private TextView url;
+    private ImageView img;
+    private TextView address;
+    private TextView date;
+    private String Date;
+    String valueurl;
+    String key, donor_name, item_status, item_type, location, phone, quantity, itemDetails;
+    String Username = "mariamedu";
+    String Password = "ehsan2019";
+    String Sender = "Ehsan";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +62,14 @@ public class donationrequestDetails extends AppCompatActivity {
 
         DonorName = (TextView) findViewById(R.id.donorname);
         Phone = (TextView) findViewById(R.id.itemphone);
-        Itemtype= (TextView) findViewById(R.id.itemtype);
-        itemstatus= (TextView) findViewById(R.id.itemstatus);
-        Quantity= (TextView) findViewById(R.id.quantity);
-        itemdetails= (TextView) findViewById(R.id.quantity2);
-
+        Itemtype = (TextView) findViewById(R.id.itemtype);
+        itemstatus = (TextView) findViewById(R.id.itemstatus);
+        Quantity = (TextView) findViewById(R.id.quantity);
+        itemdetails = (TextView) findViewById(R.id.quantity2);
+        url = findViewById(R.id.imageurl);
+        img = findViewById(R.id.imageView2);
+        address = findViewById(R.id.textView17);
+        date = findViewById(R.id.datetext);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Items");
@@ -65,33 +81,29 @@ public class donationrequestDetails extends AppCompatActivity {
                                                              @Override
                                                              public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                                                                 boolean found=false;
-                                                                 for (DataSnapshot child : dataSnapshot.getChildren()){
+                                                                 boolean found = false;
+                                                                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                                                                      String k = child.getKey().toString();
                                                                      if (k.equals(key)) {
                                                                          //Log.d("donationrequestDetails","K:" + k);
-                                                                         found=true;
+                                                                         found = true;
                                                                          donor_name = child.child("donor_name").getValue().toString();
                                                                          phone = child.child("phone").getValue().toString();
-                                                                         quantity= child.child("quantity").getValue().toString();
-                                                                         item_type= child.child("item_type").getValue().toString();
-                                                                         item_status= child.child("item_status").getValue().toString();
-                                                                         itemDetails= child.child("itemDetails").getValue().toString();
-                                                                         location= child.child("location").getValue().toString();
-
-
-
-
-
+                                                                         quantity = child.child("quantity").getValue().toString();
+                                                                         item_type = child.child("item_type").getValue().toString();
+                                                                         item_status = child.child("item_status").getValue().toString();
+                                                                         itemDetails = child.child("itemDetails").getValue().toString();
+                                                                         location = child.child("location").getValue().toString();
+                                                                         valueurl = child.child("url").getValue().toString();
+                                                                         Date = child.child("date").getValue().toString();
 
 
                                                                      }
 
 
-
                                                                  }
 
-                                                                 if(found){
+                                                                 if (found) {
 
                                                                      DonorName.setText(donor_name);
                                                                      Phone.setText(phone);
@@ -99,8 +111,14 @@ public class donationrequestDetails extends AppCompatActivity {
                                                                      itemstatus.setText(item_status);
                                                                      Quantity.setText(quantity);
                                                                      itemdetails.setText(itemDetails);
+                                                                     address.setText(location);
+                                                                     date.setText(Date);
 
-
+                                                                     url.setText(valueurl);
+                                                                     Picasso.with(img.getContext())
+                                                                             .load(String.valueOf(valueurl))
+                                                                             .placeholder(R.mipmap.ic_launcher)
+                                                                             .into(img);
 
 
                                                                  }
@@ -118,24 +136,10 @@ public class donationrequestDetails extends AppCompatActivity {
         );
 
 
-
-
-        showBtn =(Button) findViewById(R.id.downloadimg);
-        locationMap= (Button) findViewById(R.id.locationbtnadminreq);
+        // showBtn =(Button) findViewById(R.id.downloadimg);
+        locationMap = findViewById(R.id.location);
         Accept = (Button) findViewById(R.id.accept);
         Decline = (Button) findViewById(R.id.decline);
-
-
-
-
-        showBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openImagesActivity();
-            }
-        });
-
-
 
 
         locationMap.setOnClickListener(new View.OnClickListener() {
@@ -151,8 +155,7 @@ public class donationrequestDetails extends AppCompatActivity {
 
             }
 
-        } ); //end locationbtn
-
+        }); //end locationbtn
 
 
         Accept.setOnClickListener(new View.OnClickListener() {
@@ -160,17 +163,12 @@ public class donationrequestDetails extends AppCompatActivity {
             public void onClick(View v) {
 
 
-
-
-
-                DonateItems  items = new DonateItems();
-                UpdateAcc(key, items); }
-
+                DonateItems items = new DonateItems();
+                UpdateAcc(key, items);
+            }
 
 
             public void UpdateAcc(String key, DonateItems items) {
-
-
 
 
                 final DatabaseReference refe = FirebaseDatabase.getInstance().getReference().child("Donors");
@@ -182,23 +180,21 @@ public class donationrequestDetails extends AppCompatActivity {
                         boolean found = false;
 
 
-
-
                         String mobile = Phone.getText().toString();
                         for (DataSnapshot child : dataSnapshot.getChildren()) {
                             String Firebasephone = child.child("phone").getValue().toString();
                             Log.d(TAG, "Fphone found " + Firebasephone);
-                            if(Firebasephone.equals(mobile.replace("+966",""))) {
+                            if (Firebasephone.equals(mobile.replace("+966", ""))) {
                                 Log.d(TAG, "phone found " + Firebasephone);
                                 String DonorLevel = child.child("donorlevel").getValue().toString();
                                 Log.d(TAG, "level found " + DonorLevel);
                                 String levelvalue = child.child("donationvalue").getValue().toString();
 
-                                int quan=Integer.parseInt(quantity);
-                                int amount=returnvalue(item_type,item_status,quan);
+                                int quan = Integer.parseInt(quantity);
+                                int amount = returnvalue(item_type, item_status, quan);
 
 
-                                int value = Integer.parseInt(levelvalue)+amount;
+                                int value = Integer.parseInt(levelvalue) + amount;
                                 Log.d(TAG, "value found " + value);
                                 found = true;
 
@@ -223,14 +219,15 @@ public class donationrequestDetails extends AppCompatActivity {
                                     DonorLevel = "5";
                                 }
 
-                                String k=child.getKey();
+                                String k = child.getKey();
                                 Log.d(TAG, "k found " + k);
                                 refe.child(k).child("donorlevel").setValue(DonorLevel);
                                 refe.child(k).child("donationvalue").setValue(value);
 
                             }
 
-                        }} //end for
+                        }
+                    } //end for
 
 
                     @Override
@@ -240,88 +237,89 @@ public class donationrequestDetails extends AppCompatActivity {
                 });
 
 
-
-                databaseReference.child(key).child("request_status").setValue("قبول");
+                databaseReference.child(key).child("request_status").setValue("مقبول");
                 Toast.makeText(donationrequestDetails.this, "تم قبول طلب التبرع بنجاح.", Toast.LENGTH_LONG).show();
+                sendSMS(phone,donor_name,"لقد تم قبول طلبك للتبرع وسيتواصل معك السائق اليوم لاستلام التبرعات،شاكرين لك حسن عملك");
 
             }
 
-        } );
+        });
 
         Decline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DonateItems  items = new DonateItems();
-                Update(key, items); }
-
+                DonateItems items = new DonateItems();
+                Update(key, items);
+            }
 
 
             public void Update(String key, DonateItems items) {
-                databaseReference.child(key).child("request_status").setValue("رفض");
+                databaseReference.child(key).child("request_status").setValue("مرفوض");
                 Toast.makeText(donationrequestDetails.this, "تم رفض طلب التبرع بنجاح.", Toast.LENGTH_LONG).show();
-
+                sendSMS(phone,donor_name,"لقد تم رفض طلبك لعدم توافقه مع معايير الجمعية ولايمكن التبرع به");
             }
 
-        } );
+        });
     }
 
 
-    public int returnvalue(String type,String stat,int quan){
-        int amount=0;
+    public int returnvalue(String type, String stat, int quan) {
+        int amount = 0;
         //Furniture
 
-        if(type.equals("أثاث")&& stat.equals("جديد")){
-            amount=500*quan;
-        }
-        else if(type.equals("أثاث")&& stat.equals("مستخدم")){
-            amount=250*quan;
-        }
-        else if(type.equals("أثاث")&& stat.equals("يحتاج تصليح")){
-            amount=100*quan;
-        }
-
-
-
-
-        else if(type.equals("ملابس")&& stat.equals("جديد")){
-            amount=50*quan;
-        }
-        else if(type.equals("ملابس")&& stat.equals("مستخدم")){
-            amount=25*quan;
-        }
-        else if(type.equals("ملابس")&& stat.equals("يحتاج تصليح")){
-            amount=10*quan;
-        }
-
-
-
-
-        else  if(type.equals("جهاز كهربائي")&& stat.equals("جديد")){
-            amount=500*quan;
-        }
-        else if(type.equals("جهاز كهربائي")&& stat.equals("مستخدم")){
-            amount=250*quan;
-        }
-        else if(type.equals("جهاز كهربائي")&& stat.equals("يحتاج تصليح")){
-            amount=75*quan;
-        }
-
-
-        else if(type.equals("طعام جاف")&& stat.equals("جديد")){
-            amount=30*quan;
+        if (type.equals("أثاث") && stat.equals("جديد")) {
+            amount = 500 * quan;
+        } else if (type.equals("أثاث") && stat.equals("مستخدم")) {
+            amount = 250 * quan;
+        } else if (type.equals("أثاث") && stat.equals("يحتاج تصليح")) {
+            amount = 100 * quan;
+        } else if (type.equals("ملابس") && stat.equals("جديد")) {
+            amount = 50 * quan;
+        } else if (type.equals("ملابس") && stat.equals("مستخدم")) {
+            amount = 25 * quan;
+        } else if (type.equals("ملابس") && stat.equals("يحتاج تصليح")) {
+            amount = 10 * quan;
+        } else if (type.equals("جهاز كهربائي") && stat.equals("جديد")) {
+            amount = 500 * quan;
+        } else if (type.equals("جهاز كهربائي") && stat.equals("مستخدم")) {
+            amount = 250 * quan;
+        } else if (type.equals("جهاز كهربائي") && stat.equals("يحتاج تصليح")) {
+            amount = 75 * quan;
+        } else if (type.equals("طعام جاف") && stat.equals("جديد")) {
+            amount = 30 * quan;
 
         }
-
-
 
 
         return amount;
     }
 
-    private void openImagesActivity() {
 
-        Intent intent = new Intent(this, ShowImageActivity.class);
-        startActivity(intent);
+
+    private void sendSMS(String mobile, String name, String msg) {
+
+        final RequestParams params = new RequestParams();
+
+        params.add("mobile", Username);
+        params.add("password", Password);
+        params.add("returnJson", "1");
+        params.add("sender", Sender);
+        params.add("msg", Utils.convertUnicode(name + "" + msg));
+        params.add("numbers", mobile.replace("+", ""));
+        params.add("applicationType", "68");
+        params.add("dateSend", "03/12/2019");
+        params.add("timeSend", "3:30:00");
+        MyConnectionType.get("https://mobily.ws/api/msgSend.php", params, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, org.json.JSONObject response) {
+                        //Log.d(TAG, "objapi"+response.toString());
+                        //Toast.makeText(PrepaidInvoice.this, "sms sent", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+
+        );
+
     }
 }
-

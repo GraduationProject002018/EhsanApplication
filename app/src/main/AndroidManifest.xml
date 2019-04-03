@@ -39,6 +39,11 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".DonorHomeActivity" />
+        <activity android:name=".DonationHistoryActivity" />
+        <activity android:name=".DonationHistoryActivity2" />
+        <activity android:name=".donationrequestDetails2" />
+        <activity android:name=".normaladminhome" />
+
         <activity
             android:name=".VerifyPhoneActivity"
             android:label="@string/title_activity_verify_phone"
@@ -46,7 +51,6 @@
 
         </activity>
         <activity android:name=".PhoneAuth" />
-        <activity android:name=".ShowImageActivity" />
         <activity android:name=".loginverifyphone" />
         <activity android:name=".DonationTypeActivity" />
         <activity android:name=".SavedLocationsActivity" />
@@ -56,7 +60,6 @@
         <activity android:name=".PrepaidInvoice_main" />
         <activity android:name=".Gpay" />
         <activity android:name=".RecyclerEvent" />
-        <activity android:name=".DonationHistoryAcitivty" />
         <activity android:name=".DonationHistoryTypes" />
         <activity android:name=".DonationTypes_mng" />
         <activity android:name=".AdminHomeActivity" />
@@ -73,7 +76,6 @@
 
         <activity android:name=".GifActivity"/>
         <activity android:name=".Pop" />
-        <activity android:name=".MembershipPop" />
         <activity android:name=".ManageAdminsHome" />
         <activity android:name=".MembershipHome" />
         <activity android:name=".EventsActivityDonor" />
