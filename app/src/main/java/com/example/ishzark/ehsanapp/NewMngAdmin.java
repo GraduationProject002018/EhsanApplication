@@ -22,7 +22,7 @@ public class NewMngAdmin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adminnew);
-        progressBar = findViewById(R.id.progressBar7);
+       progressBar = findViewById(R.id.progressBar7);
         progressBar.setVisibility(View.GONE);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -53,10 +53,12 @@ public class NewMngAdmin extends AppCompatActivity {
                                            if (Name.isEmpty()) {
                                                AdminNameInput.setError("الرجاء إدخال اسم المشرف");
                                                AdminNameInput.requestFocus();
+                                               progressBar.setVisibility(View.GONE);
 
                                            } else if (Phone.isEmpty()) {
                                                AdminNumberInput.setError("الرجاء إدخال رقم المشرف");
                                                AdminNumberInput.requestFocus();
+                                               progressBar.setVisibility(View.GONE);
 
                                            } else {
 

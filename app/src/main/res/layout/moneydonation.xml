@@ -8,48 +8,6 @@
     android:background="#ffffff">
 
 
-    <RadioButton
-        android:id="@+id/radioMonthy"
-        android:layout_width="107dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="8dp"
-        android:layout_weight="1"
-        android:buttonTint="#00574b"
-        android:checked="true"
-        android:text="تبرع شهري"
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/radioonce"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/radioonce"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="RtlCompat" />
-
-    <RadioButton
-        android:id="@+id/radioonce"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:buttonTint="#00574b"
-        android:checked="false"
-        android:text="تبرع لمرة وحدة"
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/donationfrequency"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/radioMonthy"
-        app:layout_constraintTop_toBottomOf="@+id/donationfrequency"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="RtlCompat" />
-
     <TextView
         android:id="@+id/donationamount"
         android:layout_width="98dp"
@@ -91,46 +49,6 @@
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/btnbg"
-        android:layout_width="268dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="140dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00574b"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donateonce">
-
-        <Button
-            android:id="@+id/googlepaybtn"
-            android:layout_width="257dp"
-            android:layout_height="match_parent"
-            android:background="#00ffffff"
-            android:text="دفع عن طريق PAY        "
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="47dp"
-            android:layout_height="37dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="192dp"
-            android:layout_marginStart="32dp"
-            app:srcCompat="@drawable/google" />
-    </RelativeLayout>
-
     <TextView
         android:id="@+id/program"
         android:layout_width="241dp"
@@ -154,8 +72,8 @@
         android:id="@+id/donationfrequency"
         android:layout_width="76dp"
         android:layout_height="0dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="44dp"
         android:text="مدة التبرع"
         android:textColor="#00574b"
         android:textSize="18sp"
@@ -213,6 +131,101 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/program"
         app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/googlepaybtn"
+        android:layout_width="243dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="264dp"
+        android:background="@drawable/roundbutton"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioMonthy"
+        app:layout_constraintVertical_bias="0.186">
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="دفع عن طريق PAY        "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="36dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/googlepaybtn"
+        app:layout_constraintStart_toStartOf="@+id/googlepaybtn"
+        app:srcCompat="@drawable/google" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="266dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/googlepaybtn"
+        app:layout_constraintEnd_toStartOf="@+id/donationfrequency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/program">
+
+        <RadioGroup
+            android:id="@+id/payment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingTop="64dp"
+            android:paddingRight="8dp">
+
+            <RadioButton
+                android:id="@+id/radioM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:buttonTint="#00574b"
+                android:checked="true"
+                android:text="تبرع شهري"
+                android:textAlignment="viewStart"
+                android:textSize="14dp"
+                tools:ignore="RtlCompat" />
+
+            <RadioButton
+                android:id="@+id/radioF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:buttonTint="#00574b"
+                android:checked="false"
+                android:text="تبرع مرة وحدة"
+                android:textAlignment="viewStart"
+                android:textSize="14dp"
+                tools:ignore="RtlCompat" />
+        </RadioGroup>
+    </RelativeLayout>
 
 
 </android.support.constraint.ConstraintLayout>

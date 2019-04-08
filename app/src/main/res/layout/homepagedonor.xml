@@ -4,29 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F7">
-
-    <Button
-        android:id="@+id/donatebtn"
-        android:layout_width="243dp"
-        android:layout_height="34dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="240dp"
-        android:background="@drawable/roundbutton"
-        android:text="تبرع وأحدث فرق!"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-        app:layout_constraintVertical_bias="1.0" />
+    android:background="@color/common_google_signin_btn_text_dark_default">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -47,18 +25,18 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="مرحباً   "
+        android:textAlignment="center"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="431dp"
-        android:layout_height="227dp"
+        android:layout_height="217dp"
         android:background="@drawable/common_google_signin_btn_text_light_normal_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -105,7 +83,6 @@
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/donatebtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.425"
             app:layout_constraintStart_toStartOf="parent"
@@ -126,12 +103,11 @@
             android:layout_marginBottom="72dp"
             android:background="@drawable/progressbar"
             android:max="100"
-            android:progress="20"
+            android:progress="10"
             android:progressDrawable="@drawable/circle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcome" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/donationlevel"
@@ -157,155 +133,250 @@
     </RelativeLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/eventslayout"
         android:layout_width="191dp"
         android:layout_height="64dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
-        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427">
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/eventsimg"
             android:layout_width="46dp"
             android:layout_height="32dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/calendarg" />
+            app:layout_constraintHorizontal_bias="0.982"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/calendar_colored" />
 
         <TextView
             android:id="@+id/events"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
             android:text="فعالياتنا"
             android:textColor="#00574b"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/eventsimg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/eventsimg"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/eventsimg" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/membershiplayout"
         android:layout_width="201dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintBottom_toBottomOf="@+id/eventslayout"
+        app:layout_constraintEnd_toStartOf="@+id/eventslayout"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toTopOf="@+id/eventslayout"
         app:layout_constraintVertical_bias="1.0">
 
         <ImageView
             android:id="@+id/aboutalberimg3"
             android:layout_width="51dp"
             android:layout_height="31dp"
-            app:layout_constraintBottom_toBottomOf="@+id/benefits"
-            app:layout_constraintStart_toEndOf="@+id/benefits"
-            app:layout_constraintTop_toTopOf="@+id/benefits"
-            app:srcCompat="@drawable/information" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/statistics" />
 
         <TextView
             android:id="@+id/benefits"
             android:layout_width="wrap_content"
-            android:layout_height="29dp"
-            android:layout_marginStart="24dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="44dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
             android:text="مميزات العضوية"
             android:textColor="#00574b"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/aboutalberimg3"
+            app:layout_constraintVertical_bias="1.0" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+        android:id="@+id/historylayout"
         android:layout_width="200dp"
         android:layout_height="64dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="28dp"
-        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/eventslayout">
 
         <ImageView
             android:id="@+id/historyimg"
             android:layout_width="45dp"
             android:layout_height="29dp"
-            app:layout_constraintBottom_toBottomOf="@+id/history2"
-            app:layout_constraintStart_toEndOf="@+id/history2"
-            app:layout_constraintTop_toTopOf="@+id/history2"
-            app:layout_constraintVertical_bias="0.555"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/history" />
 
         <TextView
             android:id="@+id/history2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="تبرعاتي السابقة"
             android:textColor="#00574b"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.024"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/aboutuslayout"
         android:layout_width="188dp"
         android:layout_height="64dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintBottom_toBottomOf="@+id/historylayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintTop_toTopOf="@+id/historylayout"
         app:layout_constraintVertical_bias="1.0">
 
         <ImageView
             android:id="@+id/aboutalberimg"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="24dp"
             app:layout_constraintBottom_toBottomOf="@+id/aboutalber"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/aboutalber"
-            app:srcCompat="@drawable/information" />
+            app:srcCompat="@drawable/info" />
 
         <TextView
             android:id="@+id/aboutalber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="4dp"
             android:text="من نحن"
             android:textColor="#00574b"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.041"
+            app:layout_constraintStart_toStartOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="2dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/aboutuslayout"
+        app:layout_constraintEnd_toEndOf="@+id/divider5"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="389dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/historylayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/membershiplayout"
+        app:layout_constraintVertical_bias="0.013" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/donatebtn"
+        android:layout_width="112dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounddonatebtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutuslayout"
+        app:layout_constraintVertical_bias="0.646">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="66dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="تبرع!"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.428" />
+            app:layout_constraintVertical_bias="0.891" />
     </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="52dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="42dp"
+        app:layout_constraintBottom_toBottomOf="@+id/donatebtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.718"
+        app:layout_constraintStart_toStartOf="@+id/donatebtn"
+        app:layout_constraintTop_toTopOf="@+id/donatebtn"
+        app:srcCompat="@drawable/donatebuttonbox" />
 
 </android.support.constraint.ConstraintLayout>

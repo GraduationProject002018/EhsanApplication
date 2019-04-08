@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
@@ -30,7 +31,7 @@ public class Gpay extends AppCompatActivity {
 
     private PaymentsClient mPaymentsClient;
 
-    private View mGooglePayButton;
+    private ConstraintLayout mGooglePayButton;
 
     private static final int LOAD_PAYMENT_DATA_REQUEST_CODE = 42;
 
@@ -47,7 +48,14 @@ public class Gpay extends AppCompatActivity {
                         new Wallet.WalletOptions.Builder()
                                 .setEnvironment(WalletConstants.ENVIRONMENT_TEST)
                                 .build());
-
+        mGooglePayButton = findViewById(R.id.googlepaybtn);
+        mGooglePayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Gpay.this, R.string.Moneydonationsoon, Toast.LENGTH_SHORT).show();
+                requestPayment(view);
+            }
+        });
         possiblyShowGooglePayButton();
     }
 
@@ -71,16 +79,7 @@ public class Gpay extends AppCompatActivity {
                             boolean result = task.getResult(ApiException.class);
                             if (result) {
                                 // show Google as a payment option
-                                mGooglePayButton = findViewById(R.id.googlepaybtn);
-                                mGooglePayButton.setOnClickListener(
-                                        new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View view) {
-                                                Toast.makeText(Gpay.this, R.string.Moneydonationsoon, Toast.LENGTH_SHORT).show();
-                                                finish();
-                                                requestPayment(view);
-                                            }
-                                        });
+
                                 mGooglePayButton.setVisibility(View.VISIBLE);
                             }
                         } catch (ApiException exception) {

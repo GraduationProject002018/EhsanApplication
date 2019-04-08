@@ -31,7 +31,7 @@ public class DonationTypeActivity extends AppCompatActivity {
         itemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+
                 Intent intent = new Intent(DonationTypeActivity.this, SavedLocationsActivity.class);
                 startActivity(intent);
             }
@@ -41,7 +41,7 @@ public class DonationTypeActivity extends AppCompatActivity {
         moneyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               finish();
+
                 Intent intent = new Intent(DonationTypeActivity.this, MoneyDonationTypeActivity.class);
                 startActivity(intent);
 

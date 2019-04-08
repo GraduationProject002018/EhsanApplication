@@ -1,6 +1,7 @@
 package com.example.ishzark.ehsanapp;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -8,8 +9,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private Button RegButton;
-private TextView Events;
-private TextView About;
+private ConstraintLayout Events;
+private ConstraintLayout About;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +33,8 @@ private TextView About;
             }
         });
 
-        Events=findViewById(R.id.events);
-        About=findViewById(R.id.aboutalber);
+        Events=findViewById(R.id.eventslayout);
+        About=findViewById(R.id.aboutuslayout);
 
 
         Events.setOnClickListener(new View.OnClickListener() {

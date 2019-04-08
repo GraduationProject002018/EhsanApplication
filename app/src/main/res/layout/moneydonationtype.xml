@@ -9,12 +9,12 @@
 
     <RelativeLayout
         android:id="@+id/fastdonationbg"
-        android:layout_width="153dp"
+        android:layout_width="146dp"
         android:layout_height="122dp"
+        android:layout_marginBottom="55dp"
+        android:layout_marginEnd="106dp"
         android:layout_marginStart="132dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginBottom="55dp"
         android:background="#40d3d3d3"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,21 +36,21 @@
             android:text="تبرع سريع"
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/itemdonationimg"
+            android:id="@+id/neweventimg"
             android:layout_width="75dp"
             android:layout_height="72dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="39dp"
+            android:layout_marginEnd="35dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="11dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginBottom="39dp"
             app:srcCompat="@drawable/donation" />
     </RelativeLayout>
 
@@ -59,21 +59,22 @@
         android:layout_width="283dp"
         android:layout_height="185dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/sanaddonationbg"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084"
         app:srcCompat="@drawable/ehsan_white" />
 
     <RelativeLayout
         android:id="@+id/sanaddonationbg"
-        android:layout_width="153dp"
+        android:layout_width="146dp"
         android:layout_height="122dp"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="104dp"
         android:layout_marginEnd="106dp"
         android:layout_marginBottom="9dp"
         android:background="#40d3d3d3"
@@ -100,17 +101,17 @@
 
         <TextView
             android:id="@+id/moneydonationlabel"
-            android:layout_width="match_parent"
+            android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="10dp"
             android:text="إضافة سند مسبق الدفع"
             android:textColor="#ffffff"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
     </RelativeLayout>
 

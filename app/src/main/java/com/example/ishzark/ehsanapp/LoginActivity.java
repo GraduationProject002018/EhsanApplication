@@ -50,17 +50,20 @@ public boolean found=false;
             @Override
             public void onClick(View v) {
                 String mobile = editTextMobile.getText().toString().trim();
-
-
-                if (mobile.isEmpty() || mobile.length() < 9) {
-                    editTextMobile.setError("الرجاء ادخال رقم جوال مكون من ٩ ارقام");
+                if(mobile.isEmpty()){
+                    editTextMobile.setError("الرجاء تعبئة الحقل");
                     editTextMobile.requestFocus();
 
                 }
+                else if (mobile.isEmpty() || mobile.length() < 9|| mobile.length()>9) {
+                    editTextMobile.setError("الرجاء ادخال رقم جوال مكون من ٩ ارقام");
+                    editTextMobile.requestFocus();
+
+                }else{
 
 
                 checkNumber(mobile);
-            }
+            }}
 
 
         });

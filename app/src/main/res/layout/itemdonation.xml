@@ -68,10 +68,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.941" />
+        app:layout_constraintVertical_bias="0.991" />
 
     <Button
         android:id="@+id/upload"
@@ -289,8 +289,8 @@
 
     <ImageView
         android:id="@+id/uploadedimage"
-        android:layout_width="136dp"
-        android:layout_height="72dp"
+        android:layout_width="127dp"
+        android:layout_height="78dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class MoneyDonationTypeActivity extends AppCompatActivity {
 
@@ -21,16 +22,17 @@ public class MoneyDonationTypeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MoneyDonationTypeActivity.this, PrepaidInvoice_main.class);
                 startActivity(i);
-                finish();
+
             }
         });
 
         money.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Toast.makeText(MoneyDonationTypeActivity.this, "قريباً", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MoneyDonationTypeActivity.this, Gpay.class);
                 startActivity(i);
-                finish();
+
             }
         });
 

@@ -40,7 +40,7 @@
             android:id="@+id/numberinput"
             android:layout_width="182dp"
             android:layout_height="42dp"
-            android:hint=" 552288445"
+            android:hint=" 55xxxxxxx"
             android:inputType="phone"
             android:textAlignment="viewStart"
             android:textColor="#00574b"

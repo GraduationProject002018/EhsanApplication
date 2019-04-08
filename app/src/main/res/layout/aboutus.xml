@@ -154,7 +154,7 @@
         app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.369" />
+        app:layout_constraintVertical_bias="0.392" />
 
     <TextView
         android:id="@+id/msg"
@@ -290,12 +290,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView2"
         app:layout_constraintVertical_bias="0.032"
-        app:srcCompat="@drawable/eye_open" />
+        app:srcCompat="@drawable/eye" />
 
     <ImageView
         android:id="@+id/msgimg"
         android:layout_width="48dp"
-        android:layout_height="38dp"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -306,7 +306,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/visionimg"
         app:layout_constraintVertical_bias="0.073"
-        app:srcCompat="@drawable/concentric_circles" />
+        app:srcCompat="@drawable/target" />
 
     <ImageView
         android:id="@+id/valuesimg"
@@ -329,16 +329,14 @@
         android:layout_width="46dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/strategylabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.968"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valuesimg"
-        app:layout_constraintVertical_bias="0.112"
-        app:srcCompat="@drawable/strategy" />
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="@+id/scrollView2"
+        app:layout_constraintTop_toTopOf="@+id/strategylabel"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/tactics" />
 
     <TextView
         android:id="@+id/strategylabel"
@@ -355,8 +353,8 @@
         app:layout_constraintEnd_toStartOf="@+id/stategyimg"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintTop_toBottomOf="@+id/values"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/strategy"
@@ -417,8 +415,8 @@
 
     <Button
         android:id="@+id/instagram"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -433,8 +431,8 @@
 
     <Button
         android:id="@+id/email"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -450,13 +448,13 @@
 
     <Button
         android:id="@+id/twitter"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/twttr"
+        android:background="@drawable/twitter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.805"
@@ -467,12 +465,12 @@
     <Button
         android:id="@+id/youtube"
         android:layout_width="43dp"
-        android:layout_height="42dp"
+        android:layout_height="43dp"
         android:layout_marginStart="220dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/yt"
+        android:background="@drawable/youtube"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/twitter"
         app:layout_constraintHorizontal_bias="0.0"

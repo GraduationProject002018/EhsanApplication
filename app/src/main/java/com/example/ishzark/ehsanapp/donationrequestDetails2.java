@@ -132,7 +132,8 @@ String TAG= "donationrequestDetails2";
             public void onClick(View v) {
                 PrepaidInvoice  pre = new PrepaidInvoice();
                 Update(key, pre);
-
+                sendSMS(phone,donor_name,"تم التأكد من وصول الإيصال جزاك الله خيراً على حسن عملك");
+                finish();
 
 
 
@@ -200,7 +201,6 @@ int newvalue=Integer.parseInt(donationamount.getText().toString());
     Log.d(TAG, "k found " + k);
     refe.child(k).child("donorlevel").setValue(DonorLevel);
     refe.child(k).child("donationvalue").setValue(value);
-    sendSMS(phone,donor_name,"تم التأكد من وصول الإيصال جزاك الله خيراً على حسن عملك");
 
 }
 
@@ -217,7 +217,8 @@ int newvalue=Integer.parseInt(donationamount.getText().toString());
             @Override
             public void onClick(View v) {
                 PrepaidInvoice  pre = new PrepaidInvoice();
-                Update(key, pre); }
+                Update(key, pre);
+                finish();}
 
 
             public void Update(String key, PrepaidInvoice pre ) {

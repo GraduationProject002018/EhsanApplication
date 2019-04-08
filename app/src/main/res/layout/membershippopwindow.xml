@@ -83,7 +83,7 @@
             app:layout_constraintBottom_toTopOf="@+id/benefits4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/level5"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.533" />
 
         <TextView
             android:id="@+id/benefits4"
@@ -110,11 +110,12 @@
         android:layout_width="208dp"
         android:layout_height="221dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="215dp"
-        app:layout_constraintBottom_toTopOf="@+id/benefitslayoutL5"
+        app:layout_constraintBottom_toBottomOf="@+id/benefitslayoutL3"
         app:layout_constraintEnd_toStartOf="@+id/benefitslayoutL3"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/benefitslayoutL2">
+        app:layout_constraintTop_toTopOf="@+id/benefitslayoutL3"
+        app:layout_constraintVertical_bias="0.255">
 
         <ProgressBar
             android:id="@+id/level4"
@@ -183,33 +184,36 @@
 
         <TextView
             android:id="@+id/benefits3"
-            android:layout_width="208dp"
-            android:layout_height="113dp"
+            android:layout_width="204dp"
+            android:layout_height="63dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:scrollbars="vertical"
             android:text="@string/goldenmembership"
             android:textAlignment="center"
             android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10L4"
-            android:scrollbars="vertical"/>
+            app:layout_constraintVertical_bias="0.0" />
 
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/benefitslayoutL3"
         android:layout_width="191dp"
-        android:layout_height="212dp"
+        android:layout_height="178dp"
         android:layout_marginStart="205dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toTopOf="@+id/benefitslayoutL5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/benefitslayout"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/mainbenefit"
+        app:layout_constraintVertical_bias="0.91">
 
         <ProgressBar
             android:id="@+id/level3"
@@ -280,15 +284,14 @@
             android:layout_width="183dp"
             android:layout_height="83dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:scrollbars="vertical"
             android:text="@string/silveremembership"
             android:textAlignment="center"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/levelview3"
-            android:scrollbars="vertical"/>
+            app:layout_constraintTop_toBottomOf="@+id/levelview3" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -439,7 +442,7 @@
             android:max="100"
             android:progress="100"
             android:progressDrawable="@drawable/circle"
-            android:progressTint="@color/wallet_highlighted_text_holo_dark"
+            android:progressTint="#3fb7ff"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
@@ -466,7 +469,7 @@
             android:layout_marginTop="8dp"
             android:text=" أزرق"
             android:textAlignment="center"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="#3fb7ff"
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"

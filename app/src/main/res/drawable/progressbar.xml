@@ -5,7 +5,6 @@
     android:innerRadiusRatio="2.5"
     android:thickness="6dp"
     android:useLevel="false">
-
     <solid android:color="#E8E8E8" />
 
 </shape>

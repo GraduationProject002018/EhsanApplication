@@ -3,8 +3,11 @@ package com.example.ishzark.ehsanapp;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -20,13 +23,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class DonorHomeActivity extends AppCompatActivity {
-    Button donateButton;
+    ConstraintLayout donateButton;
     TextView username;
     public String Donorname="";
-    private TextView eventsview;
-    private TextView aboutalberview;
-    private TextView benefitsview;
-    private TextView historyview;
+    private ConstraintLayout eventsview;
+    private ConstraintLayout aboutalberview;
+    private ConstraintLayout benefitsview;
+    private ConstraintLayout historyview;
     private TextView LevelView;
     private TextView donationlevel;
     private String level;
@@ -52,10 +55,10 @@ public class DonorHomeActivity extends AppCompatActivity {
             }
         });
 
-        eventsview=findViewById(R.id.events);
-        aboutalberview=findViewById(R.id.aboutalber);
-        benefitsview=findViewById(R.id.benefits);
-        historyview=findViewById(R.id.history2);
+        eventsview=findViewById(R.id.eventslayout);
+        aboutalberview=findViewById(R.id.aboutuslayout);
+        benefitsview=findViewById(R.id.membershiplayout);
+        historyview=findViewById(R.id.historylayout);
 
         eventsview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -242,27 +245,32 @@ public class DonorHomeActivity extends AppCompatActivity {
         if (level.equals("1"))
         {
             Lname="الأزرق";
-            LevelView.setTextColor(Color.parseColor("#85C1E9"));
+            progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#3fb7ff"), PorterDuff.Mode.SRC_IN);
+            LevelView.setTextColor(Color.parseColor("#3fb7ff"));
 
         }
         if (level.equals("2"))
         {
             Lname="برونزي";
-            LevelView.setTextColor(Color.parseColor("#cd7f32"));
+            progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#d28c47"), PorterDuff.Mode.SRC_IN);
+            LevelView.setTextColor(Color.parseColor("#d28c47"));
         }
         if (level.equals("3"))
         {
             Lname="فضي";
+            progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#C0C0C0"), PorterDuff.Mode.SRC_IN);
             LevelView.setTextColor(Color.parseColor("#C0C0C0"));
         }
         if (level.equals("4"))
         {
             Lname="ذهبي";
+            progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#cba135"), PorterDuff.Mode.SRC_IN);
             LevelView.setTextColor(Color.parseColor("#cba135"));
         }
         if (level.equals("5"))
         {
             Lname="بلاتيني";
+            progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#e5e4e2"), PorterDuff.Mode.SRC_IN);
             LevelView.setTextColor(Color.parseColor("#e5e4e2"));
 
         }

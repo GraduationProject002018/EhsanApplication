@@ -171,7 +171,6 @@
     <string-array name="donationtype_array">
         <item>أثاث</item>
         <item>طعام جاف</item>
-        <item> أثاث</item>
         <item>جهاز كهربائي</item>
         <item>ملابس</item>
     </string-array>

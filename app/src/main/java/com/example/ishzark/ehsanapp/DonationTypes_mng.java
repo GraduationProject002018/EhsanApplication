@@ -20,17 +20,10 @@ public class DonationTypes_mng extends AppCompatActivity {
 
 
 
-        /*Intent intent = getIntent();
-        String phone=intent.getStringExtra("mobile");
-        intent.putExtra("mobile",phone);
-        String Donorname=intent.getStringExtra("donorname");
-        intent.putExtra("donorname",Donorname);
-        */
-
         itemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+               // finish();
                 Intent intent = new Intent(DonationTypes_mng.this, ItemsRequestsHome.class);
                 startActivity(intent);
             }
@@ -40,7 +33,7 @@ public class DonationTypes_mng extends AppCompatActivity {
         moneyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+              //  finish();
                 Intent intent = new Intent(DonationTypes_mng.this, PrepaidInvoiceHome.class);
                 startActivity(intent);
             }

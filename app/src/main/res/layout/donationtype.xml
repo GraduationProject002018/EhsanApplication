@@ -39,7 +39,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/itemdonationimg"
+            android:id="@+id/neweventimg"
             android:layout_width="75dp"
             android:layout_height="72dp"
             android:layout_alignParentStart="true"

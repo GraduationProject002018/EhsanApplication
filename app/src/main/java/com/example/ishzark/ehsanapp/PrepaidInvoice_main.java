@@ -157,25 +157,28 @@ public class PrepaidInvoice_main extends AppCompatActivity {
         if (TextUtils.isEmpty(donationamount)) {
             donationamount2.setError("الرجاءإدخال قيمة التبرع");
             donationamount2.requestFocus();
-            //Toast.makeText(this, , LENGTH_LONG).show();
+
+            prgressBar.setVisibility(View.GONE);
 
         }
-        if (TextUtils.isEmpty(Invoicenum)) {
+        else if (TextUtils.isEmpty(Invoicenum)) {
             InvoiceNm2.setError("الرجاءإدخال رقم الايصال");
             InvoiceNm2.requestFocus();
-            //Toast.makeText(this, ".", LENGTH_LONG).show();
+            prgressBar.setVisibility(View.GONE);
 
         }
-        if (TextUtils.isEmpty(date)) {
+       else if (TextUtils.isEmpty(date)) {
             mDisplayDate.setError("الرجاءإدخال تاريخ الايصال");
             mDisplayDate.requestFocus();
-            //Toast.makeText(this, ".", LENGTH_LONG).show();
+            prgressBar.setVisibility(View.GONE);
+
 
         }
-        if (TextUtils.isEmpty(bank)) {
+       else  if (TextUtils.isEmpty(bank)) {
             bankName.setError("الرجاءإدخال أسم البنك");
             bankName.requestFocus();
-            //Toast.makeText(this, ".", LENGTH_LONG).show();
+            prgressBar.setVisibility(View.GONE);
+
         }else {
 
 

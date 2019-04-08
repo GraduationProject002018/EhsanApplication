@@ -76,7 +76,6 @@ public class donationrequestDetails extends AppCompatActivity {
 
 
         key = getIntent().getStringExtra("key");
-        //Log.d("donationrequestDetails","key:" + key);
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                                                              @Override
                                                              public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -120,7 +119,6 @@ public class donationrequestDetails extends AppCompatActivity {
                                                                              .placeholder(R.mipmap.ic_launcher)
                                                                              .into(img);
 
-
                                                                  }
 
                                                              }
@@ -136,7 +134,6 @@ public class donationrequestDetails extends AppCompatActivity {
         );
 
 
-        // showBtn =(Button) findViewById(R.id.downloadimg);
         locationMap = findViewById(R.id.location);
         Accept = (Button) findViewById(R.id.accept);
         Decline = (Button) findViewById(R.id.decline);
@@ -165,6 +162,7 @@ public class donationrequestDetails extends AppCompatActivity {
 
                 DonateItems items = new DonateItems();
                 UpdateAcc(key, items);
+                finish();
             }
 
 
@@ -250,6 +248,7 @@ public class donationrequestDetails extends AppCompatActivity {
             public void onClick(View v) {
                 DonateItems items = new DonateItems();
                 Update(key, items);
+                finish();
             }
 
 
@@ -312,8 +311,7 @@ public class donationrequestDetails extends AppCompatActivity {
         MyConnectionType.get("https://mobily.ws/api/msgSend.php", params, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, org.json.JSONObject response) {
-                        //Log.d(TAG, "objapi"+response.toString());
-                        //Toast.makeText(PrepaidInvoice.this, "sms sent", Toast.LENGTH_SHORT).show();
+
 
                     }
                 }

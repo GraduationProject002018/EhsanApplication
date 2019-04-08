@@ -22,7 +22,7 @@ public class DonationHistoryTypes extends AppCompatActivity {
             itemButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
+
                     Intent intent = new Intent(com.example.ishzark.ehsanapp.DonationHistoryTypes.this, DonationHistoryActivity2.class);
                     startActivity(intent);
                 }
@@ -32,7 +32,7 @@ public class DonationHistoryTypes extends AppCompatActivity {
             moneyButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
+
                     Intent intent = new Intent(com.example.ishzark.ehsanapp.DonationHistoryTypes.this, DonationHistoryActivity.class);
                     startActivity(intent);
                 }
