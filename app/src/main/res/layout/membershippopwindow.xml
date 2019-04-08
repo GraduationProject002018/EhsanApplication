@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/popwindow"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/benefitslayoutL5"
@@ -93,6 +94,7 @@
             android:layout_marginTop="44dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:scrollbars="vertical"
             android:text="@string/platinummembership"
             android:textAlignment="center"
             android:textSize="12sp"
@@ -100,8 +102,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/level5"
-            android:scrollbars="vertical"/>
+            app:layout_constraintTop_toBottomOf="@+id/level5" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -377,14 +378,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:scrollbars="vertical"
             android:text="@string/bronzemembership"
             android:textAlignment="center"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/levelview2"
-            android:scrollbars="vertical"/>
+            app:layout_constraintTop_toBottomOf="@+id/levelview2" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -501,14 +502,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:scrollbars="vertical"
             android:text="@string/bluemembership"
             android:textAlignment="center"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/levelview1"
-            android:scrollbars="vertical"/>
+            app:layout_constraintTop_toBottomOf="@+id/levelview1" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -31,57 +31,59 @@
             android:textStyle="bold" />
 
     </RelativeLayout>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="80dp"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingBottom="16dp">
 
-    <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="عنوان الرسالة:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#00574b"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="80dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="16dp">
 
-    <EditText
-        android:id="@+id/emailSubject"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#00574b"
-        android:inputType="textEmailSubject"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="عنوان الرسالة:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#00574b"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="الرسالة:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#00574b"
-        android:textStyle="bold" />
+        <EditText
+            android:id="@+id/emailSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailSubject"
+            android:textColor="#00574b" />
 
-    <EditText
-        android:id="@+id/emailMsg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end|top"
-        android:lines="10"
-        android:textColor="#00574b" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="الرسالة:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#00574b"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/emailSendBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:background="@drawable/roundbutton"
-        android:text="إرسال"
-        android:textColor="#ffffff"
-        android:textSize="18sp" />
+        <EditText
+            android:id="@+id/emailMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end|top"
+            android:lines="10"
+            android:textColor="#00574b" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/emailSendBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/roundbutton"
+            android:text="إرسال"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

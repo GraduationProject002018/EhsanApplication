@@ -35,7 +35,7 @@ private String userslocation;
         setContentView(R.layout.content_verify_phone);
 
 
-        progressBar = findViewById(R.id.progressBar2);
+        progressBar = findViewById(R.id.progressBar11);
         progressBar.setVisibility(View.GONE);
         editTextMobile = findViewById(R.id.numberinput);
 
@@ -90,6 +90,7 @@ private String userslocation;
                     progressBar.setVisibility(View.GONE);
                     Intent intent = new Intent(PhoneAuth.this, VerifyPhoneActivity.class);
                     intent.putExtra("mobile", number);
+                    finish();
                     startActivity(intent);
                 }
 

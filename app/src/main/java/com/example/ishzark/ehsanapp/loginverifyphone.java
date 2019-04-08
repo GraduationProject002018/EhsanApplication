@@ -138,6 +138,7 @@ public class loginverifyphone extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
                                 startActivity(i);
+                                finish();
                             }else if (usertype.equals("Admin")) {
                                 Intent i = new Intent(loginverifyphone.this, normaladminhome.class);
                                 i.putExtra("mobile", mobile);
@@ -145,6 +146,7 @@ public class loginverifyphone extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
                                 startActivity(i);
+                                finish();
 
                             }else if(usertype.equals("Donor")) {
                                 Intent i = new Intent(loginverifyphone.this, DonorHomeActivity.class);
@@ -153,6 +155,7 @@ public class loginverifyphone extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 Toast.makeText(loginverifyphone.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
                                 startActivity(i);
+                                finish();
                             }
 
                         } else {

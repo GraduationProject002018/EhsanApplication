@@ -198,6 +198,7 @@ spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             });
 
             startActivity(in);
+            finish();
 
 
 

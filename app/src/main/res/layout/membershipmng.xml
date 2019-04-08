@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:id="@+id/header"
-        android:layout_width="411dp"
+        android:layout_width="414dp"
         android:layout_height="58dp"
         android:background="#00574b"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,10 +17,16 @@
 
         <TextView
             android:id="@+id/headertxt"
-            android:layout_width="136dp"
-            android:layout_height="31dp"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="113dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="114dp"
+            android:layout_marginBottom="14dp"
             android:text="إدارة العضويات"
             android:textAlignment="center"
             android:textColor="#ffffff"
@@ -33,15 +39,11 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerV"
         android:layout_width="395dp"
-        android:layout_height="657dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="144dp"
+        android:layout_height="598dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 </android.support.constraint.ConstraintLayout>
