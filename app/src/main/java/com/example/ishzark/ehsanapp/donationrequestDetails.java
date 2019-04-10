@@ -235,7 +235,7 @@ public class donationrequestDetails extends AppCompatActivity {
                 });
 
 
-                databaseReference.child(key).child("request_status").setValue("مقبول");
+                databaseReference.child(key).child("requestStatus").setValue("مقبول");
                 Toast.makeText(donationrequestDetails.this, "تم قبول طلب التبرع بنجاح.", Toast.LENGTH_LONG).show();
                 sendSMS(phone,donor_name,"لقد تم قبول طلبك للتبرع وسيتواصل معك السائق اليوم لاستلام التبرعات،شاكرين لك حسن عملك");
 
@@ -253,7 +253,7 @@ public class donationrequestDetails extends AppCompatActivity {
 
 
             public void Update(String key, DonateItems items) {
-                databaseReference.child(key).child("request_status").setValue("مرفوض");
+                databaseReference.child(key).child("requestStatus").setValue("مرفوض");
                 Toast.makeText(donationrequestDetails.this, "تم رفض طلب التبرع بنجاح.", Toast.LENGTH_LONG).show();
                 sendSMS(phone,donor_name,"لقد تم رفض طلبك لعدم توافقه مع معايير الجمعية ولايمكن التبرع به");
             }

@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,11 +29,13 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     private EditText editTextCode;
     private FirebaseAuth mAuth;
     private TextView mobiletext;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.authenticatenumber);
+        progressBar=findViewById(R.id.progressBar11);
 
         mAuth = FirebaseAuth.getInstance();
         editTextCode = findViewById(R.id.numberinput2);
@@ -61,11 +64,11 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 if (code.isEmpty() || code.length() < 6) {
                     editTextCode.setError("الرجاء إدخال ٦ ارقام على الأقل");
                     editTextCode.requestFocus();
+                    progressBar.setVisibility(View.GONE);
                     return;
                 }
 
 
-                //startActivity(intent);
 
                 //verifying the code entered manually
                 verifyVerificationCode(code);
@@ -113,6 +116,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(VerifyPhoneActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -129,11 +133,13 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                             startActivity(i);
 
                         } else {
+                            progressBar.setVisibility(View.GONE);
 
                             Toast.makeText(VerifyPhoneActivity.this, getString(R.string.Phoneregistration_failed), Toast.LENGTH_LONG).show();
 
 
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(VerifyPhoneActivity.this, getString(R.string.Phoneregistration_wrongcode), Toast.LENGTH_LONG).show();
                             }
 

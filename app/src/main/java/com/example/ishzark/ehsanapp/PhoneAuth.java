@@ -35,7 +35,7 @@ private String userslocation;
         setContentView(R.layout.content_verify_phone);
 
 
-        progressBar = findViewById(R.id.progressBar11);
+        progressBar = findViewById(R.id.progressBar2);
         progressBar.setVisibility(View.GONE);
         editTextMobile = findViewById(R.id.numberinput);
 

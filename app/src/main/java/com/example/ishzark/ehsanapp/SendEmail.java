@@ -39,18 +39,9 @@ public class SendEmail extends AppCompatActivity {
         String subject = mEditTextSubject.getText().toString();
         String message = mEditTextMsg.getText().toString();
 
-        //Intent intent = new Intent(Intent.ACTION_SEND);
-        //intent.putExtra(Intent.EXTRA_EMAIL, "mailto:n.s.g_911@hotmail.com");
-        //intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        //intent.putExtra(Intent.EXTRA_TEXT, message);
-
-        //intent.setType("message/rfc822");
-        //startActivity(Intent.createChooser(intent, "Choose an email client"));
-
-        String mailto = "mailto:n.s.g_911@hotmail.com"; /*+
-                "&subject=" + Uri.encode(subject) +
-                "&body=" + Uri.encode(message);*/
-
+        String mailto = "mailto:n.s.g_911@hotmail.com";
+        //the email is replaced by the organizations email before publish
+        //Start Intent
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
         emailIntent.setData(Uri.parse(mailto));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);

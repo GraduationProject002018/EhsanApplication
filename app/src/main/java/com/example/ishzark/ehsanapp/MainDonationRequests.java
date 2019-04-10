@@ -34,7 +34,6 @@ public class MainDonationRequests {
         private TextView Quantity;
         private TextView itemdetails;
 
-       // Query q =
 
         public ViewHolder(View itemView) {
             super(itemView);

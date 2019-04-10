@@ -252,8 +252,7 @@ int newvalue=Integer.parseInt(donationamount.getText().toString());
         MyConnectionType.get("https://mobily.ws/api/msgSend.php", params, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, org.json.JSONObject response) {
-                        //Log.d(TAG, "objapi"+response.toString());
-                        //Toast.makeText(PrepaidInvoice.this, "sms sent", Toast.LENGTH_SHORT).show();
+
 
                     }
                 }

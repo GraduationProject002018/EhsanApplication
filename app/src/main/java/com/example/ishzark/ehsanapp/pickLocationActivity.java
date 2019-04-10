@@ -77,8 +77,8 @@ public class pickLocationActivity extends AppCompatActivity implements OnMapRead
             config.locale=locale;
             getResources().updateConfiguration(config,getResources().getDisplayMetrics());
         }
-latText=findViewById(R.id.latitiudetext);
-longText=findViewById(R.id.longtitiudetext);
+    latText=findViewById(R.id.latitiudetext);
+    longText=findViewById(R.id.longtitiudetext);
 
         continueButton=findViewById(R.id.continubtn);
         continueButton.setOnClickListener(new View.OnClickListener() {
@@ -142,7 +142,6 @@ String longt=longText.getText().toString();
 
                 LatLng myCoordinates = new LatLng(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
                 String cityName = getCityName(myCoordinates);
-                //Toast.makeText(RegisterActivity.this, cityName, Toast.LENGTH_SHORT).show();
                 CityText.setText(cityName);
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myCoordinates, 13.0f));
                 if (marker == null) {
@@ -188,34 +187,33 @@ String longt=longText.getText().toString();
     }
 
     private void requestLocation() {
-        CityText = findViewById(R.id.locationadd2);
 
+        CityText = findViewById(R.id.locationadd2);
+        //Request location enabled from the donor
         Criteria criteria = new Criteria();
         criteria.setAccuracy(Criteria.ACCURACY_MEDIUM);
         criteria.setPowerRequirement(Criteria.POWER_MEDIUM);
         String provider = locationManager.getBestProvider(criteria, true);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions((RegisterActivity) mContext,
                     new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                    REQUEST_ACCESS_COARSE_LOCATION);            //    ActivityCompat#requestPermissions
+                    REQUEST_ACCESS_COARSE_LOCATION);
 
             return;
         }
+        //If location request was used before
         final Location location = locationManager.getLastKnownLocation(provider);
         Log.d("mylog", "In Requesting Location");
         if (location != null && (System.currentTimeMillis() - location.getTime()) <= 1000 * 2) {
               final LatLng myCoordinates = new LatLng(location.getLatitude(), location.getLongitude());
 
+              //Get city name to create an address
              final String cityName = getCityName(myCoordinates);
-            // Toast.makeText(this, cityName, Toast.LENGTH_SHORT).show();
-            CityText.setText(cityName);
-
-
-
-
+             CityText.setText(cityName);
 
         } else {
-
+            //Make a new location request
             LocationRequest locationRequest = new LocationRequest();
             locationRequest.setNumUpdates(1);
             locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
