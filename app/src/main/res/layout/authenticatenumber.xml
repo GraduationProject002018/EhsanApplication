@@ -116,6 +116,7 @@
         android:layout_marginStart="181dp"
         android:layout_marginEnd="182dp"
         android:layout_marginBottom="5dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/numberinput2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

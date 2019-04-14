@@ -90,10 +90,14 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     editTextCode.setText(code);
                     //verifying the code
                     verifyVerificationCode(code);
+                    progressBar.setVisibility(View.GONE);
+
                 }
             }
             public void onVerificationFailed(FirebaseException e) {
                 Toast.makeText(VerifyPhoneActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
+
             }
 
             @Override
@@ -102,6 +106,8 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
                 //storing the verification id that is sent to the user
                 mVerificationId = s;
+                progressBar.setVisibility(View.GONE);
+
             }
         };
 
@@ -129,7 +135,9 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                             Intent i = new Intent(VerifyPhoneActivity.this, RegisterActivity.class);
                             i.putExtra("mobile", mobile);
                            i.putExtra("user", user);
+                            progressBar.setVisibility(View.GONE);
                             Toast.makeText(VerifyPhoneActivity.this, getString(R.string.Phoneregistration_success), Toast.LENGTH_LONG).show();
+                            finish();
                             startActivity(i);
 
                         } else {

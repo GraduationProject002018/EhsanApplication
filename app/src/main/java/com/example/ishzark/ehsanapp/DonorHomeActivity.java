@@ -185,10 +185,10 @@ public class DonorHomeActivity extends AppCompatActivity {
                 }
                 break;
             case "3":
-                if(value>=100000 && value<=62499){
+                if(value>=100000 && value<=114999){
                     progressBar.setProgress(25);
                 }
-                else if(value>=62500 && value<=124999){
+                else if(value>=115000 && value<=124999){
                     progressBar.setProgress(50);
                 }
                 else if(value>=125000 && value<=187499){
@@ -202,7 +202,7 @@ public class DonorHomeActivity extends AppCompatActivity {
                 if(value>=250000 && value<=374999){
                     progressBar.setProgress(25);
                 }
-                else if(value>=375000 && value<=315499){
+                else if(value>= 315499&& value<=375000){
                     progressBar.setProgress(50);
                 }
                 else if(value>=315500 && value<=374999){

@@ -131,7 +131,7 @@
     <TextView
         android:id="@+id/namelabel"
         android:layout_width="108dp"
-        android:layout_height="20dp"
+        android:layout_height="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
