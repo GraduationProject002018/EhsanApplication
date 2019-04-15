@@ -72,7 +72,7 @@
 
 
     <string name="mainmembershipbenefits">
-         وصول تبرعاتك الى مستويات أعلى تعود عليك بمنافع قيمة وهي كالآتي:\n
+         وصول عضويتك الى مستويات أعلى تعود عليك بمنافع قيمة وهي كالآتي:\n
     </string>
     <string name="bluemembership">
         إرسال التقرير السنوي لإنجازات الجمعية.
@@ -153,6 +153,22 @@
         <item>عربات الطعام المتنقلة</item>
 
     </array>
+
+    <array name="BankName">
+        <item>بنك البلاد</item>
+        <item>البنك السعودي الفرنسي</item>
+        <item>البنك الأهلي</item>
+        <item>بنك الرياض</item>
+        <item>البنك العربي</item>
+        <item>بنك ساب</item>
+        <item>البنك الأول</item>
+        <item>البنك السعودي للاستثمار</item>
+        <item>مصرف الراجحي</item>
+        <item>بنك الجزيرة</item>
+        <item>مجموعة سامبا المالية</item>
+        <item>مصرف الإنماء</item>
+    </array>
+
     <string-array name="city_arrays">
         <item>الخبر</item>
         <item> الدمام</item>
@@ -171,6 +187,7 @@
     <string-array name="donationtype_array">
         <item>أثاث</item>
         <item>طعام جاف</item>
+        <item> أثاث</item>
         <item>جهاز كهربائي</item>
         <item>ملابس</item>
     </string-array>

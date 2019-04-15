@@ -26,7 +26,7 @@ public class MembershipHome extends AppCompatActivity {
         });
 
 
-        intent1 = new Intent(this, NewMembershipActivity.class);
+
 
 
 

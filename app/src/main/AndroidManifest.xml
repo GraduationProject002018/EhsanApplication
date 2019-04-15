@@ -97,9 +97,6 @@
             android:name=".NewEventActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".NewMembershipActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".membershipDetails"
             android:screenOrientation="portrait" />
 
