@@ -104,8 +104,6 @@ spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
-
-               // System.currentTimeMillis();
                 DatePickerDialog dialog = new DatePickerDialog(
                         RegisterActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,

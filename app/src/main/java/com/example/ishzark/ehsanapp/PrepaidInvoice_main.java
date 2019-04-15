@@ -43,22 +43,23 @@ import static com.example.ishzark.ehsanapp.R.layout.prepaidinvoice;
 public class PrepaidInvoice_main extends AppCompatActivity {
     //view objects
     EditText bankName;
-    //EditText Phone;
     EditText date_;
     String donorname;
     EditText donationamount2;
     EditText InvoiceNm2;
     Spinner Program2;
+    Spinner Bank_;
     Button donatebtn;
     private FirebaseAuth auth;
     private ProgressBar prgressBar;
+    private static final String TAG = "PrepaidInvoice_main";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     String Username = "mariamedu";
     String Password="ehsan2019";
     String Sender= "Ehsan";
-    String Message ="لقد تم استلام طلب تأكيد الإيصال وسيتم التواصل معك خلال ٢-٣ايام عمل";
+    String Message ="لقد تم استلام طلب تبرعك وسيتم التواصل معك خلال ٢-٣ايام عمل";
 
     //a list to store all the invoice from firebase database
     List<PrepaidInvoice> invoices;
@@ -78,11 +79,8 @@ public class PrepaidInvoice_main extends AppCompatActivity {
         //getting views
         donationamount2 = findViewById(R.id.donationamount2);
         InvoiceNm2 = findViewById(R.id.InvoiceNm2);
-        Program2 = findViewById(R.id.Program2);
-        //donorname = findViewById(R.id.donorName);
-        //Phone = findViewById(R.id.phone);
-      //  date_ = findViewById(R.id.date);
-        bankName = findViewById(R.id.bank);
+        Program2 = findViewById(R.id.program2);
+        Bank_ = findViewById(R.id.Bank);
 
         donatebtn = findViewById(R.id.donatebtn);
 
@@ -100,12 +98,18 @@ public class PrepaidInvoice_main extends AppCompatActivity {
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
+
+
                 // System.currentTimeMillis();
                 DatePickerDialog dialog = new DatePickerDialog(
                         PrepaidInvoice_main.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener,
                         year, month, day);
+
+
+                dialog.getDatePicker().setMaxDate(cal.getTimeInMillis());
+
 
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
@@ -116,10 +120,14 @@ public class PrepaidInvoice_main extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
+                Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
+
                 String date = month + "/" + day + "/" + year;
                 mDisplayDate.setText(date);
             }
         };
+
+///////////////////////////////////End of Date Picker Code///////////////////////////
 
 
         //list to store invoices
@@ -148,7 +156,7 @@ public class PrepaidInvoice_main extends AppCompatActivity {
         final String donationamount = donationamount2.getText().toString().trim();
         final String Invoicenum = InvoiceNm2.getText().toString().trim();
         final String date = mDisplayDate.getText().toString().trim();
-        final String bank = bankName.getText().toString().trim();
+        final String Bank = Bank_.getSelectedItem().toString();
         final String program = Program2.getSelectedItem().toString();
 
 
@@ -158,29 +166,18 @@ public class PrepaidInvoice_main extends AppCompatActivity {
             donationamount2.setError("الرجاءإدخال قيمة التبرع");
             donationamount2.requestFocus();
 
-            prgressBar.setVisibility(View.GONE);
-
         }
-        else if (TextUtils.isEmpty(Invoicenum)) {
+        if (TextUtils.isEmpty(Invoicenum)) {
             InvoiceNm2.setError("الرجاءإدخال رقم الايصال");
             InvoiceNm2.requestFocus();
-            prgressBar.setVisibility(View.GONE);
 
         }
-       else if (TextUtils.isEmpty(date)) {
+        if (TextUtils.isEmpty(date)) {
             mDisplayDate.setError("الرجاءإدخال تاريخ الايصال");
             mDisplayDate.requestFocus();
-            prgressBar.setVisibility(View.GONE);
-
 
         }
-       else  if (TextUtils.isEmpty(bank)) {
-            bankName.setError("الرجاءإدخال أسم البنك");
-            bankName.requestFocus();
-            prgressBar.setVisibility(View.GONE);
-
-        }else {
-
+        else {
 
             DatabaseReference refe = FirebaseDatabase.getInstance().getReference().child("Donors");
 
@@ -191,7 +188,6 @@ public class PrepaidInvoice_main extends AppCompatActivity {
                     boolean found = false;
                     auth = FirebaseAuth.getInstance();
                     FirebaseUser user = auth.getCurrentUser();
-                    //String userID = user.getUid();
 
                     String mobile = user.getPhoneNumber();
                     for (DataSnapshot child : dataSnapshot.getChildren()) {
@@ -207,13 +203,12 @@ public class PrepaidInvoice_main extends AppCompatActivity {
 
                     if (found) {
 
-                        //getting a unique id using push().getKey() method
                         //it will create a unique id and we will use it as the Primary Key for PrepaidInvoice
                         String id = Ehsan.push().getKey();
 
                         //creating an PrepaidInvoice Object
                         PrepaidInvoice invoice = new PrepaidInvoice();
-                        invoice.setBankName(bank);
+                        invoice.setBankName(Bank);
                         invoice.setDate(date);
                         invoice.setDonationAmount(donationamount);
                         invoice.setInvoiceNum(Invoicenum);
@@ -229,7 +224,6 @@ public class PrepaidInvoice_main extends AppCompatActivity {
                     }
 
                     prgressBar.setVisibility(View.GONE);
-                    sendSMS(mobile,donorname);
 
                     startActivity(new Intent(PrepaidInvoice_main.this, GifActivity.class));
                     finish();
