@@ -1,6 +1,8 @@
 package com.example.ishzark.ehsanapp;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -116,7 +118,33 @@ public class eventDetails extends AppCompatActivity {
         DeleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Delete(key);}
+                showConfirmDialog();
+            }
+
+            private void showConfirmDialog(){
+
+                final AlertDialog.Builder alertDig = new AlertDialog.Builder(eventDetails.this );
+                alertDig.setMessage("هل أنت متأكد من عملية الحذف؟");
+                alertDig.setCancelable(false);
+                alertDig.setPositiveButton("نعم",new DialogInterface.OnClickListener(){
+
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Delete(key);
+                    }
+                });
+                alertDig.setNegativeButton("لا", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+
+                    }
+                });
+                alertDig.create().show();
+
+            }
 
 
             public void Delete(String key) {

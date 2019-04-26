@@ -1,5 +1,7 @@
 package com.example.ishzark.ehsanapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -75,7 +77,33 @@ public class membershipDetails extends AppCompatActivity {
         DeleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Delete(key);}
+                showConfirmDialog();
+            }
+
+            private void showConfirmDialog(){
+
+                final AlertDialog.Builder alertDig = new AlertDialog.Builder(membershipDetails.this );
+                alertDig.setMessage("هل أنت متأكد من عملية الحذف؟");
+                alertDig.setCancelable(false);
+                alertDig.setPositiveButton("نعم",new DialogInterface.OnClickListener(){
+
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Delete(key);
+                    }
+                });
+                alertDig.setNegativeButton("لا", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+
+                    }
+                });
+                alertDig.create().show();
+
+            }
 
 
             public void Delete(String key) {

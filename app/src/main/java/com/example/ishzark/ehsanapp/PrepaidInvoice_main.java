@@ -165,17 +165,17 @@ public class PrepaidInvoice_main extends AppCompatActivity {
         if (TextUtils.isEmpty(donationamount)) {
             donationamount2.setError("الرجاءإدخال قيمة التبرع");
             donationamount2.requestFocus();
-
+            prgressBar.setVisibility(View.GONE);
         }
-        if (TextUtils.isEmpty(Invoicenum)) {
+        else if (TextUtils.isEmpty(Invoicenum)) {
             InvoiceNm2.setError("الرجاءإدخال رقم الايصال");
             InvoiceNm2.requestFocus();
-
+            prgressBar.setVisibility(View.GONE);
         }
-        if (TextUtils.isEmpty(date)) {
+       else if (TextUtils.isEmpty(date)) {
             mDisplayDate.setError("الرجاءإدخال تاريخ الايصال");
             mDisplayDate.requestFocus();
-
+            prgressBar.setVisibility(View.GONE);
         }
         else {
 

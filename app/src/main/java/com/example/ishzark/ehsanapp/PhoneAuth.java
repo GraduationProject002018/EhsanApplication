@@ -75,7 +75,6 @@ private String userslocation;
                 Intent restart=getIntent();
                 for (DataSnapshot child:dataSnapshot.getChildren()){
                     String phone= child.child("phone").getValue().toString();
-                    Log.d(TAG,"phone found"+phone);
                     if(phone.equals(number)){
                       found=true;
                     }
