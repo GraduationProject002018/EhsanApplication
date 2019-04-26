@@ -29,9 +29,9 @@ public class MoneyDonationTypeActivity extends AppCompatActivity {
         money.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Toast.makeText(MoneyDonationTypeActivity.this, "قريباً", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(MoneyDonationTypeActivity.this, Gpay.class);
-                startActivity(i);
+                 Toast.makeText(MoneyDonationTypeActivity.this ,getString(R.string.Moneydonationsoon), Toast.LENGTH_SHORT).show();
+                //Intent i = new Intent(MoneyDonationTypeActivity.this, Gpay.class);
+                //startActivity(i);
 
             }
         });

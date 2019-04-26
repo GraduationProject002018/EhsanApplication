@@ -93,7 +93,7 @@ public class NewMngAdmin extends AppCompatActivity {
                         if(found){
                             progressBar.setVisibility(View.GONE);
                             Log.d(TAG,"number is "+number);
-                            Toast.makeText(NewMngAdmin.this, getString(R.string.Phoneregistration_exsist), Toast.LENGTH_LONG).show();
+                            Toast.makeText(NewMngAdmin.this, "الرقم المدخل مسجل مسبقاً يرجى ادخال رقم اخر", Toast.LENGTH_LONG).show();
                             startActivity(restart);
                             finish();
                         }else {

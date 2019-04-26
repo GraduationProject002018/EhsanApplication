@@ -14,7 +14,7 @@
     <string name="title_activity_verify_phone">VerifyPhoneActivity</string>
     <string name="Phoneregistration_success">تم تأكيد الرقم بنجاح</string>
     <string name="Phoneregistration_failed">حدث خطآ اثناء التأكيد يرجى المحاولة مرة أخرى</string>
-    <string name="Phoneregistration_exsist">الرقم المدخل مسجل مسبقاً يرجى تسجيل الدخول بهذا الرقم أو ادخال دقم اخر</string>
+    <string name="Phoneregistration_exsist">الرقم المدخل مسجل مسبقاً يرجى تسجيل الدخول بهذا الرقم أو ادخال رقم اخر</string>
     <string name="Phonedontexist">هذا الرقم غير مسجل الرجاء التسجيل كمستخدم جديد</string>
     <string name="Phoneregistration_wrongcode">رقم التحقق المدخل خاطئ، الرجاء إدخاله مرة أخرى</string>
     <string name="continubtn">استمرار</string>
@@ -182,6 +182,8 @@
         <item>القطيف</item>
         <item>الخفجي</item>
         <item>بقيق</item>
+        <item>عنك</item>
+        <item>النعيرية</item>
         <item>أخرى</item>
     </string-array>
     <string-array name="donationtype_array">

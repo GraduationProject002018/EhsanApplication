@@ -52,7 +52,6 @@ private String userslocation;
 
                 }else {
 
-               // userslocation="https://ehsan-c48bc.firebaseio.com/";
                 checkNumber(mobile);
 
 
